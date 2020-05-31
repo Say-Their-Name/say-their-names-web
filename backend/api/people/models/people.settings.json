@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "People",
+  "info": {
+    "name": "people"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "deathDate": {
+      "type": "date"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "childrenCount": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "context": {
+      "type": "text"
+    }
+  }
+}
