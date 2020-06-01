@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Query from "../../components/Query";
 import PEOPLE_QUERY from "../../queries/people/people";
 import Person from "../../components/Person"
-import Tabs from "../../components/Tabs"
 
 const People = ({ people }) => {
   return (
