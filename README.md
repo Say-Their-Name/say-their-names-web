@@ -66,17 +66,6 @@ npm start
 
 Let's have fun, let's make an impact.
 
-### Deploy the backend
-
-To deploy this Strapi instance you'll need:
-
-- [A Heroku account](https://signup.heroku.com/) for free
-- [A Cloudinary account for saving images](https://cloudinary.com/users/register/free) for free
-
-Once you have created these accounts you can deploy your instance by clicking on this button
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-react-blog)
-
 ### Deploy the frontend
 
 **Netlify**
@@ -87,4 +76,4 @@ To deploy this Strapi instance you'll need:
 
 Once you have created your account you can deploy your instance by clicking on this button.
 
-[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/strapi/strapi-starter-react-blog)
+[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Say-Their-Name/web)
