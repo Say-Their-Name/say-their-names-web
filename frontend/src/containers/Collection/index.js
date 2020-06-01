@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Query from "../../components/Query";
 import PEOPLE_QUERY from "../../queries/people/people";
 import Person from "../../components/Person"
@@ -16,10 +16,10 @@ const People = ({ people }) => {
 
 
 const Collection = () => {
+
   return (
     <div>
       <div className="collection">
-          <Tabs/>
           <Query query={PEOPLE_QUERY}>
           {({ data: { people } }) => {
                return <People people={people} />;
