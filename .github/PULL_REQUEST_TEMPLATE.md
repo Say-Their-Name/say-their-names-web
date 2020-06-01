@@ -14,7 +14,7 @@
 
 -
 
-**Pull Request Type (check one)**
+#### Pull Request Type (check one)
 
 - [ ] Feature
 - [ ] Bug Fixes
