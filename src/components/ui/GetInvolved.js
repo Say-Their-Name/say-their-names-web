@@ -20,6 +20,22 @@ const StyledGetInvolved = styled.div`
     background-position: center;
     height: 450px;
 
+    @media (max-width: 1300px) {
+      width: 50%;
+    }
+
+    @media (max-width: 1000px) {
+      width: 55%;
+    }
+
+    @media (max-width: 800px) {
+      width: 95%;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
     .image-text-container {
       display: flex;
       flex-direction: column;
@@ -53,9 +69,33 @@ const StyledGetInvolved = styled.div`
   .details {
     width: 40%;
 
+    @media (max-width: 1300px) {
+      width: 45%;
+    }
+
+    @media (max-width: 1000px) {
+      width: 30%;
+    }
+
+    @media (max-width: 800px) {
+      width: 95%;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+
     h1 {
       font-size: 6rem;
       text-align: center;
+
+      @media (max-width: 1200px) {
+        font-size: 4rem;
+      }
+
+      @media (max-width: 1000px) {
+        font-size: 3.5rem;
+      }
     }
   }
 `;
