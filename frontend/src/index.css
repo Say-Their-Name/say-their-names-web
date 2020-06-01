@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: 'Karla', sans-serif;
 }
 
@@ -172,4 +173,17 @@ img:hover {
     text-transform: uppercase;
     margin-right: 5px;
 
+=======
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+>>>>>>> 7857a4455421d140519c919cf35fb77755899180
 }
