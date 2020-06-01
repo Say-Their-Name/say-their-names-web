@@ -49,20 +49,6 @@ The first step to running Spectrum locally is downloading the code by cloning th
 
 ```sh
 git clone https://github.com/Say-Their-Name/web.git
-
-```
-### Start the backend server
-
-```bash
-cd backend
-
-# Using yarn
-yarn
-yarn develop
-
-# Using npm
-npm install
-npm run develop
 ```
 
 ### Start the frontend server
@@ -72,15 +58,13 @@ cd frontend
 
 # Using yarn
 yarn
-yarn develop
+yarn start
 
 # Using npm
 npm install
-npm run develop
+npm start
 ```
 
-React server is running here => [http://localhost:3000](http://localhost:3000)
-Strapi server is running here => [http://localhost:1337](http://localhost:1337)
 
 Let's have fun, let's make an impact.
 
