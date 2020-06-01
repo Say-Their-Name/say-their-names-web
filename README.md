@@ -54,8 +54,6 @@ git clone https://github.com/Say-Their-Name/web.git
 ### Start the frontend server
 
 ```bash
-cd frontend
-
 # Using yarn
 yarn
 yarn start
