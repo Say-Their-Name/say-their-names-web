@@ -6,6 +6,6 @@ const Home = () => (
       <p>Say Their Names</p>
     </header>
   </div>
-)
+);
 
 export default Home;
