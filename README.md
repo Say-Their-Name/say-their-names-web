@@ -44,7 +44,7 @@ With the ground rules out of the way, let's talk about the core architecture of 
 The first step to running Spectrum locally is downloading the code by cloning the repository:
 
 ```sh
-git clone https://github.com/FranckNdame/say-their-names.git
+git clone https://github.com/Say-Their-Name/web.git
 
 ```
 ### Start the backend server
