@@ -31,8 +31,24 @@
     ],
     "rules": {
       "semi": 0,
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "comma-dangle": ["error", "never"]
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint"
     }
   },
   "browserslist": {
@@ -49,6 +65,7 @@
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3"
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "husky": "^4.2.5"
   }
 }
