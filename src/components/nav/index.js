@@ -1,12 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-} from "./styles";
-import Logo from "../../assets/logo.png";
+  Space
+} from './styles';
+import Logo from '../../assets/logo.png';
 
 const Navigation = () => (
   <StyledNavigation className="navbar">
@@ -15,8 +16,16 @@ const Navigation = () => (
         <img src={Logo} alt="Say Their Names Logo" />
       </Link>
     </StyledNavigationLogo>
+    <Space />
     <StyledNavigationLinks>
-      <a href="/about">About</a>
+      <Link to="/about">
+        About
+      </Link>
+    </StyledNavigationLinks>
+    <StyledNavigationLinks>
+      <Link to="/petitions">
+        Petitions
+      </Link>
     </StyledNavigationLinks>
   </StyledNavigation>
 );
