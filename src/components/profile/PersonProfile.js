@@ -78,9 +78,9 @@ PersonProfile.propTypes = {
   info: PropTypes.shape({
     images: PropTypes.array.isRequired,
     full_name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
+    age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    number_of_children: PropTypes.number
+    number_of_children: PropTypes.string.isRequired
   }).isRequired
 };

@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
 
-import Profile from "../components/profile/PersonProfile";
-import BackToProfile from "../components/profile/Button/Button";
-import MediaList from "../components/ui/MediaList/MediaList";
-import Container from "../components/Container";
-import config from "../utils/config";
+import Profile from '../components/profile/PersonProfile';
+import BackToProfile from '../components/profile/Button/Button';
+import MediaList from '../components/ui/MediaList/MediaList';
+import Container from '../components/Container';
+import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
 const PersonProfile = ({ match }) => {
   const { id } = match.params;
-
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
 
@@ -20,7 +20,6 @@ const PersonProfile = ({ match }) => {
     async function fetchdata() {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
-        console.log(response.data.data);
         setPerson(response.data.data);
       } catch (error) {
         toast(error.message);
@@ -31,7 +30,7 @@ const PersonProfile = ({ match }) => {
     fetchdata();
   }, [id]);
 
-  if (loading) return "loading";
+  if (loading) return 'loading';
   return (
     <Container>
       {loading && <h1>Loading....</h1>}
@@ -44,3 +43,11 @@ const PersonProfile = ({ match }) => {
 };
 
 export default PersonProfile;
+
+PersonProfile.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  }).isRequired
+};

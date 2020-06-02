@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { ReactTinyLink } from "react-tiny-link";
-import PropTypes from "prop-types";
-import StyledMedia from "./styles";
+import React, { useState } from 'react';
+import { ReactTinyLink } from 'react-tiny-link';
+import PropTypes from 'prop-types';
+import StyledMedia from './styles';
 
 const Media = ({ media }) => {
-  const [display, setDisplay] = useState("none");
+  const [display, setDisplay] = useState('none');
   return (
     <StyledMedia style={{ display }}>
       <ReactTinyLink
@@ -14,8 +14,8 @@ const Media = ({ media }) => {
         minLine={1}
         url={media.url}
         loadSecureUrl
-        onSuccess={() => setDisplay("flex")}
-        onError={() => setDisplay("none")}
+        onSuccess={() => setDisplay('flex')}
+        onError={() => setDisplay('none')}
       />
     </StyledMedia>
   );
@@ -23,7 +23,7 @@ const Media = ({ media }) => {
 
 Media.propTypes = {
   media: PropTypes.shape({
-    url: PropTypes.string,
-  }).isRequired,
+    url: PropTypes.string
+  }).isRequired
 };
 export default Media;

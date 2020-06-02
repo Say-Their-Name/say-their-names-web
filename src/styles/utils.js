@@ -1,5 +1,5 @@
-import { css } from "styled-components";
-import Breakpoints from "../constants/Breakpoints";
+import { css } from 'styled-components';
+import Breakpoints from '../constants/Breakpoints';
 
 /**
  * Media Query Helper
