@@ -6,17 +6,21 @@ const Profile = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10px 0px;
+    padding: 10px;
 `;
 
 const PersonalInformation = styled.div`
     display: flex;
-    width: 655px;
-    height: 338px;
+    width: 726px;
+    height: 360px;
+    margin: 10px 0px;
+    padding: 10px;
 `;
 const Photo = styled.div`
     img {
         width: 270px;
-        height: 338px;
+        height: 100%;
     }
 `;
 
@@ -24,9 +28,9 @@ const PersonSection = styled.section`
     display: flex;
     flex-direction: column;
     width: 317px;
-    /* height: 317px; */
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 20px;
 `;
 
 const Name = styled.div`
@@ -106,10 +110,24 @@ const Button = styled.div`
 const ShareSection = styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-around;
+    width: 247px;
+    height: 20px;
+    p {
+        margin: 5px 0px;
+    }
+`;
 
+const Share = styled.div`
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     p {
         margin: 5px;
+        font-family: Karla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 20px;
     }
 `;
 
@@ -122,7 +140,32 @@ const H2 = styled.h2`
     color: #101010;
 `;
 
+const Context = styled.section`
+    width: 726px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-family: Karla;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 20px;
+    }
+
+    p {
+        font-family: Karla;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+    }
+`;
+
 
 export {
-  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Location, ShareSection, Button, H2
+  Profile, PersonalInformation, Photo, PersonSection, Name,
+  H4, Div, Age, Location, ShareSection, Button, H2, Share,
+  Context
 };

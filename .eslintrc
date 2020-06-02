@@ -9,7 +9,7 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [ ".js", ".jsx"] }],
-        "max-len": [2, 108, 4, {"ignoreUrls": true}],
+        "max-len": [2, 200, 4, {"ignoreUrls": true}],
         "comma-dangle": [
             "error",
             "never"

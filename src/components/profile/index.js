@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Location, ShareSection, Button, H2
+  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Location, ShareSection, Button, H2, Share, Context
 } from './styles';
 
 export default function index({ info }) {
@@ -40,20 +40,20 @@ export default function index({ info }) {
           <Button>
             <button type="button">DONATE</button>
           </Button>
-          <section>
+          <Share>
             <p>Share on:</p>
             <ShareSection>
               <p>Twitter</p>
               <p>Facebook</p>
               <p>Whatsapp</p>
             </ShareSection>
-          </section>
+          </Share>
         </PersonSection>
       </PersonalInformation>
-      <div>
+      <Context>
         <h2>Context</h2>
         <p>{context}</p>
-      </div>
+      </Context>
     </Profile>
   );
 }
