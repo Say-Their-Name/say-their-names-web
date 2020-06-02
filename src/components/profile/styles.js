@@ -16,6 +16,10 @@ const PersonalInformation = styled.div`
     height: 360px;
     margin: 10px 0px;
     padding: 10px;
+
+    @media screen and (max-width: 760px) {
+        flex-direction: column;
+    }
 `;
 const Photo = styled.div`
     img {
