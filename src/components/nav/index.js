@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import {
   StyledNavigation,
   StyledNavigationLogo,
-  StyledNavigationLinks
+  StyledNavigationLinks,
+  Space
 } from './styles';
 import Logo from '../../assets/logo.png';
 
@@ -13,11 +14,23 @@ const Navigation = () => (
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
         <img src={Logo} alt="Say Their Names Logo" />
-        <h1>Say Their Names</h1>
       </Link>
     </StyledNavigationLogo>
+    <Space />
     <StyledNavigationLinks>
-      <a href="/about">About</a>
+      <Link to="/about">
+        About
+      </Link>
+    </StyledNavigationLinks>
+    <StyledNavigationLinks>
+      <Link to="/petitions">
+        Petitions
+      </Link>
+    </StyledNavigationLinks>
+    <StyledNavigationLinks>
+      <Link to="/donations">
+        Donations
+      </Link>
     </StyledNavigationLinks>
   </StyledNavigation>
 );

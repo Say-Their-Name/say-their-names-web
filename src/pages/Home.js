@@ -1,10 +1,9 @@
 import React from 'react';
+import GetInvolved from '../components/ui/GetInvolved';
 
 const Home = () => (
   <div className="App">
-    <header className="App-header">
-      <p>Say Their Names</p>
-    </header>
+    <GetInvolved />
   </div>
 );
 

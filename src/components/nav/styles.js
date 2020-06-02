@@ -30,7 +30,14 @@ const StyledNavigationLogo = styled.div`
 const StyledNavigationLinks = styled.div`
   a {
     color: ${Color.WHITE};
+    margin-left: 20px;
   }
 `;
 
-export { StyledNavigation, StyledNavigationLogo, StyledNavigationLinks };
+const Space = styled.div`
+  flex-grow: 1
+`;
+
+export {
+  StyledNavigation, StyledNavigationLogo, StyledNavigationLinks, Space
+};

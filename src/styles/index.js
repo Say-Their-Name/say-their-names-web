@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: 'Karla', sans-serif;
-    font-size: 120px;
+    font-size: 3rem;
 }
 
 a {
