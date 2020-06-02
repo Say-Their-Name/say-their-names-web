@@ -6,7 +6,6 @@ import {
   StyledFooterLinks,
   StyledFooterMissions,
   StyleFooterForm,
-  InputEmail,
   InputSubmit
 } from './style';
 
@@ -19,10 +18,11 @@ const Footer = () => (
       <Link to="/petitions">Petitions</Link>
       <Link to="/settings">Settings</Link>
     </StyledFooterLinks>
-
     <StyleFooterForm className="footer__form">
-      <label>Sign up to our Newsletter</label>
-      <InputEmail />
+      <label htmlFor="email">
+        Sign up to our Newsletter
+        <input id="email" type="email" />
+      </label>
       <InputSubmit />
     </StyleFooterForm>
 
