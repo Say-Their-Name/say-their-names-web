@@ -32,6 +32,7 @@ const PersonSection = styled.section`
 const Name = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 10px;
     div {
         display: flex;
         align-items: center;
@@ -80,6 +81,7 @@ const Location = styled.div`
     align-content: space-around;
     width: 217px;
     height: 45px;
+    margin: 10px;
     h2 {
             margin:0px
         }
@@ -94,6 +96,10 @@ const Button = styled.div`
         background-color: black;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
+        cursor: pointer;
+        :hover {
+            opacity: 0.9
+        }
     }
 `;
 
