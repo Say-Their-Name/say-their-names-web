@@ -31,7 +31,7 @@ export default function PersonProfile() {
   return (
     <div>
       { loading && <h1>Loading....</h1> }
-      { data.map((item) => (
+      { data.length && data.map((item) => (
         <Profile info={item} key={item.fullname} />
       )) }
       <ToastContainer />

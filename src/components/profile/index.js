@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age
+  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Location, ShareSection, Button, H2
 } from './styles';
 
 export default function index({ info }) {
@@ -19,31 +19,35 @@ export default function index({ info }) {
           <Name>
             <H4>FULL NAME</H4>
             <div>
-              <h2>{fullname}</h2>
+              <H2>{fullname}</H2>
               <i>Icon</i>
             </div>
           </Name>
           <Div>
             <Age>
               <H4>Age</H4>
-              <h2>{age}</h2>
+              <H2>{age}</H2>
             </Age>
-            <div>
+            <div style={{ padding: '0px 10px' }}>
               <H4>Children</H4>
-              <h2>{children && children}</h2>
+              <H2>{children && children}</H2>
             </div>
           </Div>
-          <div>
+          <Location>
             <H4>LOCATION</H4>
-            <h2>{location}</h2>
-          </div>
-          {/* <button>DONATE</button>
-                    <section>
-                        <p>Share on:</p>
-                        <h3>Twitter</h3>
-                        <h3>Facebook</h3>
-                        <h3>Whatsapp</h3>
-                    </section> */}
+            <H2>{location}</H2>
+          </Location>
+          <Button>
+            <button type="button">DONATE</button>
+          </Button>
+          <section>
+            <p>Share on:</p>
+            <ShareSection>
+              <p>Twitter</p>
+              <p>Facebook</p>
+              <p>Whatsapp</p>
+            </ShareSection>
+          </section>
         </PersonSection>
       </PersonalInformation>
       <div>
