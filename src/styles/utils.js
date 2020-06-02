@@ -22,12 +22,12 @@ import Breakpoints from "../constants/Breakpoints";
  * ```
  */
 export const MediaQuery = Object.keys(Breakpoints).reduce(
-  (accumulator, device) => {
+  (accumulator, size) => {
     // use em in breakpoints to work properly cross-browser and support users
     // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
-    const emSize = Breakpoints[device] / 16;
+    const emSize = Breakpoints[size] / 16;
 
-    accumulator[device] = (...args) => css`
+    accumulator[size] = (...args) => css`
       @media screen and (min-width: ${emSize}em) {
         ${css(...args)};
       }

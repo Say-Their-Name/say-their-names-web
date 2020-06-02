@@ -1,7 +1,9 @@
-const Breakpoint = {
-  mobile: 0,
-  tablet: 768,
-  dsktop: 1200,
+const Breakpoints = {
+  xs: 0,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920,
 };
 
-export default Breakpoint;
+export default Breakpoints;
