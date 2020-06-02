@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -22,8 +22,8 @@ const StyledFooterLinks = styled.div`
 `;
 
 const InputEmail = styled.input.attrs({
-  type: "email",
-  placeholder: "email@email.com",
+  type: 'email',
+  placeholder: 'email@email.com'
 })`
   width: 70%;
   padding: 12px 20px;
@@ -38,8 +38,8 @@ const InputEmail = styled.input.attrs({
   }
 `;
 const InputSubmit = styled.input.attrs({
-  type: "submit",
-  value: "Submit",
+  type: 'submit',
+  value: 'Submit'
 })`
   width: 40%;
   padding: 12px 20px;
@@ -71,5 +71,5 @@ export {
   StyledFooterMissions,
   StyleFooterForm,
   InputEmail,
-  InputSubmit,
+  InputSubmit
 };
