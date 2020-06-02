@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const BackProfile = styled.section`
@@ -11,14 +10,13 @@ const BackProfile = styled.section`
         width: 162px;
         height: 36px; 
         border: 1px solid black;
-        background-color: white;      
+        background-color: white; 
+        cursor: pointer;
+        outline: none;
+        :hover {
+            opacity: 0.7
+        }     
     }
 `;
 
-export default function button() {
-  return (
-    <BackProfile>
-      <button type="button">BACK TO PROFILES</button>
-    </BackProfile>
-  );
-}
+export default BackProfile;

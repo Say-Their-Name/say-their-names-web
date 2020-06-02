@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
-import Profile from '../components/profile';
-import BackToProfile from '../components/profile/button';
+import Profile from '../components/profile/PersonProfile';
+import BackToProfile from '../components/profile/Button/Button';
 
 const data = [{
   image: 'https://via.placeholder.com/150',
@@ -13,15 +13,13 @@ const data = [{
   context: 'smkjjyhhbbfnfuhhb lorem',
   children: 2
 }];
-export default function PersonProfile() {
-//   const [persons, setPerson] = useState([]);
+const PersonProfile = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchdata() {
       try {
         await axios.get('thebackendurl.com');
-        // setPerson(response);
       } catch (error) {
         toast(error.message);
       } finally {
@@ -40,4 +38,6 @@ export default function PersonProfile() {
       <ToastContainer />
     </div>
   );
-}
+};
+
+export default PersonProfile;

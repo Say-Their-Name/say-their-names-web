@@ -1,4 +1,4 @@
-import styled from './node_modules/styled-components';
+import styled from 'styled-components';
 import Color from '../../constants/Color';
 
 const StyledFooter = styled.footer`
@@ -21,10 +21,7 @@ const StyledFooterLinks = styled.div`
   }
 `;
 
-const InputEmail = styled.input.attrs({
-  type: 'email',
-  placeholder: 'email@email.com'
-})`
+const InputEmail = styled.input`
   width: 70%;
   padding: 12px 20px;
   margin: 8px 0;

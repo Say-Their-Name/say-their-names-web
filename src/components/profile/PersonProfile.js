@@ -2,10 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Children, Location, ShareSection, Button, H2, Share, Context
+  Profile,
+  PersonalInformation,
+  Photo,
+  PersonSection,
+  Name,
+  H4,
+  Div,
+  Age,
+  Children,
+  Location,
+  ShareSection,
+  Button,
+  H2,
+  Share,
+  Context
 } from './styles';
 
-export default function index({ info }) {
+const PersonProfile = ({ info }) => {
   const {
     image, fullname, age, children, location, context
   } = info;
@@ -56,9 +70,11 @@ export default function index({ info }) {
       </Context>
     </Profile>
   );
-}
+};
 
-index.propTypes = {
+export default PersonProfile;
+
+PersonProfile.propTypes = {
   info: PropTypes.shape({
     image: PropTypes.string.isRequired,
     fullname: PropTypes.string.isRequired,

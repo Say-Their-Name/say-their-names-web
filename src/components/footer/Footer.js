@@ -1,12 +1,11 @@
-import React from './node_modules/react';
-import { Link } from './node_modules/react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
   StyleFooterForm,
-  InputEmail,
   InputSubmit
 } from './style';
 
@@ -19,10 +18,11 @@ const Footer = () => (
       <Link to="/petitions">Petitions</Link>
       <Link to="/settings">Settings</Link>
     </StyledFooterLinks>
-
     <StyleFooterForm className="footer__form">
-      <label>Sign up to our Newsletter</label>
-      <InputEmail />
+      <label htmlFor="email">
+        Sign up to our Newsletter
+        <input id="email" type="email" />
+      </label>
       <InputSubmit />
     </StyleFooterForm>
 

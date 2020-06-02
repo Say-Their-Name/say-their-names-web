@@ -116,6 +116,7 @@ const Button = styled.div`
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         cursor: pointer;
+        outline: none;
         :hover {
             opacity: 0.9
         }
@@ -180,7 +181,19 @@ const Context = styled.section`
 
 
 export {
-  Profile, PersonalInformation, Photo, PersonSection, Name,
-  H4, Div, Age, Children, Location, ShareSection, Button, H2, Share,
+  Profile,
+  PersonalInformation,
+  Photo,
+  PersonSection,
+  Name,
+  H4,
+  Div,
+  Age,
+  Children,
+  Location,
+  ShareSection,
+  Button,
+  H2,
+  Share,
   Context
 };
