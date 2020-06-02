@@ -9,14 +9,14 @@ import Breakpoints from "../constants/Breakpoints";
  * @example
  * ```js
  * const StyledBox = styled.div`
- *  padding-top: 1rem; // Will apply to mobile and up
+ *  padding-top: 1rem; // Will apply to xs(0px) and up
  *
- *  ${MediaQuery.tablet`
- *    padding-top: 2rem; // Will apply to tablet and up
+ *  ${MediaQuery.md`
+ *    padding-top: 2rem; // Will apply to md(960px) devices and up
  *  `}
  *
- *  ${MediaQuery.desktop`
- *    padding-top: 3rem; // Will apply to desktop and up
+ *  ${MediaQuery.lg`
+ *    padding-top: 3rem; // Will apply to lg(1280px) devices and up
  *  `}
  * `;
  * ```
