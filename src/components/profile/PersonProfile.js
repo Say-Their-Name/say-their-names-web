@@ -21,19 +21,19 @@ import {
 
 const PersonProfile = ({ info }) => {
   const {
-    image, fullname, age, children, location, context
+    images, full_name, age, number_of_children, city, context
   } = info;
   return (
     <Profile>
       <PersonalInformation>
         <Photo>
-          <img src={image} alt="profile" />
+          <img src={images[0].image_url} alt="profile" />
         </Photo>
         <PersonSection>
           <Name>
             <H4>FULL NAME</H4>
             <div>
-              <H2>{fullname}</H2>
+              <H2>{full_name}</H2>
               <i className="far fa-bookmark" />
             </div>
           </Name>
@@ -44,12 +44,12 @@ const PersonProfile = ({ info }) => {
             </Age>
             <Children>
               <H4>Children</H4>
-              <H2>{children && children}</H2>
+              <H2>{number_of_children && number_of_children}</H2>
             </Children>
           </Div>
           <Location>
             <H4>LOCATION</H4>
-            <H2>{location}</H2>
+            <H2>{city}</H2>
           </Location>
           <Button>
             <button type="button">DONATE</button>
@@ -76,11 +76,11 @@ export default PersonProfile;
 
 PersonProfile.propTypes = {
   info: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    fullname: PropTypes.string.isRequired,
+    images: PropTypes.array.isRequired,
+    full_name: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
-    location: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    children: PropTypes.number
+    number_of_children: PropTypes.number
   }).isRequired
 };

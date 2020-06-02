@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
-import Profile from '../components/profile/PersonProfile';
-import BackToProfile from '../components/profile/Button/Button';
+import Profile from "../components/profile/PersonProfile";
+import BackToProfile from "../components/profile/Button/Button";
+import MediaList from "../components/ui/MediaList/MediaList";
+import Container from "../components/Container";
+import config from "../utils/config";
 
-const data = [{
-  image: 'https://via.placeholder.com/150',
-  fullname: 'James Bond',
-  age: '42',
-  location: 'SOMEWHERE',
-  context: 'smkjjyhhbbfnfuhhb lorem',
-  children: 2
-}];
-const PersonProfile = () => {
+const { apiBaseUrl } = config;
+
+const PersonProfile = ({ match }) => {
+  const { id } = match.params;
+
   const [loading, setLoading] = useState(true);
+  const [person, setPerson] = useState({});
 
   useEffect(() => {
     async function fetchdata() {
       try {
-        await axios.get('thebackendurl.com');
+        const response = await axios.get(`${apiBaseUrl}/people/${id}`);
+        console.log(response.data.data);
+        setPerson(response.data.data);
       } catch (error) {
         toast(error.message);
       } finally {
@@ -27,16 +29,17 @@ const PersonProfile = () => {
       }
     }
     fetchdata();
-  }, []);
+  }, [id]);
+
+  if (loading) return "loading";
   return (
-    <div>
-      { loading && <h1>Loading....</h1> }
+    <Container>
+      {loading && <h1>Loading....</h1>}
       <BackToProfile />
-      { data.length && data.map((item) => (
-        <Profile info={item} key={item.fullname} />
-      )) }
+      <Profile info={person} />
+      <MediaList mediaList={person.media_links} />
       <ToastContainer />
-    </div>
+    </Container>
   );
 };
 

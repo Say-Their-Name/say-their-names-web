@@ -1,22 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledMedia = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 20%;
-  margin: 1rem;
+  justify-content: space-between;
+  width: 30%;
+  margin: 1rem 0;
 
   @media (max-width: 1300px) {
     width: 30%;
   }
 
   @media (max-width: 1000px) {
-    width: 40%;
-  }
-
-  @media (max-width: 900px) {
-    width: 44%;
+    width: 45%;
   }
 
   @media (max-width: 600px) {
