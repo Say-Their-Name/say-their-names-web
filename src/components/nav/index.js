@@ -27,6 +27,11 @@ const Navigation = () => (
         Petitions
       </Link>
     </StyledNavigationLinks>
+    <StyledNavigationLinks>
+      <Link to="/donations">
+        Donations
+      </Link>
+    </StyledNavigationLinks>
   </StyledNavigation>
 );
 
