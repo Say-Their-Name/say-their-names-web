@@ -1,13 +1,10 @@
 import React from 'react';
+import GetInvolved from '../components/ui/GetInvolved/GetInvolved';
 
-const Home =() => {
-  return (
-    <div className="App">
-      <header className="App-header">
-       <p>Say Their Names</p>
-      </header>
-    </div>
-  );
-}
+const Home = () => (
+  <div className="App">
+    <GetInvolved />
+  </div>
+);
 
 export default Home;

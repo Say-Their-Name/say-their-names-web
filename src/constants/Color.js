@@ -1,4 +1,4 @@
 export default {
-  PRIMARY: "black",
-  WHITE: "white",
+  PRIMARY: 'black',
+  WHITE: 'white'
 };

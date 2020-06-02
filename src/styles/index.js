@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import Color from "../constants/Color";
+import { createGlobalStyle } from 'styled-components';
+import Color from '../constants/Color';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: 'Karla', sans-serif;
-    font-size: 120px;
+    font-size: 3rem;
 }
 
 a {
