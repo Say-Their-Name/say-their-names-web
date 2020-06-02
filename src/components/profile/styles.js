@@ -71,9 +71,20 @@ const Age = styled.div`
     display: flex;
     flex-direction: column;
     align-content: space-around;
-    width: 45%;
+    width: 20%;
     height: 45px;
     border-right: 1px solid #D8D8D8;;
+    h2 {
+            margin:0px
+        }
+`;
+
+const Children = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding-left: 15px;
+    height: 45px;
     h2 {
             margin:0px
         }
@@ -166,6 +177,6 @@ const Context = styled.section`
 
 export {
   Profile, PersonalInformation, Photo, PersonSection, Name,
-  H4, Div, Age, Location, ShareSection, Button, H2, Share,
+  H4, Div, Age, Children, Location, ShareSection, Button, H2, Share,
   Context
 };

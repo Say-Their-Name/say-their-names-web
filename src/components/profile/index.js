@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Location, ShareSection, Button, H2, Share, Context
+  Profile, PersonalInformation, Photo, PersonSection, Name, H4, Div, Age, Children, Location, ShareSection, Button, H2, Share, Context
 } from './styles';
 
 export default function index({ info }) {
@@ -28,10 +28,10 @@ export default function index({ info }) {
               <H4>Age</H4>
               <H2>{age}</H2>
             </Age>
-            <div style={{ padding: '0px 10px' }}>
+            <Children>
               <H4>Children</H4>
               <H2>{children && children}</H2>
-            </div>
+            </Children>
           </Div>
           <Location>
             <H4>LOCATION</H4>
