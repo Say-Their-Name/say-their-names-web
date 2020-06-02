@@ -1,50 +1,56 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Profile = styled.section`
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 0px;
-  padding: 10px;
+  /* margin: 10px 0px;
+  padding: 10px; */
 `;
 
 const PersonalInformation = styled.div`
   display: flex;
-  width: 726px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  /* width: 726px;
   height: 360px;
   margin: 10px 0px;
-  padding: 10px;
-
+  padding: 10px; */
   @media screen and (max-width: 760px) {
     flex-direction: column;
   }
 `;
 const Photo = styled.div`
+  width: 40%;
+  min-height: 500px;
   img {
-    width: 270px;
+    width: 100%;
     height: 100%;
   }
 `;
 
 const PersonSection = styled.section`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  width: 317px;
-  justify-content: flex-start;
+  width: 40%;
+  justify-content: center;
   align-items: center;
-  margin-left: 20px;
 `;
 
 const Name = styled.div`
   display: flex;
   flex-direction: column;
+  width: 50%;
   margin: 10px;
   div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 217px;
 
     h2 {
       margin: 0px;
@@ -64,8 +70,7 @@ const H4 = styled.h4`
 
 const Div = styled.div`
   display: flex;
-  height: 46px;
-  width: 217px;
+  width: 50%;
   justify-content: flex-start;
   margin: 10px;
 `;
@@ -74,8 +79,7 @@ const Age = styled.div`
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  width: 20%;
-  height: 45px;
+  width: 25%;
   border-right: 1px solid #d8d8d8;
   h2 {
     margin: 0px;
@@ -87,7 +91,6 @@ const Children = styled.div`
   flex-direction: column;
   align-content: space-around;
   padding-left: 15px;
-  height: 45px;
   h2 {
     margin: 0px;
   }
@@ -98,7 +101,6 @@ const Location = styled.div`
   flex-direction: column;
   align-content: space-around;
   width: 217px;
-  height: 45px;
   margin: 10px;
   h2 {
     margin: 0px;
@@ -106,12 +108,13 @@ const Location = styled.div`
 `;
 
 const Button = styled.div`
-  margin: 15px 0px;
+  margin: 1rem 0px;
   button {
     width: 244px;
     height: 46px;
     color: white;
     background-color: black;
+    border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     cursor: pointer;
@@ -126,7 +129,7 @@ const ShareSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 247px;
-  height: 20px;
+  /* height: 20px; */
   p {
     margin: 5px 0px;
   }
@@ -154,12 +157,11 @@ const H2 = styled.h2`
   line-height: 28px;
   color: #101010;
   text-transform: uppercase;
-
 `;
 
 const Context = styled.section`
-  width: 726px;
-  height: 110px;
+  width: 100%;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 
@@ -167,8 +169,7 @@ const Context = styled.section`
     font-family: Karla;
     font-style: normal;
     font-weight: bold;
-    font-size: 17px;
-    line-height: 20px;
+    text-transform: uppercase;
   }
 
   p {
@@ -176,7 +177,7 @@ const Context = styled.section`
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 21px;
+    line-height: 2rem;
   }
 `;
 
@@ -195,5 +196,5 @@ export {
   Button,
   H2,
   Share,
-  Context
+  Context,
 };

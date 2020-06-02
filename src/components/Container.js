@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
-    margin: 2rem;
+    margin: 3rem;
 `;
 
 const Container = ({ children }) => <StyledContainer>{children}</StyledContainer>;
