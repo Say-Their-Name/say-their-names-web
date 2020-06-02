@@ -1,9 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-
-import BlackLivesMatterBanner from '../../assets/black-lives-matter-banner.png';
-import Container from '../Container';
-import Color from '../../constants/Color';
+import Color from '../../../constants/Color';
+import BlackLivesMatterBanner from '../../../assets/black-lives-matter-banner.png';
 
 const StyledGetInvolved = styled.div`
   display: flex;
@@ -100,23 +97,4 @@ const StyledGetInvolved = styled.div`
   }
 `;
 
-const GetInvolved = () => (
-  <Container>
-    <StyledGetInvolved>
-      <div className="image-container">
-        <div className="image-text-container">
-          <div className="image-text">
-            <h3>#BLACKLIVESMATTER</h3>
-            <h3>How to get involved</h3>
-          </div>
-        </div>
-      </div>
-
-      <div className="details">
-        <h1>Delayed justice is injustice</h1>
-      </div>
-    </StyledGetInvolved>
-  </Container>
-);
-
-export default GetInvolved;
+export default StyledGetInvolved;
