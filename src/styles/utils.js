@@ -11,11 +11,11 @@ import Breakpoints from "../constants/Breakpoints";
  * const StyledBox = styled.div`
  *  padding-top: 1rem; // Will apply to mobile and up
  *
- *  ${mediaQuery.tablet`
+ *  ${MediaQuery.tablet`
  *    padding-top: 2rem; // Will apply to tablet and up
  *  `}
  *
- *  ${mediaQuery.desktop`
+ *  ${MediaQuery.desktop`
  *    padding-top: 3rem; // Will apply to desktop and up
  *  `}
  * `;
