@@ -20,7 +20,7 @@ export default function index({ info }) {
             <H4>FULL NAME</H4>
             <div>
               <H2>{fullname}</H2>
-              <i>Icon</i>
+              <i class="far fa-bookmark"></i>
             </div>
           </Name>
           <Div>
