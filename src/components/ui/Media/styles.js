@@ -1,6 +1,4 @@
-import React from "react";
-import styled from "styled-components";
-import { ReactTinyLink } from "react-tiny-link";
+import styled from 'styled-components';
 
 const StyledMedia = styled.div`
   display: flex;
@@ -41,18 +39,4 @@ const StyledMedia = styled.div`
   }
 `;
 
-const Media = ({ media }) => {
-  return (
-    <StyledMedia>
-      <ReactTinyLink
-        cardSize="large"
-        showGraphic={true}
-        maxLine={2}
-        minLine={1}
-        url={media.url}
-      />
-    </StyledMedia>
-  );
-};
-
-export default Media;
+export default StyledMedia;

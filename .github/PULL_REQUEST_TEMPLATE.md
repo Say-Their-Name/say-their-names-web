@@ -15,4 +15,11 @@
 - [ ] Bug Fixes
 - [ ] Chore
 
+#### Developer Checklist
+- [ ] New code has been scanned for eslint issues
+- [ ] I have tested my code locally
+- [ ] I made sure that there are no other pull requests that solve for this issue
+- [ ] My code follows the same structure within the guildlines
+
+
 #### Screenshots (if appropriate)
