@@ -18,7 +18,7 @@ const BackProfile = styled.section`
 export default function button() {
   return (
     <BackProfile>
-      <button type='button'>BACK TO PROFILES</button>
+      <button type="button">BACK TO PROFILES</button>
     </BackProfile>
   );
 }
