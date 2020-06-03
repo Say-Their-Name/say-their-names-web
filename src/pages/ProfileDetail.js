@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { ToastContainer, toast } from "react-toastify";
 import Spinner from "../components/common/Spinner";
 
-import Profile from "../components/profile/PersonProfile";
-import BackToProfile from "../components/profile/button/Button";
+import Profile from "../components/profileDetails/PersonProfile";
+import BackToProfile from "../components/profileDetails/button/Button";
 import MediaList from "../components/ui/mediaList/MediaList";
 
 import Container from "../components/common/Container";
@@ -13,7 +13,7 @@ import config from "../utils/config";
 
 const { apiBaseUrl } = config;
 
-const PersonProfile = ({ match }) => {
+const ProfileDetail = ({ match }) => {
   const { id } = match.params;
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
@@ -47,9 +47,9 @@ const PersonProfile = ({ match }) => {
   );
 };
 
-export default PersonProfile;
+export default ProfileDetail;
 
-PersonProfile.propTypes = {
+ProfileDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,

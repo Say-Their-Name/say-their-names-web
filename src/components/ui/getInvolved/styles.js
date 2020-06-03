@@ -1,12 +1,12 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
-import BlackLivesMatterBanner from '../../../assets/black-lives-matter-banner.png';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
+import BlackLivesMatterBanner from "../../../assets/black-lives-matter-banner.png";
 
 const StyledGetInvolved = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   .image-container {
@@ -15,7 +15,7 @@ const StyledGetInvolved = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 450px;
+    height: 400px;
 
     @media (max-width: 1300px) {
       width: 50%;
