@@ -7,8 +7,6 @@ const Profile = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 10px 0px;
-  padding: 10px; */
 `;
 
 const PersonalInformation = styled.div`

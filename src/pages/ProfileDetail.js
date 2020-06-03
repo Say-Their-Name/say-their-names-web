@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { ToastContainer, toast } from "react-toastify";
-import Spinner from "../components/common/Spinner";
 
+import Spinner from "../components/common/Spinner";
 import Profile from "../components/profileDetails/PersonProfile";
 import BackToProfile from "../components/profileDetails/button/Button";
 import MediaList from "../components/ui/mediaList/MediaList";
@@ -19,7 +19,7 @@ const ProfileDetail = ({ match }) => {
   const [person, setPerson] = useState({});
 
   useEffect(() => {
-    async function fetchdata() {
+    const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
         setPerson(response.data.data);
@@ -28,7 +28,7 @@ const ProfileDetail = ({ match }) => {
       } finally {
         setLoading(false);
       }
-    }
+    };
     fetchdata();
   }, [id]);
 

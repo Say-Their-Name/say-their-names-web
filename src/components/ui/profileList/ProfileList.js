@@ -1,68 +1,59 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 import PersonPreview from "../profilePreview/ProfilePreview";
 
-// const personListContainer = styled.div`
-// //todo
-// `;
+import Spinner from "../../common/Spinner";
+
+import config from "../../../utils/config";
+import Container from "../../common/Container";
+
+const { apiBaseUrl } = config;
+
+const StyledProfileList = styled.div`
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
 const ProfileList = () => {
-  const [people, setPeople] = useState([]); //this will hold the people list fetched from the API
+  const [profiles, setProfiles] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //   await fetch("https://saytheirnames.dev/api/people")
-    //                     .then(response => response.json())
-    //                     .then(data =>{
-    //                      setPeople(data.data);
-    //                     });
-    //                         setLoading(false)
+    const fetchdata = async () => {
+      try {
+        const response = await axios.get(`${apiBaseUrl}/people`);
+        console.log(response.data.data);
+        setProfiles(response.data.data);
+      } catch (error) {
+        // toast(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchdata();
   }, []);
-  return "ass";
-  //    const renderPerson = (person, idx) => {
-
-  //         return (
-  //             <li key={idx} style = {{display: 'inline'}}>
-  //                 <PersonPreview source = {person.images[0].image_url} name = {person.full_name} date = {person.date_of_incident}/>
-  //             </li>
-  //         );
-  //       }
-  //     const showPeopleList = () =>{
-  // ​
-  //         return(
-
-  //                 <FlatList
-  //                   list={people}
-  //                   renderItem={renderPerson}
-  //                   renderWhenEmpty={() => <div></div>}
-  //                   sortBy={["id", {key: "person_id", descending: false}]}
-  //                   display={{
-  //                     grid: true,
-  // ​
-  //                   }}
-  //                 />
-
-  //         )
-  //     }
-
-  //     if(!loading)
-  //     {
-
-  //           return(
-  //                   <ul style={{listStyleType:'none', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
-  //                      {showPeopleList()}
-  //                  </ul>
-
-  // ​
-  //         )
-
-  //     }
-  //     else
-  //     {
-  //         return(
-  //             <div>
-  // ​
-  //             </div>
-  //         )
-  //     }
+  return (
+    <Container>
+      {loading && <Spinner height="40vh" />}
+      {profiles.length === 0 && !loading && <h2>No profile found</h2>}
+      <StyledProfileList>
+        {profiles.length > 0 &&
+          profiles.map((profile) => (
+            <PersonPreview
+              key={profile.id}
+              image={profile.images[0]}
+              fullName={profile.full_name}
+              dateOfIncident={profile.date_of_incident}
+              //   source={person.images[0].image_url}
+              //   name={person.full_name}
+              //   date={person.date_of_incident}
+            />
+          ))}
+      </StyledProfileList>
+    </Container>
+  );
 };
 export default ProfileList;
