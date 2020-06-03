@@ -28,7 +28,7 @@ const PersonProfile = ({ info }) => {
     <Profile>
       <PersonalInformation>
         <Photo>
-          <img src={images[0].image_url} alt="profile" />
+          <img src={images[0].image_url} alt={full_name} />
         </Photo>
         <PersonSection>
           <Name>
