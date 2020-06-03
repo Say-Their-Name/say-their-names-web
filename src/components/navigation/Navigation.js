@@ -15,7 +15,7 @@ const Navigation = () => (
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
         <img src={logo} alt="Say Their Names Logo" />
-        <StyleName> SAY THEIR NAME </StyleName> 
+        <StyleName> SAY THEIR NAME </StyleName>
       </Link>
     </StyledNavigationLogo>
     <StyledNavigationLinkContainer>
