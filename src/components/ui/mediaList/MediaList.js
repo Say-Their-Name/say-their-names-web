@@ -2,19 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Media from '../media/Media';
-import Container from '../../Container';
 import StyledMediaList from './styles';
 
 const MediaList = ({ mediaList }) => (
-  <Container>
-    <StyledMediaList>
-      <h2>Media</h2>
+  <StyledMediaList>
+    <h2>Media</h2>
 
-      {mediaList.map((media) => (
-        <Media key={media.url} media={media} />
-      ))}
-    </StyledMediaList>
-  </Container>
+    {mediaList.map((media) => (
+      <Media key={media.url} media={media} />
+    ))}
+  </StyledMediaList>
 );
 
 export default MediaList;
