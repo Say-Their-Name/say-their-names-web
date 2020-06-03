@@ -113,7 +113,7 @@ The purpose of naming the component [ComponentName].js is so that it is easier t
 ```
 src
   - components
-    - NewComponent
+    - new-component 
       - NewComponent.js
       - styles.js
 
