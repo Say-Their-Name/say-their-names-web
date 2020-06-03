@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyledAbout, StyledAboutContainer } from './style';
+import React from "react";
+import { StyledAbout, StyledAboutContainer } from "./style";
 
 const About = () => (
   <StyledAbout className="About">
@@ -27,7 +27,7 @@ const About = () => (
     <StyledAboutContainer className="AboutContainer">
       <h3> Join Us</h3>
       <p>
-        Join our
+        Join our &nbsp;
         <a
           target="_blank"
           href="https://t.co/JvU3sgfoFu"
@@ -35,7 +35,7 @@ const About = () => (
         >
           Slack Channel
         </a>
-        to find out ways to get involved.
+        &nbsp; to find out ways to get involved.
       </p>
     </StyledAboutContainer>
   </StyledAbout>
