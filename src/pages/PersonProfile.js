@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
+import Spinner from '../components/common/Spinner';
 
 import Profile from '../components/profile/PersonProfile';
 import BackToProfile from '../components/profile/button/Button';
 import MediaList from '../components/ui/mediaList/MediaList';
 
-
-import Container from '../components/Container';
+import Container from '../components/common/Container';
 import config from '../utils/config';
 
 const { apiBaseUrl } = config;
@@ -32,14 +32,17 @@ const PersonProfile = ({ match }) => {
     fetchdata();
   }, [id]);
 
-  if (loading) return 'loading';
   return (
     <Container>
-      {loading && <h1>Loading....</h1>}
-      <BackToProfile />
-      <Profile info={person} />
-      <MediaList mediaList={person.media_links} />
-      <ToastContainer />
+      {loading && <Spinner />}
+      {Object.keys(person).length > 0 && (
+        <>
+          <BackToProfile />
+          <Profile info={person} />
+          <MediaList mediaList={person.media_links} />
+          <ToastContainer />
+        </>
+      )}
     </Container>
   );
 };
