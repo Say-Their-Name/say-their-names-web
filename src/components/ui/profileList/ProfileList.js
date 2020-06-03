@@ -25,7 +25,6 @@ const ProfileList = () => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people`);
-        console.log(response.data.data);
         setProfiles(response.data.data);
       } catch (error) {
         // toast(error.message);
@@ -44,6 +43,7 @@ const ProfileList = () => {
           profiles.map((profile) => (
             <PersonPreview
               key={profile.id}
+              id={profile.id}
               image={profile.images[0]}
               fullName={profile.full_name}
               dateOfIncident={profile.date_of_incident}

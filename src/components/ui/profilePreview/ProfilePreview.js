@@ -1,10 +1,14 @@
 import React from "react";
-import Container from "../../common/Container";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-// const imageContainer = styled.img`
-// //todo
-// `;
+import Container from "../../common/Container";
+import Color from "../../../constants/Color";
+
+const StyledProfilePreviewContainer = styled.div`
+  width: 30%;
+`;
+
 const StyledProfilePreview = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -12,8 +16,8 @@ const StyledProfilePreview = styled.div`
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
   margin: 1rem;
   align-items: center;
-  width: 30%;
-
+  width: 100%;
+  color: ${Color.PRIMARY};
   .image-container {
     display: flex;
     width: 100%;
@@ -23,7 +27,7 @@ const StyledProfilePreview = styled.div`
     width: 100%;
     height: 300px;
     object-fit: cover;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #efefef;
   }
 
   .profile-preview-container {
@@ -54,22 +58,26 @@ const StyledProfilePreview = styled.div`
   }
 `;
 
-const ProfilePreview = ({ fullName, dateOfIncident, image }) => {
+const ProfilePreview = ({ id, fullName, dateOfIncident, image }) => {
   return (
-    <StyledProfilePreview>
-      <div className="image-container">
-        <img src={image.image_url} alt={fullName} />
-      </div>
+    <StyledProfilePreviewContainer>
+      <Link to={`/profile/${id}`}>
+        <StyledProfilePreview>
+          <div className="image-container">
+            <img src={image.image_url} alt={fullName} />
+          </div>
 
-      <div className="profile-preview-container">
-        <div className="profile-preview">
-          <h3>{fullName}</h3>
-          <p>{dateOfIncident}</p>
-        </div>
+          <div className="profile-preview-container">
+            <div className="profile-preview">
+              <h3>{fullName}</h3>
+              <p>{dateOfIncident}</p>
+            </div>
 
-        <i className="far fa-bookmark" />
-      </div>
-    </StyledProfilePreview>
+            <i className="far fa-bookmark" />
+          </div>
+        </StyledProfilePreview>
+      </Link>
+    </StyledProfilePreviewContainer>
   );
 };
 export default ProfilePreview;
