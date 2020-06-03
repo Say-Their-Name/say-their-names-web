@@ -1,26 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
 
 import PersonPreview from '../profilePreview/ProfilePreview';
-
+import StyledProfileList from './styles';
 import Spinner from '../../common/Spinner';
-
 import config from '../../../utils/config';
 import Container from '../../common/Container';
 
 const { apiBaseUrl } = config;
 
-const StyledProfileList = styled.div`
-  justify-content: space-between;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-
-  @media (max-width: 600px) {
-    justify-content: center;
-  }
-`;
 const ProfileList = () => {
   const [profiles, setProfiles] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
@@ -51,9 +39,6 @@ const ProfileList = () => {
               image={profile.images[0]}
               fullName={profile.full_name}
               dateOfIncident={profile.date_of_incident}
-              //   source={person.images[0].image_url}
-              //   name={person.full_name}
-              //   date={person.date_of_incident}
             />
           ))}
       </StyledProfileList>
