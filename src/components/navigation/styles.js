@@ -42,20 +42,10 @@ const StyledNavigationLinkContainer = styled.div`
   padding: 1rem;
 `;
 
-const StyleName = styled.li`
-  font-family: Karla;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 19px;
-  line-height: 22px;
-  color: #FFFFFF;
-  list-style: none;
-`;
 
 export {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  StyledNavigationLinkContainer,
-  StyleName
+  StyledNavigationLinkContainer
 };

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Say Their Name",
+  "name": "Say Their Name",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +8,23 @@
       "type": "image/x-icon"
     },
     {
+      "src": "android-icon-150x150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    },
+    {
       "src": "android-icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "310x310"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "black",
-  "color": "black"
+  "background_color": "white"
 }
