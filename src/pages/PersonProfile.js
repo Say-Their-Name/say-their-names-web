@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
 import Profile from '../components/profile/PersonProfile';
-import BackToProfile from '../components/profile/Button/Button';
+import BackToProfile from '../components/profile/button/Button';
 
 const data = [{
   image: 'https://via.placeholder.com/150',
