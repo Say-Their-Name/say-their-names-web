@@ -21,7 +21,7 @@ const Home = () => {
       setProfiles(response.data.data);
       window.scrollTo(0, 0);
     } catch (error) {
-      // toast(error.message);
+      // set error and show error page
     } finally {
       setLoading(false);
     }
