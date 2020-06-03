@@ -14,7 +14,7 @@ const Profile = styled.section`
 const PersonalInformation = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   @media screen and (max-width: 900px) {
     justify-content: space-between;
@@ -26,7 +26,7 @@ const PersonalInformation = styled.div`
   }
 `;
 const Photo = styled.div`
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-wrap: wrap;
   min-height: 500px;
@@ -66,14 +66,15 @@ const PersonSection = styled.section`
   flex-direction: column;
   width: 40%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   @media screen and (max-width: 900px) {
     width: 45%;
   }
 
   @media screen and (max-width: 750px) {
-    width:  85%;
+    width: 85%;
+    align-items: center;
   }
 `;
 
@@ -185,7 +186,7 @@ const ShareSection = styled.section`
 `;
 
 const Share = styled.div`
-  margin: auto;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   p {

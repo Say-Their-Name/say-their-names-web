@@ -14,7 +14,7 @@ const Media = ({ media }) => {
         minLine={1}
         url={media.url}
         loadSecureUrl
-        onSuccess={() => setDisplay('flex')}
+        onSuccess={() => setDisplay('block')}
         onError={() => setDisplay('none')}
       />
     </StyledMedia>

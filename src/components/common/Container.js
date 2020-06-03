@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledContainer = styled.div`
-  margin: 3rem;
+  margin: 5rem;
+
+  @media (max-width: 120px) {
+    margin: 3rem;
+  }
 
   @media (max-width: 700px) {
     margin: 1rem;
