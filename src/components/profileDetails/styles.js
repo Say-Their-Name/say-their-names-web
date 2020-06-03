@@ -24,7 +24,7 @@ const PersonalInformation = styled.div`
   }
 `;
 const Photo = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-wrap: wrap;
   min-height: 500px;
