@@ -35,7 +35,7 @@ export default Pagination;
 
 Pagination.propTypes = {
   paginationData: PropTypes.shape({
-    last_page: PropTypes.string.isRequired
+    last_page: PropTypes.number.isRequired
   }).isRequired,
   fetchdata: PropTypes.func.isRequired
 };
