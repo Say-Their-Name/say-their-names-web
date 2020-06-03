@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Profile = styled.section`
   display: flex;
@@ -31,6 +31,10 @@ const Photo = styled.div`
   flex-wrap: wrap;
   min-height: 500px;
 
+  @media screen and (max-width: 1200px) {
+    width: 40%;
+  }
+
   @media screen and (max-width: 900px) {
     width: 45%;
   }
@@ -45,6 +49,7 @@ const Photo = styled.div`
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 
     @media screen and (max-width: 750px) {
       border-radius: 50%;
@@ -250,5 +255,5 @@ export {
   Button,
   H2,
   Share,
-  Context
+  Context,
 };
