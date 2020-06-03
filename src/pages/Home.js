@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 
-import GetInvolved from "../components/ui/getInvolved/GetInvolved";
-import ProfileList from "../components/ui/profileList/ProfileList";
-import Spinner from "../components/common/Spinner";
-import Pagination from "../components/pagination/Pagination";
-import config from "../utils/config";
+import GetInvolved from '../components/ui/getInvolved/GetInvolved';
+import ProfileList from '../components/ui/profileList/ProfileList';
+import Spinner from '../components/common/Spinner';
+import Pagination from '../components/pagination/Pagination';
+import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
@@ -21,6 +21,7 @@ const Home = () => {
       setProfiles(response.data.data);
       window.scrollTo(0, 0);
     } catch (error) {
+      // set error and show error page
     } finally {
       setLoading(false);
     }
