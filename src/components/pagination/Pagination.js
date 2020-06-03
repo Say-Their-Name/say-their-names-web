@@ -3,6 +3,10 @@ import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 
 const StyledPagination = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   .pagination {
     margin: 15px auto;
     display: flex;
@@ -19,6 +23,11 @@ const StyledPagination = styled.div`
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
   .pagination > .active > a,
   .pagination > .active > span,
@@ -46,8 +55,8 @@ const Pagination = ({ paginationData, fetchdata }) => {
   const { total, last_page } = paginationData;
 
   const onChange = (touched) => {
-    fetchdata(touched.selected);
-    console.log(touched.selected);
+    fetchdata(touched.selected + 1);
+    // console.log(touched.selected + 1);
   };
 
   return (
@@ -58,7 +67,7 @@ const Pagination = ({ paginationData, fetchdata }) => {
         breakLabel={"..."}
         breakClassName={"break-me"}
         pageCount={last_page}
-        marginPagesDisplayed={1}
+        // marginPagesDisplayed={1}
         // pageRangeDisplayed={5}
         onPageChange={onChange}
         containerClassName={"pagination"}

@@ -15,12 +15,11 @@ const Home = () => {
   const [paginationData, setPaginationData] = useState({});
 
   const fetchdata = useCallback(async (page = 1) => {
-    console.log("aaa", page);
     try {
       const response = await axios.get(`${apiBaseUrl}/people?page=${page}`);
-      // console.log(response.data.links);
       setPaginationData(response.data.meta);
       setProfiles(response.data.data);
+      window.scrollTo(0, 0);
     } catch (error) {
       // toast(error.message);
     } finally {
