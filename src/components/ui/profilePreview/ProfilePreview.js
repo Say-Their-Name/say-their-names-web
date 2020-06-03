@@ -100,8 +100,10 @@ const ProfilePreview = ({
 export default ProfilePreview;
 
 ProfilePreview.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   fullName: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    image_url: PropTypes.string.isRequired
+  }).isRequired,
   dateOfIncident: PropTypes.string.isRequired
 };
