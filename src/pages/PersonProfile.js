@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
 
 import Profile from '../components/profile/PersonProfile';
-import BackToProfile from '../components/profile/Button/Button';
-import MediaList from '../components/ui/MediaList/MediaList';
+import BackToProfile from '../components/profile/button/Button';
+import MediaList from '../components/ui/mediaList/MediaList';
 
 
 import Container from '../components/Container';

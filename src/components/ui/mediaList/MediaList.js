@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Media from '../media/Media';
 import Container from '../../Container';
 import StyledMediaList from './styles';
