@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -16,6 +16,10 @@ const StyledProfileList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 `;
 const ProfileList = () => {
   const [profiles, setProfiles] = useState([]); // this will hold the profles list fetched from the API

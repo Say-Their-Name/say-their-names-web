@@ -2,11 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Container from "../../common/Container";
 import Color from "../../../constants/Color";
 
 const StyledProfilePreviewContainer = styled.div`
   width: 30%;
+  margin: 1rem;
+  @media (max-width: 900px) {
+    width: 40%;
+  }
+
+  @media (max-width: 600px) {
+    width: 65%;
+  }
+
+  @media (max-width: 500px) {
+    width: 75%;
+  }
+
+  @media (max-width: 400px) {
+    width: 85%;
+  }
 `;
 
 const StyledProfilePreview = styled.div`
@@ -14,7 +29,7 @@ const StyledProfilePreview = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
-  margin: 1rem;
+
   align-items: center;
   width: 100%;
   color: ${Color.PRIMARY};
