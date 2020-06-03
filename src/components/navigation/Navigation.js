@@ -5,15 +5,17 @@ import {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  StyledNavigationLinkContainer
+  StyledNavigationLinkContainer,
+  StyleName
 } from './styles';
-import Logo from '../../assets/logo.png';
+import logo from '../../assets/Object.svg';
 
 const Navigation = () => (
   <StyledNavigation className="navbar">
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
-        <img src={Logo} alt="Say Their Names Logo" />
+        <img src={logo} alt="Say Their Names Logo" />
+        <StyleName> SAY THEIR NAME </StyleName> 
       </Link>
     </StyledNavigationLogo>
     <StyledNavigationLinkContainer>
