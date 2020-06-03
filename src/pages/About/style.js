@@ -20,8 +20,6 @@ const StyledAbout = styled.div`
 
   padding: 5rem 3rem;
 
-
- 
   h2 {
     margin-top: 0;
     text-align: left;
