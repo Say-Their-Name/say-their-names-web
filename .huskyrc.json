@@ -1,18 +1,7 @@
 {
     "husky": {
         "hooks": {
-          "pre-commit": "lint-staged"
+          "pre-commit": "yarn run lint:fix"
         }
-      },
-      "lint-staged": {
-        "*.{js,jsx,ts,tsx}": [
-          "prettier --write",
-          "eslint --fix",
-          "git add"
-        ],
-        "*.{html,css,less,ejs,json}": [
-          "prettier --write",
-          "git add"
-        ]
       }
     }
