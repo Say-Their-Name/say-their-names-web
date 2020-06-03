@@ -2,6 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 import Color from '../constants/Color';
 
 const GlobalStyle = createGlobalStyle`
+html {
+  scroll-behavior: smooth;
+}
+
   body {
     margin: 0;
     font-family: 'Karla', sans-serif;
