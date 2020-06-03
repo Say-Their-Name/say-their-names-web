@@ -1,5 +1,5 @@
 import React from 'react';
-import GetInvolved from '../components/ui/GetInvolved/GetInvolved';
+import GetInvolved from '../components/ui/getInvolved/GetInvolved';
 
 const Home = () => (
   <div className="App">
