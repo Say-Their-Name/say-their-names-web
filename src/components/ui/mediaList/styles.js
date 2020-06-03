@@ -4,15 +4,21 @@ const StyledMediaList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 
   h2 {
     font-family: Karla;
     font-style: normal;
     font-weight: bold;
     width: 100%;
-    margin: 1rem 0 0 4rem;
     text-transform: uppercase;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 `;
 

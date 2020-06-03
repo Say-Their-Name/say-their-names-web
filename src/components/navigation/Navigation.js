@@ -5,7 +5,7 @@ import {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  Space
+  StyledNavigationLinkContainer
 } from './styles';
 import Logo from '../../assets/logo.png';
 
@@ -16,22 +16,17 @@ const Navigation = () => (
         <img src={Logo} alt="Say Their Names Logo" />
       </Link>
     </StyledNavigationLogo>
-    <Space />
-    <StyledNavigationLinks>
-      <Link to="/about">
-        About
-      </Link>
-    </StyledNavigationLinks>
-    <StyledNavigationLinks>
-      <Link to="/petitions">
-        Petitions
-      </Link>
-    </StyledNavigationLinks>
-    <StyledNavigationLinks>
-      <Link to="/donations">
-        Donations
-      </Link>
-    </StyledNavigationLinks>
+    <StyledNavigationLinkContainer>
+      <StyledNavigationLinks>
+        <Link to="/about">About</Link>
+      </StyledNavigationLinks>
+      <StyledNavigationLinks>
+        <Link to="/petitions">Petitions</Link>
+      </StyledNavigationLinks>
+      <StyledNavigationLinks>
+        <Link to="/donations">Donations</Link>
+      </StyledNavigationLinks>
+    </StyledNavigationLinkContainer>
   </StyledNavigation>
 );
 

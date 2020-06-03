@@ -3,14 +3,16 @@ import Color from '../../constants/Color';
 
 const StyledNavigation = styled.nav`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   color: ${Color.WHITE};
   background-color: ${Color.PRIMARY};
-  padding: 1rem 2rem;
+  width: 100%;
 `;
 
 const StyledNavigationLogo = styled.div`
+  padding: 1rem;
   a {
     display: flex;
     align-items: center;
@@ -34,10 +36,15 @@ const StyledNavigationLinks = styled.div`
   }
 `;
 
-const Space = styled.div`
-  flex-grow: 1
+const StyledNavigationLinkContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
 `;
 
 export {
-  StyledNavigation, StyledNavigationLogo, StyledNavigationLinks, Space
+  StyledNavigation,
+  StyledNavigationLogo,
+  StyledNavigationLinks,
+  StyledNavigationLinkContainer
 };

@@ -12,7 +12,6 @@ Welcome to the Say Their Names project. Our aim is to build an open-source platf
     - [Technologies](#technologies)
   - [First time setup](#first-time-setup)
 
-
 ## Contributing
 
 **We heartily welcome any and all contributions that match our engineering standards!**
@@ -33,7 +32,6 @@ If you want to implement a new feature, open an issue first to discuss what it'd
 
 Want to fix a bug or implement an agreed-upon feature? Great, jump to the [local setup instructions](#first-time-setup)!
 
-
 ### Codebase
 
 #### Technologies
@@ -41,7 +39,6 @@ Want to fix a bug or implement an agreed-upon feature? Great, jump to the [local
 With the ground rules out of the way, let's talk about the core architecture of this mono repo:
 
 - **Full-stack JavaScript**: We use strapi.io as our open-source headless CMS powered by GraphQL, and React to power our frontend. Almost all of the code you'll touch in this codebase will be JavaScript.
-
 
 ### First time setup
 
@@ -51,18 +48,30 @@ The first step to running Spectrum locally is downloading the code by cloning th
 git clone https://github.com/Say-Their-Name/web.git
 ```
 
+### Navigate to web folder
+
+```bash
+cd web
+
+```
+
+### Env
+
+Create a `.env` file in the root of your project, and copy the contents of `.env.example` to the newly created `.env` file.
+
 ### Start the frontend server
 
 ```bash
+
+
 # Using yarn
-yarn
-yarn start
+- yarn
+- yarn start
 
 # Using npm
-npm install
-npm start
+- npm install
+- npm start
 ```
-
 
 Let's have fun, let's make an impact.
 

@@ -1,5 +1,5 @@
-import { css } from "styled-components";
-import Breakpoints from "../constants/Breakpoints";
+import { css } from 'styled-components';
+import Breakpoints from '../constants/Breakpoints';
 
 /**
  * Media Query Helper
@@ -21,18 +21,17 @@ import Breakpoints from "../constants/Breakpoints";
  * `;
  * ```
  */
-export const MediaQuery = Object.keys(Breakpoints).reduce(
-  (accumulator, size) => {
-    // use em in breakpoints to work properly cross-browser and support users
-    // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
-    const emSize = Breakpoints[size] / 16;
+const MediaQuery = Object.keys(Breakpoints).reduce((accumulator, size) => {
+  // use em in breakpoints to work properly cross-browser and support users
+  // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
+  const emSize = Breakpoints[size] / 16;
 
-    accumulator[size] = (...args) => css`
-      @media screen and (min-width: ${emSize}em) {
-        ${css(...args)};
-      }
-    `;
-    return accumulator;
-  },
-  {}
-);
+  accumulator[size] = (...args) => css`
+    @media screen and (min-width: ${emSize}em) {
+      ${css(...args)};
+    }
+  `;
+  return accumulator;
+}, {});
+
+export default MediaQuery;
