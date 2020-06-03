@@ -1,12 +1,12 @@
-import React from "react";
-import Loader from "react-loader-spinner";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import Loader from 'react-loader-spinner';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-import Color from "../../constants/Color";
+import Color from '../../constants/Color';
 
 const StyledSpinner = styled.div`
-  height: ${(props) => (props.height ? props.height : "100vh")};
+  height: ${(props) => (props.height ? props.height : '100vh')};
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -23,9 +23,9 @@ const Spinner = ({ height }) => (
 export default Spinner;
 
 Spinner.defaultProps = {
-  height: "100vh",
+  height: '100vh'
 };
 
 Spinner.propTypes = {
-  height: PropTypes.string,
+  height: PropTypes.string
 };

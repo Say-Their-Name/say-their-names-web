@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Color from "../../../constants/Color";
-import BlackLivesMatterBanner from "../../../assets/black-lives-matter-banner.png";
+import styled from 'styled-components';
+import Color from '../../../constants/Color';
+import BlackLivesMatterBanner from '../../../assets/black-lives-matter-banner.png';
 
 const StyledGetInvolved = styled.div`
   display: flex;

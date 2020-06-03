@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
 
-import PersonPreview from "../profilePreview/ProfilePreview";
+import PersonPreview from '../profilePreview/ProfilePreview';
 
-import Spinner from "../../common/Spinner";
+import Spinner from '../../common/Spinner';
 
-import config from "../../../utils/config";
-import Container from "../../common/Container";
+import config from '../../../utils/config';
+import Container from '../../common/Container';
 
 const { apiBaseUrl } = config;
 
@@ -43,8 +43,8 @@ const ProfileList = () => {
       {loading && <Spinner height="40vh" />}
       {profiles.length === 0 && !loading && <h2>No profile found</h2>}
       <StyledProfileList>
-        {profiles.length > 0 &&
-          profiles.map((profile) => (
+        {profiles.length > 0
+          && profiles.map((profile) => (
             <PersonPreview
               key={profile.id}
               id={profile.id}

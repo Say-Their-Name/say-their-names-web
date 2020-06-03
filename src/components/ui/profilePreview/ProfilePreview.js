@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import Color from "../../../constants/Color";
+import Color from '../../../constants/Color';
 
 const StyledProfilePreviewContainer = styled.div`
   width: 30%;
@@ -73,26 +74,34 @@ const StyledProfilePreview = styled.div`
   }
 `;
 
-const ProfilePreview = ({ id, fullName, dateOfIncident, image }) => {
-  return (
-    <StyledProfilePreviewContainer>
-      <Link to={`/profile/${id}`}>
-        <StyledProfilePreview>
-          <div className="image-container">
-            <img src={image.image_url} alt={fullName} />
+const ProfilePreview = ({
+  id, fullName, dateOfIncident, image
+}) => (
+  <StyledProfilePreviewContainer>
+    <Link to={`/profile/${id}`}>
+      <StyledProfilePreview>
+        <div className="image-container">
+          <img src={image.image_url} alt={fullName} />
+        </div>
+
+        <div className="profile-preview-container">
+          <div className="profile-preview">
+            <h3>{fullName}</h3>
+            <p>{dateOfIncident}</p>
           </div>
 
-          <div className="profile-preview-container">
-            <div className="profile-preview">
-              <h3>{fullName}</h3>
-              <p>{dateOfIncident}</p>
-            </div>
+          <i className="far fa-bookmark" />
+        </div>
+      </StyledProfilePreview>
+    </Link>
+  </StyledProfilePreviewContainer>
+);
 
-            <i className="far fa-bookmark" />
-          </div>
-        </StyledProfilePreview>
-      </Link>
-    </StyledProfilePreviewContainer>
-  );
-};
 export default ProfilePreview;
+
+ProfilePreview.propTypes = {
+  id: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  dateOfIncident: PropTypes.string.isRequired
+};

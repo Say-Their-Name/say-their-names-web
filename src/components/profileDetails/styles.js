@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Profile = styled.section`
   display: flex;
@@ -253,5 +253,5 @@ export {
   Button,
   H2,
   Share,
-  Context,
+  Context
 };
