@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledMedia = styled.div`
   display: flex;
@@ -15,8 +15,13 @@ const StyledMedia = styled.div`
     width: 45%;
   }
 
+  @media (max-width: 800px) {
+    width: 47%;
+  }
+
   @media (max-width: 600px) {
     width: 80%;
+    justify-content: center;
   }
 
   @media (max-width: 500px) {

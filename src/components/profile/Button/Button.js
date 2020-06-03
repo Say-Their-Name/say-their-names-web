@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import BackProfile from './styles';
+import BackProfile from "./styles";
 
 const Button = () => (
   <BackProfile>
-    <button type="button">BACK TO PROFILES</button>
+    <Link to="/">
+      <button type="button">BACK TO PROFILES</button>
+    </Link>
   </BackProfile>
 );
 

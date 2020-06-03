@@ -16,20 +16,47 @@ const PersonalInformation = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  /* width: 726px;
-  height: 360px;
-  margin: 10px 0px;
-  padding: 10px; */
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 900px) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 750px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 const Photo = styled.div`
   width: 40%;
+  display: flex;
+  flex-wrap: wrap;
   min-height: 500px;
+
+  @media screen and (max-width: 900px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 750px) {
+    min-height: auto;
+    margin: 1rem 0;
+    width: 90%;
+    justify-content: center;
+  }
+
   img {
     width: 100%;
     height: 100%;
+
+    @media screen and (max-width: 750px) {
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+    }
+
+    @media screen and (max-width: 500px) {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+    }
   }
 `;
 
@@ -40,6 +67,14 @@ const PersonSection = styled.section`
   width: 40%;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    width: 45%;
+  }
+
+  @media screen and (max-width: 750px) {
+    width:  85%;
+  }
 `;
 
 const Name = styled.div`
@@ -47,6 +82,11 @@ const Name = styled.div`
   flex-direction: column;
   width: 50%;
   margin: 10px;
+
+  @media screen and (max-width: 750px) {
+    width: 85%;
+  }
+
   div {
     display: flex;
     align-items: center;
@@ -73,6 +113,10 @@ const Div = styled.div`
   width: 50%;
   justify-content: flex-start;
   margin: 10px;
+
+  @media screen and (max-width: 750px) {
+    width: 85%;
+  }
 `;
 
 const Age = styled.div`
@@ -81,6 +125,7 @@ const Age = styled.div`
   align-content: space-around;
   width: 25%;
   border-right: 1px solid #d8d8d8;
+
   h2 {
     margin: 0px;
   }
@@ -102,6 +147,10 @@ const Location = styled.div`
   align-content: space-around;
   width: 217px;
   margin: 10px;
+
+  @media screen and (max-width: 750px) {
+    width: 85%;
+  }
   h2 {
     margin: 0px;
   }
@@ -118,6 +167,7 @@ const Button = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
     outline: none;
     :hover {
       opacity: 0.9;
@@ -129,7 +179,6 @@ const ShareSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 247px;
-  /* height: 20px; */
   p {
     margin: 5px 0px;
   }
@@ -170,6 +219,10 @@ const Context = styled.section`
     font-style: normal;
     font-weight: bold;
     text-transform: uppercase;
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 
   p {
