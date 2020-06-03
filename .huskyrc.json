@@ -1,7 +1,7 @@
 {
     "husky": {
         "hooks": {
-          "pre-commit": "yarn run lint:fix"
+          "pre-commit": "eslint src --fix"
         }
     }
 }
