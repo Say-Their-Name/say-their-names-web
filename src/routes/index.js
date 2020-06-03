@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Petitions from '../pages/Petitions';
 import PersonProfile from '../pages/PersonProfile';
-import About from '../pages/About/About';
+import About from '../pages/about/About';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 
