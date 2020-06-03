@@ -7,14 +7,12 @@ const Profile = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 10px 0px;
-  padding: 10px; */
 `;
 
 const PersonalInformation = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
   @media screen and (max-width: 900px) {
     justify-content: space-between;
@@ -26,10 +24,14 @@ const PersonalInformation = styled.div`
   }
 `;
 const Photo = styled.div`
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-wrap: wrap;
   min-height: 500px;
+
+  @media screen and (max-width: 1200px) {
+    width: 40%;
+  }
 
   @media screen and (max-width: 900px) {
     width: 45%;
@@ -45,6 +47,7 @@ const Photo = styled.div`
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 
     @media screen and (max-width: 750px) {
       border-radius: 50%;
@@ -66,14 +69,15 @@ const PersonSection = styled.section`
   flex-direction: column;
   width: 40%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   @media screen and (max-width: 900px) {
     width: 45%;
   }
 
   @media screen and (max-width: 750px) {
-    width:  85%;
+    width: 85%;
+    align-items: center;
   }
 `;
 
@@ -185,7 +189,7 @@ const ShareSection = styled.section`
 `;
 
 const Share = styled.div`
-  margin: auto;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   p {
