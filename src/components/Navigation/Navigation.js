@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  StyledNavigationLinkContainer,
-} from "./styles";
-import Logo from "../../assets/logo.png";
+  StyledNavigationLinkContainer
+} from './styles';
+import Logo from '../../assets/logo.png';
 
 const Navigation = () => (
   <StyledNavigation className="navbar">

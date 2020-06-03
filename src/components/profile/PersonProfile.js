@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Profile,
@@ -16,11 +16,13 @@ import {
   Button,
   H2,
   Share,
-  Context,
-} from "./styles";
+  Context
+} from './styles';
 
 const PersonProfile = ({ info }) => {
-  const { images, full_name, age, number_of_children, city, context } = info;
+  const {
+    images, full_name, age, number_of_children, city, context
+  } = info;
   return (
     <Profile>
       <PersonalInformation>
@@ -79,6 +81,6 @@ PersonProfile.propTypes = {
     age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    number_of_children: PropTypes.string.isRequired,
-  }).isRequired,
+    number_of_children: PropTypes.string.isRequired
+  }).isRequired
 };

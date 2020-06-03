@@ -34,7 +34,7 @@ const PersonProfile = ({ match }) => {
   return (
     <Container>
       {loading && <h1>Loading....</h1>}
-      {/* <BackToProfile /> */}
+      <BackToProfile />
       <Profile info={person} />
       <MediaList mediaList={person.media_links} />
       <ToastContainer />
