@@ -42,6 +42,7 @@ const StyledNavigationLinkContainer = styled.div`
   padding: 1rem;
 `;
 
+
 export {
   StyledNavigation,
   StyledNavigationLogo,
