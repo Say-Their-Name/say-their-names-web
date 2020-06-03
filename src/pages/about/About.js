@@ -1,5 +1,5 @@
-import React from "react";
-import { StyledAbout, StyledAboutContainer } from "./style";
+import React from 'react';
+import { StyledAbout, StyledAboutContainer } from './style';
 
 const About = () => (
   <StyledAbout className="About">
