@@ -25,6 +25,11 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint:fix"
+    }
+},
   "browserslist": {
     "production": [
       ">0.2%",
