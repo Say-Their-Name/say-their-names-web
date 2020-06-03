@@ -4,8 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Petitions from '../pages/Petitions';
 import PersonProfile from '../pages/PersonProfile';
-import Navigation from '../components/Navigation/Navigation';
-import Footer from '../components/Footer/Footer';
+import Navigation from '../components/navigation/Navigation';
+import Footer from '../components/footer/Footer';
 
 const AppRoutes = () => (
   <>
