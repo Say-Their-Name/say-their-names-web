@@ -13,8 +13,8 @@ const AppRoutes = () => (
     <Navigation />
     <Switch>
       <Route path="/" component={Home} exact />
-      <Route path="/profile/:id" component={ProfileDetail} exact />
       <Route path="/about" component={About} exact />
+      <Route path="/profile/:id" component={ProfileDetail} exact />
       <Route path="/petitions" component={Petitions} exact />
     </Switch>
     <Footer />
