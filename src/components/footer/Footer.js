@@ -1,15 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Container from '../common/Container';
+import Container from "../common/Container";
 import {
   StyledFooterContainer,
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
   StyleFooterForm,
-  // InputSubmit
-} from './style';
+} from "./style";
 
 const Footer = () => (
   <StyledFooterContainer>
@@ -23,12 +22,18 @@ const Footer = () => (
           <Link to="/settings">Settings</Link>
         </StyledFooterLinks>
         <StyleFooterForm className="footer__form">
-          <p>Sign up to our Newsletter</p>
+          <h4>Sign up to our Newsletter</h4>
           {/* <label htmlFor="email">Sign up to our Newsletter</label> */}
           <div className="form-container">
-            <input placeholder="Email Address" id="email" type="email" />
+            <input
+              placeholder="Email Address"
+              required
+              id="email"
+              type="email"
+            />
             <button type="submit">Submit</button>
           </div>
+          {/* <span>Subscribed successfully</span> */}
 
           {/* <InputSubmit /> */}
         </StyleFooterForm>

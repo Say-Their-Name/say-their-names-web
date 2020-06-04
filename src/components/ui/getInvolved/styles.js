@@ -9,6 +9,10 @@ const StyledGetInvolved = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 800px) {
+    justify-content: center;
+    }
+
   .image-container {
     background-image: url(${BlackLivesMatterBanner});
     width: 45%;
