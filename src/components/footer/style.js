@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
 
 const StyledFooterContainer = styled.footer`
   display: flex;
@@ -147,5 +147,5 @@ export {
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
-  StyleFooterForm,
+  StyleFooterForm
 };
