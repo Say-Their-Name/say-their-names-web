@@ -6,27 +6,28 @@ import BackProfile from "./styles";
 
 const BackToProfiles = () => {
   const [sticky, setSticky] = useState("static");
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const backgroundcolor = window.scrollY < 100 ? "static" : "sticky";
-      setSticky(backgroundcolor);
+  const [donationsDisplay, setDonationsDisplay] = useState("none");
 
-      // this.setState({ navBackground: backgroundcolor });
+  useEffect(() => {
+    const onScroll = document.addEventListener("scroll", () => {
+      const scrollHeight = window.scrollY < 100 ? "static" : "sticky";
+      const scrollHeightDisplay = window.scrollY < 100 ? "none" : "flex";
+      setSticky(scrollHeight);
+      setDonationsDisplay(scrollHeightDisplay);
     });
     return () => {
-      // window.removeEventListener("scroll", this.onScroll, false);
-      console.log("==");
+      window.removeEventListener("scroll", onScroll, false);
     };
   }, []);
 
   return (
     <BackProfile style={{ position: sticky, top: 0 }}>
       <Link to="/">
-        <i className="fas fa-chevron-left"></i>
+        <i className="fas fa-chevron-left" />
         <p>BACK TO PROFILES</p>
       </Link>
 
-      <div className="donate">
+      <div className="donate" style={{ display: donationsDisplay }}>
         <p>Donate now to end Police brutality on minorities</p>
         <Link to="/donations">
           <Button width="100px" padding="0.8rem">

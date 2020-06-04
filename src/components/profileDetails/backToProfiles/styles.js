@@ -9,6 +9,7 @@ const BackProfile = styled.section`
   border-bottom: 1px solid ${Color.GREY};
   background-color: white;
   z-index: 999;
+  transition: all 0.3s ease-in-out;
 
   a {
     margin: 0 1rem;
@@ -35,6 +36,9 @@ const BackProfile = styled.section`
 
     p {
       margin: 0 0.5rem;
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
   }
 `;
