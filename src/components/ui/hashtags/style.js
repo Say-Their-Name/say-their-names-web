@@ -22,12 +22,14 @@ const StyledHashTags = styled.section`
 
   a {
     background-color: #e1e1e1;
-    padding: 0.5rem;
+    padding: 0.3rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
     color: black;
-
+    transition: all 0.3s ease-in-out;
+    
     &:hover {
       cursor: pointer;
+      transform: scale(1.05);
     }
 
     p {

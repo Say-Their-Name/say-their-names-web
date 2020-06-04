@@ -1,14 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import StyledHashTags from './style';
+import StyledHashTags from "./style";
 
 const HashTags = ({ hashtags }) => (
   <StyledHashTags>
     <h2>Social Media Hashtags</h2>
     {hashtags.map((hashtag) => (
-      <a href={hashtag.link} target="_blank" rel="noopener noreferrer">
-        <p key={hashtag.link}>{hashtag.title}</p>
+      <a
+        key={hashtag.link}
+        href={hashtag.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p>{hashtag.title}</p>
       </a>
     ))}
   </StyledHashTags>
@@ -20,7 +25,7 @@ HashTags.propTypes = {
   hashtags: PropTypes.arrayOf(
     PropTypes.shape({
       link: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
+      title: PropTypes.string.isRequired,
     }).isRequired
-  ).isRequired
+  ).isRequired,
 };
