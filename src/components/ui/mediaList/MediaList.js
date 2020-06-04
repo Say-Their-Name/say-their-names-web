@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Media from '../media/Media';
 import StyledMediaList from './styles';
 
+
 const MediaList = ({ mediaList }) => (
   <StyledMediaList>
     <h2>Media</h2>
