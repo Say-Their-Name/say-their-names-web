@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import StyledMedia from './styles';
 
 const Media = ({ media }) => {
-  const [display, setDisplay] = useState('none');
+  const [display, setDisplay] = useState('block');
 
   return (
     <>
