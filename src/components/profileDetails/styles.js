@@ -87,6 +87,10 @@ const Name = styled.div`
   width: 50%;
   margin: 10px;
 
+  @media screen and (max-width: 1050px) {
+    width: 70%;
+  }
+
   @media screen and (max-width: 750px) {
     width: 85%;
   }

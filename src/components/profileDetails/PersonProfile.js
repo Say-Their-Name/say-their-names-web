@@ -1,5 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 import {
   Profile,
@@ -16,13 +17,24 @@ import {
   Button,
   H2,
   Share,
-  Context
-} from './styles';
+  Context,
+} from "./styles";
 
-const PersonProfile = ({ info }) => {
+const PersonProfile = (props) => {
+  const { info } = props;
   const {
-    images, full_name, age, number_of_children, city, context
+    images,
+    full_name,
+    age,
+    number_of_children,
+    city,
+    context,
+    id,
   } = info;
+
+  const handleClick = () => {
+    props.history.push(`/donations/${id}`);
+  };
 
   return (
     <Profile>
@@ -40,12 +52,12 @@ const PersonProfile = ({ info }) => {
           </Name>
           <Div>
             <Age>
-              <H4>Age</H4>
+              <H4>AGE</H4>
               <H2>{age}</H2>
             </Age>
             <Children>
-              <H4>Children</H4>
-              <H2>{number_of_children === null ? 0 : number_of_children}</H2>
+              <H4>CHILDREN</H4>
+              <H2>{number_of_children ? number_of_children : "None"}</H2>
             </Children>
           </Div>
           <Location>
@@ -53,7 +65,9 @@ const PersonProfile = ({ info }) => {
             <H2>{city}</H2>
           </Location>
           <Button>
-            <button type="button">DONATE</button>
+            <button type="button" onClick={handleClick}>
+              DONATE
+            </button>
           </Button>
           <Share>
             <p>Share on:</p>
@@ -73,12 +87,12 @@ const PersonProfile = ({ info }) => {
   );
 };
 
-export default PersonProfile;
+export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: '0'
-  })
+    number_of_children: "0",
+  }),
 };
 
 PersonProfile.propTypes = {
@@ -88,6 +102,8 @@ PersonProfile.propTypes = {
     age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    number_of_children: PropTypes.string
-  })
+    number_of_children: PropTypes.string,
+    id: PropTypes.number.isRequired,
+  }),
+  history: PropTypes.func.isRequired,
 };
