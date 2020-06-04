@@ -10,6 +10,7 @@ import MediaList from '../components/ui/mediaList/MediaList';
 
 import Container from '../components/common/Container';
 import config from '../utils/config';
+import HashTags from '../components/ui/hashtags/HashTags';
 
 const { apiBaseUrl } = config;
 
@@ -23,6 +24,7 @@ const ProfileDetail = ({ match }) => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
         setPerson(response.data.data);
+        window.scrollTo(0, 0);
       } catch (error) {
         toast(error.message);
       } finally {
@@ -40,6 +42,7 @@ const ProfileDetail = ({ match }) => {
           <BackToProfile />
           <Profile info={person} />
           <MediaList mediaList={person.media_links} />
+          <HashTags hashtags={person.social_media} />
           <ToastContainer />
         </>
       )}
