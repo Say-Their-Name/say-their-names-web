@@ -34,8 +34,6 @@ const Footer = () => (
             <button type="submit">Submit</button>
           </div>
           {/* <span>Subscribed successfully</span> */}
-
-          {/* <InputSubmit /> */}
         </StyleFooterForm>
 
         <StyledFooterMissions className="footer_missions">

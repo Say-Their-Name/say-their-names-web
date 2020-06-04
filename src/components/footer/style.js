@@ -90,11 +90,17 @@ const StyleFooterForm = styled.form`
       width: 70%;
     }
 
+    @media (max-width: 450px) {
+      width: 90%;
+    }
+
+    @media (max-width: 350px) {
+      width: 95%;
+    }
+
     input {
       width: 70%;
-      /* height: 100%; */
       font-family: "Karla", sans-serif;
-
       border: none;
       padding: 0.5rem;
 
@@ -106,7 +112,6 @@ const StyleFooterForm = styled.form`
     }
     button {
       width: 20%;
-      /* height: 100%; */
       border: none;
       font-family: "Karla", sans-serif;
       padding: 0.5rem;
@@ -132,6 +137,7 @@ const StyledFooterMissions = styled.div`
   }
   p {
     margin-bottom: 0;
+    text-align: justify;
   }
 `;
 
