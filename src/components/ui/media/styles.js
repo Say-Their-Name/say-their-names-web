@@ -4,7 +4,7 @@ const StyledMedia = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 30%;
+  width: 23%;
   margin: 1rem 0;
 
   @media (max-width: 1300px) {
