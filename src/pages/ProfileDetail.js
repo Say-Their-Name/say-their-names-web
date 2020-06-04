@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import PropTypes from "prop-types";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { ToastContainer, toast } from 'react-toastify';
 
-import Spinner from "../components/common/Spinner";
-import Profile from "../components/profileDetails/PersonProfile";
-import BackNavigation from "../components/backNavigation/BackNavigation";
-import MediaList from "../components/ui/mediaList/MediaList";
+import Spinner from '../components/common/Spinner';
+import Profile from '../components/profileDetails/PersonProfile';
+import BackNavigation from '../components/backNavigation/BackNavigation';
+import MediaList from '../components/ui/mediaList/MediaList';
 
-import Container from "../components/common/Container";
-import config from "../utils/config";
-import HashTags from "../components/ui/hashtags/HashTags";
+import Container from '../components/common/Container';
+import config from '../utils/config';
+import HashTags from '../components/ui/hashtags/HashTags';
 
 const { apiBaseUrl } = config;
 
@@ -63,7 +63,7 @@ export default ProfileDetail;
 ProfileDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
+      id: PropTypes.string.isRequired
+    })
+  }).isRequired
 };

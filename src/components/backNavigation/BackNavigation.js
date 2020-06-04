@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import { Button } from "../profileDetails/styles";
-import BackProfile from "./styles";
+import { Button } from '../profileDetails/styles';
+import BackProfile from './styles';
 
-const BackToProfiles = ({ text, link, longText, linkText, backLink }) => {
-  const [sticky, setSticky] = useState("static");
-  const [donationsDisplay, setDonationsDisplay] = useState("none");
+const BackToProfiles = ({
+  text, link, longText, linkText, backLink
+}) => {
+  const [sticky, setSticky] = useState('static');
+  const [donationsDisplay, setDonationsDisplay] = useState('none');
 
   useEffect(() => {
-    const onScroll = document.addEventListener("scroll", () => {
-      const scrollHeight = window.scrollY < 100 ? "static" : "sticky";
-      const scrollHeightDisplay = window.scrollY < 100 ? "none" : "flex";
+    const onScroll = document.addEventListener('scroll', () => {
+      const scrollHeight = window.scrollY < 100 ? 'static' : 'sticky';
+      const scrollHeightDisplay = window.scrollY < 100 ? 'none' : 'flex';
       setSticky(scrollHeight);
       setDonationsDisplay(scrollHeightDisplay);
     });
     return () => {
-      window.removeEventListener("scroll", onScroll, false);
+      window.removeEventListener('scroll', onScroll, false);
     };
   }, []);
 
@@ -47,6 +49,6 @@ BackToProfiles.propTypes = {
   link: PropTypes.string.isRequired,
   longText: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
-  backLink: PropTypes.string.isRequired,
+  backLink: PropTypes.string.isRequired
 
 };
