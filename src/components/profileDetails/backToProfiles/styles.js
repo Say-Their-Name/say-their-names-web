@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../../constants/Color';
 
 const BackProfile = styled.section`
   display: flex;

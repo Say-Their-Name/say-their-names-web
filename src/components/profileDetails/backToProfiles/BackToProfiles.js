@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Button } from "../styles";
-import BackProfile from "./styles";
+import { Button } from '../styles';
+import BackProfile from './styles';
 
 const BackToProfiles = () => {
-  const [sticky, setSticky] = useState("static");
-  const [donationsDisplay, setDonationsDisplay] = useState("none");
+  const [sticky, setSticky] = useState('static');
+  const [donationsDisplay, setDonationsDisplay] = useState('none');
 
   useEffect(() => {
-    const onScroll = document.addEventListener("scroll", () => {
-      const scrollHeight = window.scrollY < 100 ? "static" : "sticky";
-      const scrollHeightDisplay = window.scrollY < 100 ? "none" : "flex";
+    const onScroll = document.addEventListener('scroll', () => {
+      const scrollHeight = window.scrollY < 100 ? 'static' : 'sticky';
+      const scrollHeightDisplay = window.scrollY < 100 ? 'none' : 'flex';
       setSticky(scrollHeight);
       setDonationsDisplay(scrollHeightDisplay);
     });
     return () => {
-      window.removeEventListener("scroll", onScroll, false);
+      window.removeEventListener('scroll', onScroll, false);
     };
   }, []);
 
