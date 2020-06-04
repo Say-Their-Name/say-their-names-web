@@ -9,7 +9,7 @@ const Petition = ({
     <div style={{ height: '40%', backgroundColor: 'black' }}>
       {/* <img src={imgUrl} alt={title} /> */}
     </div>
-    <div style={{display: 'flex', flexDirection: 'column', alignContent: 'space-between'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'space-between' }}>
       <h2>{title}</h2>
       <p>{description}</p>
       <PetitionLink href={link}>FIND OUT MORE</PetitionLink>
@@ -20,15 +20,13 @@ const Petition = ({
 Petition.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  link: PropTypes.string,
-  imgUrl: PropTypes.string
+  link: PropTypes.string
 };
 
 Petition.defaultProps = {
   title: 'title',
   description: 'description',
-  link: 'link',
-  imgUrl: 'imgUrl'
+  link: 'link'
 };
 
 export default Petition;
