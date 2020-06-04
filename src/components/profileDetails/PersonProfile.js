@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import {
   Profile,
@@ -17,8 +17,8 @@ import {
   Button,
   H2,
   Share,
-  Context,
-} from "./styles";
+  Context
+} from './styles';
 
 const PersonProfile = (props) => {
   const { info } = props;
@@ -29,7 +29,7 @@ const PersonProfile = (props) => {
     number_of_children,
     city,
     context,
-    id,
+    id
   } = info;
 
   const handleClick = () => {
@@ -57,7 +57,7 @@ const PersonProfile = (props) => {
             </Age>
             <Children>
               <H4>CHILDREN</H4>
-              <H2>{number_of_children ? number_of_children : "None"}</H2>
+              <H2>{number_of_children && number_of_children}</H2>
             </Children>
           </Div>
           <Location>
@@ -91,8 +91,8 @@ export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: "0",
-  }),
+    number_of_children: '0'
+  })
 };
 
 PersonProfile.propTypes = {
@@ -103,7 +103,7 @@ PersonProfile.propTypes = {
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
     number_of_children: PropTypes.string,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired
   }),
-  history: PropTypes.func.isRequired,
+  history: PropTypes.func.isRequired
 };
