@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import StyledHashTags from "./style";
+import StyledHashTags from './style';
 
 const HashTags = ({ hashtags }) => (
   <StyledHashTags>
@@ -25,7 +25,7 @@ HashTags.propTypes = {
   hashtags: PropTypes.arrayOf(
     PropTypes.shape({
       link: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired
     }).isRequired
-  ).isRequired,
+  ).isRequired
 };
