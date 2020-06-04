@@ -33,7 +33,13 @@ const StyledFooterLinks = styled.div`
     width: 90%;
   }
   a {
+
     color: ${Color.PRIMARY};
+
+    &:hover {
+      opacity: 0.6;
+    }
+
   }
   a:not(:first-child) {
     margin-top: 0.5rem;
