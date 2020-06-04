@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
 
 const StyledFooterContainer = styled.footer`
   display: flex;
@@ -33,20 +33,6 @@ const StyledFooterLinks = styled.div`
   a:not(:first-child) {
     margin-top: 0.5rem;
   }
-`;
-
-const InputEmail = styled.input`
-  /* width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: width 0.5s ease-in-out;
-  &:focus {
-    width: 100%;
-  } */
 `;
 
 const StyleFooterForm = styled.form`
@@ -116,6 +102,14 @@ const StyleFooterForm = styled.form`
       font-family: "Karla", sans-serif;
       padding: 0.5rem;
       background-color: white;
+      cursor: pointer;
+      
+      &:focus {
+        border: none;
+        outline: none;
+        background: white !important;
+        
+      }
     }
   }
 `;
@@ -146,6 +140,5 @@ export {
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
-  StyleFooterForm,
-  InputEmail,
+  StyleFooterForm
 };
