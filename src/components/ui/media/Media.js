@@ -5,19 +5,24 @@ import StyledMedia from './styles';
 
 const Media = ({ media }) => {
   const [display, setDisplay] = useState('none');
+
   return (
-    <StyledMedia style={{ display }}>
-      <ReactTinyLink
-        cardSize="large"
-        showGraphic
-        maxLine={2}
-        minLine={1}
-        url={media.url}
-        loadSecureUrl
-        onSuccess={() => setDisplay('flex')}
-        onError={() => setDisplay('none')}
-      />
-    </StyledMedia>
+    <>
+      {media.url && (
+        <StyledMedia style={{ display }}>
+          <ReactTinyLink
+            cardSize="large"
+            showGraphic
+            maxLine={2}
+            minLine={1}
+            url={media.url}
+            loadSecureUrl
+            onSuccess={() => setDisplay('block')}
+            onError={() => setDisplay('none')}
+          />
+        </StyledMedia>
+      )}
+    </>
   );
 };
 

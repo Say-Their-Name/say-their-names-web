@@ -23,11 +23,12 @@ const PersonProfile = ({ info }) => {
   const {
     images, full_name, age, number_of_children, city, context
   } = info;
+
   return (
     <Profile>
       <PersonalInformation>
         <Photo>
-          <img src={images[0].image_url} alt="profile" />
+          <img src={images[0].image_url} alt={full_name} />
         </Photo>
         <PersonSection>
           <Name>
@@ -44,7 +45,7 @@ const PersonProfile = ({ info }) => {
             </Age>
             <Children>
               <H4>Children</H4>
-              <H2>{number_of_children && number_of_children}</H2>
+              <H2>{number_of_children === null ? 0 : number_of_children}</H2>
             </Children>
           </Div>
           <Location>
@@ -74,6 +75,12 @@ const PersonProfile = ({ info }) => {
 
 export default PersonProfile;
 
+PersonProfile.defaultProps = {
+  info: PropTypes.shape({
+    number_of_children: '0'
+  })
+};
+
 PersonProfile.propTypes = {
   info: PropTypes.shape({
     images: PropTypes.array.isRequired,
@@ -81,6 +88,6 @@ PersonProfile.propTypes = {
     age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
-    number_of_children: PropTypes.string.isRequired
-  }).isRequired
+    number_of_children: PropTypes.string
+  })
 };
