@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Color from '../../constants/Color';
+import styled from "styled-components";
+import Color from "../../constants/Color";
 
 const StyledFooterContainer = styled.footer`
   display: flex;
@@ -23,9 +23,14 @@ const StyledFooterLinks = styled.div`
   flex-direction: column;
   margin: 1rem 0;
 
-  @media (max-width: 650px) {
-    width: 100%;
-    align-items: center;
+  @media (max-width: 700px) {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    width: 90%;
   }
   a {
     color: ${Color.PRIMARY};
@@ -67,7 +72,6 @@ const StyleFooterForm = styled.form`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    /* background-color: red; */
     border: 2px solid black;
     border-radius: 5px;
     padding: 0.5rem;
@@ -103,27 +107,30 @@ const StyleFooterForm = styled.form`
       padding: 0.5rem;
       background-color: white;
       cursor: pointer;
-      
+
       &:focus {
         border: none;
         outline: none;
         background: white !important;
-        
       }
     }
   }
 `;
 const StyledFooterMissions = styled.div`
-  width: 33%;
+  width: 35%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   margin: 1rem 0;
 
-  @media (max-width: 750px) {
+  @media (max-width: 700px) {
     text-align: center;
     width: 70%;
     margin: 3rem auto 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    width: 90%;
   }
 
   h4 {
@@ -140,5 +147,5 @@ export {
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
-  StyleFooterForm
+  StyleFooterForm,
 };
