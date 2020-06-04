@@ -16,6 +16,7 @@ const AppRoutes = () => (
       <Route path="/about" component={About} exact />
       <Route path="/profile/:id" component={ProfileDetail} exact />
       <Route path="/petitions" component={Petitions} exact />
+      <Route path="/donations/:id" render={() => <h1>Donations</h1>} exact />
     </Switch>
     <Footer />
   </>
