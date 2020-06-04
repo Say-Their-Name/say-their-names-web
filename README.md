@@ -27,6 +27,14 @@ Using SSH:
   git clone git@github.com:Say-Their-Name/say-their-names-web.git
 ```
 
+### Navigate to app
+```sh
+ cd say-their-names-web
+```
+
+### Add Environment Variable
+Create a `.env` file in the root of the project and copy the contents of `.env.example` file to the newly created `.env` file.
+
 ### Installing Dependencies
 
 Using NPM:

@@ -21,7 +21,6 @@ const ProfilePreview = ({
             <p>{dateOfIncident}</p>
           </div>
 
-          <i className="far fa-bookmark" />
         </div>
       </StyledProfilePreview>
     </Link>
