@@ -39,7 +39,6 @@ const Footer = () => {
             <Link to="/donation">Donation</Link>
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
-            <Link to="/settings">Settings</Link>
           </StyledFooterLinks>
           <StyleFooterForm
             style={{ display: 'none' }}
