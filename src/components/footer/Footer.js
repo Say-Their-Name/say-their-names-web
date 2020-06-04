@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-import config from "../../utils/config";
-import Container from "../common/Container";
+import config from '../../utils/config';
+import Container from '../common/Container';
 import {
   StyledFooterContainer,
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
-  StyleFooterForm,
-} from "./style";
+  StyleFooterForm
+} from './style';
 
 const { apiBaseUrl } = config;
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [savedEmailResponse, setSavedEmailResponse] = useState();
 
   const onSaveNewsLetterHandler = async (e) => {
     e.preventDefault();
     try {
       await axios.post(`${apiBaseUrl}/join/newsletter`, {
-        email,
+        email
       });
-      setSavedEmailResponse("Subscribed successfully");
+      setSavedEmailResponse('Subscribed successfully');
     } catch (error) {
-      setSavedEmailResponse("Unable to subscribe, please try again");
+      setSavedEmailResponse('Unable to subscribe, please try again');
     }
   };
 
