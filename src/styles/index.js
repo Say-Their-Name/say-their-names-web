@@ -22,6 +22,15 @@ a {
     text-decoration: none;
 }
 
+.hover {
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+}
+
 `;
 
 export default GlobalStyle;

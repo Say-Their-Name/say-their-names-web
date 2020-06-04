@@ -23,7 +23,13 @@ import {
 const PersonProfile = (props) => {
   const { info } = props;
   const {
-    images, full_name, age, number_of_children, city, context, id
+    images,
+    full_name,
+    age,
+    number_of_children,
+    city,
+    context,
+    id
   } = info;
 
   const handleClick = () => {
@@ -46,11 +52,11 @@ const PersonProfile = (props) => {
           </Name>
           <Div>
             <Age>
-              <H4>Age</H4>
+              <H4>AGE</H4>
               <H2>{age}</H2>
             </Age>
             <Children>
-              <H4>Children</H4>
+              <H4>CHILDREN</H4>
               <H2>{number_of_children && number_of_children}</H2>
             </Children>
           </Div>
@@ -59,7 +65,9 @@ const PersonProfile = (props) => {
             <H2>{city}</H2>
           </Location>
           <Button>
-            <button type="button" onClick={handleClick}>DONATE</button>
+            <button type="button" onClick={handleClick}>
+              DONATE
+            </button>
           </Button>
           <Share>
             <p>Share on:</p>
