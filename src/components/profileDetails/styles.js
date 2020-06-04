@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Profile = styled.section`
   display: flex;
@@ -167,13 +167,12 @@ const Location = styled.div`
 const Button = styled.div`
   margin: 1rem 0px;
   button {
-    width: 244px;
-    height: 46px;
+    width: ${(props) => (props.width ? props.width : "244px")};
+    padding: ${(props) => (props.padding ? props.padding : "1rem")};
     color: white;
     background-color: black;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     outline: none;
@@ -257,5 +256,5 @@ export {
   Button,
   H2,
   Share,
-  Context
+  Context,
 };
