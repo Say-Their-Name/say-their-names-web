@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
 
 const StyledProfilePreviewContainer = styled.div`
+  /* width: 250px; */
   width: 23%;
   margin: 1rem 0;
   display: flex;
@@ -15,14 +16,16 @@ const StyledProfilePreviewContainer = styled.div`
   }
 
   @media (max-width: 1100px) {
+
     width: 30%;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     width: 45%;
   }
 
   @media (max-width: 600px) {
+    justify-content:center;
     width: 75%;
   }
 
@@ -42,11 +45,28 @@ const StyledProfilePreview = styled.div`
   color: ${Color.PRIMARY};
   .image-container {
     display: flex;
-    width: 100%;
+    width: 250px;
+
+    @media (max-width: 850px) {
+      width: 300px;
+    }
+
+    @media (max-width: 700px) {
+      width: 250px;
+    }
+
+    @media (max-width: 600px) {
+      width: 350px;
+    }
+
+    @media (max-width: 500px) {
+      width: 300px;
+    }
   }
 
   img {
     width: 100%;
+    /* width: 250px; */
     height: 300px;
     object-fit: cover;
     border-bottom: 1px solid #efefef;
