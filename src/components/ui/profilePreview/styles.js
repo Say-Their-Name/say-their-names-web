@@ -4,6 +4,13 @@ import Color from '../../../constants/Color';
 const StyledProfilePreviewContainer = styled.div`
   width: 30%;
   margin: 1rem 0;
+  transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
+
   @media (max-width: 900px) {
     width: 40%;
   }

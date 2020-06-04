@@ -5,7 +5,8 @@ const StyledPagination = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
+  margin: 1rem 0;
+  
   .pagination {
     margin: 15px auto;
     display: flex;
@@ -19,6 +20,7 @@ const StyledPagination = styled.div`
     color: #fff;
   }
   .pagination > li > a {
+    margin: 0.3rem;
     padding: 5px 10px;
     outline: none;
     cursor: pointer;
