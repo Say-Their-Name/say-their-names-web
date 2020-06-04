@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import Color from '../../constants/Color';
 
-const StyledFooter = styled.footer`
+const StyledFooterContainer = styled.footer`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 2px solid ${Color.GREY};
+`;
+const StyledFooter = styled.div`
   display: flex;
   font-weight: normal;
   align-items: "center";
   justify-content: space-between;
   background-color: ${Color.WHITE};
-  padding: 5rem 3rem;
+  padding: 2rem 0;
 `;
 
 const StyledFooterLinks = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   a {
     color: ${Color.PRIMARY};
@@ -22,7 +29,7 @@ const StyledFooterLinks = styled.div`
 `;
 
 const InputEmail = styled.input`
-  width: 70%;
+  /* width: 70%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -32,24 +39,56 @@ const InputEmail = styled.input`
   transition: width 0.5s ease-in-out;
   &:focus {
     width: 100%;
-  }
-`;
-const InputSubmit = styled.input.attrs({
-  type: 'submit',
-  value: 'Submit'
-})`
-  width: 40%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  text-align: center;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  } */
 `;
 
+const InputSubmit = styled.input``;
+// const InputSubmit = styled.input.attrs({
+//   type: "submit",
+//   value: "Submit",
+// })`
+//   width: 40%;
+//   padding: 12px 20px;
+//   margin: 8px 0;
+//   text-align: center;
+//   display: inline-block;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+// `;
+
 const StyleFooterForm = styled.form`
-  width: 33%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+
+    input {
+      width: 70%;
+      /* height: 100%; */
+      font-family: "Karla", sans-serif;
+
+      border: none;
+      padding: 0.5rem;
+    }
+    button {
+      width: 20%;
+      /* height: 100%; */
+      border: none;
+      font-family: "Karla", sans-serif;
+      padding: 0.5rem;
+      background-color: white;
+    }
+  }
 `;
 const StyledFooterMissions = styled.div`
   width: 33%;
@@ -63,6 +102,7 @@ const StyledFooterMissions = styled.div`
 `;
 
 export {
+  StyledFooterContainer,
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
