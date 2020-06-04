@@ -1,35 +1,31 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
-import BlackLivesMatterBanner from '../../../assets/black-lives-matter-banner.png';
+import styled from "styled-components";
 
 const StyledGetInvolved = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    justify-content: space-between;
+  }
 
   @media (max-width: 800px) {
     justify-content: center;
-    }
+  }
 
   .image-container {
-    background-image: url(${BlackLivesMatterBanner});
     width: 45%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-
-    @media (max-width: 1300px) {
-      width: 50%;
-    }
 
     @media (max-width: 1000px) {
-      width: 55%;
+      width: 50%;
+    }
+    @media (max-width: 800px) {
+      width: 80%;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 650px) {
       width: 95%;
     }
 
@@ -37,48 +33,28 @@ const StyledGetInvolved = styled.div`
       width: 100%;
     }
 
-    .image-text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      height: 100%;
-      color: ${Color.WHITE};
-
-      .image-text {
-        padding: 1rem;
-      }
-
-      h3 {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin: 0.2rem 0;
-        padding: 0.2rem 0;
-        font-family: "Karla", sans-serif;
-      }
-
-      h4 {
-        margin: 0.2rem 0;
-        padding: 0.2rem 0;
-        font-family: "Karla", sans-serif;
-        font-size: 1rem;
-        font-weight: 100;
-      }
+    img {
+      width: 100%;
     }
   }
 
   .details {
-    width: 40%;
-
-    @media (max-width: 1300px) {
-      width: 45%;
-    }
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3rem;
 
     @media (max-width: 1000px) {
-      width: 30%;
+      margin-left: 0;
     }
 
     @media (max-width: 800px) {
+      width: 80%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 650px) {
       width: 95%;
     }
 
@@ -87,15 +63,11 @@ const StyledGetInvolved = styled.div`
     }
 
     h1 {
-      font-size: 6rem;
+      font-size: 4rem;
       text-align: center;
 
       @media (max-width: 1200px) {
-        font-size: 4rem;
-      }
-
-      @media (max-width: 1000px) {
-        font-size: 3.5rem;
+        font-size: 3rem;
       }
     }
   }

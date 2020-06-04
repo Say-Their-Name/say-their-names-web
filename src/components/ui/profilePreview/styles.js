@@ -2,29 +2,32 @@ import styled from 'styled-components';
 import Color from '../../../constants/Color';
 
 const StyledProfilePreviewContainer = styled.div`
-  width: 30%;
+  width: 23%;
   margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   transition: all 0.3s ease-in-out;
-    
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.01);
-    }
 
-  @media (max-width: 900px) {
-    width: 40%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  @media (max-width: 1100px) {
+    width: 30%;
+  }
+
+  @media (max-width: 800px) {
+    width: 45%;
   }
 
   @media (max-width: 600px) {
-    width: 65%;
-  }
-
-  @media (max-width: 500px) {
     width: 75%;
   }
 
-  @media (max-width: 400px) {
-    width: 85%;
+  @media (max-width: 450px) {
+    width: 90%;
   }
 `;
 
