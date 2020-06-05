@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
   display: flex;
@@ -54,4 +54,6 @@ const BoxContent = styled.div`
 `;
 
 const InnerContainer = styled.div``;
-export { ContainerDiv, ImageCover, HomeButton, BoxContent, InnerContainer };
+export {
+  ContainerDiv, ImageCover, HomeButton, BoxContent, InnerContainer
+};

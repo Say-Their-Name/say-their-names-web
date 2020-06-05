@@ -1,20 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ContainerDiv,
   ImageCover,
   HomeButton,
   BoxContent,
-  InnerContainer,
-} from "./style";
-import BLM from "../../assets/blm.svg";
-const NotFound = () => {
-  return (
+  InnerContainer
+} from './style';
+import BLM from '../../assets/blm.svg';
+
+const NotFound = () => (
+  <div>
     <ContainerDiv>
       <InnerContainer>
         <BoxContent>
           <span>
-            404 <br />
+            404
+            <br />
             Page not found
           </span>
         </BoxContent>
@@ -23,14 +25,15 @@ const NotFound = () => {
           wrong turn.
         </p>
         <HomeButton>
-          <Link to='/'>
-            <button type='button'>BACK TO HOME</button>
+          <Link to="/">
+            <button type="button">BACK TO HOME</button>
           </Link>
         </HomeButton>
       </InnerContainer>
-      <ImageCover src={BLM} alt='not found  svg' />
+      <ImageCover src={BLM} alt="not found  svg" />
     </ContainerDiv>
-  );
-};
+  </div>
+
+);
 
 export default NotFound;
