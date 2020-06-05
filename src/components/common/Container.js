@@ -9,6 +9,10 @@ const StyledContainer = styled.div`
   @media (max-width: 1200px) {
     margin: 3rem;
   }
+
+  @media (max-width: 700px) {
+    margin: 1rem;
+  }
 `;
 
 const Container = ({ children }) => (
