@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
 
 const StyledProfilePreviewContainer = styled.div`
   width: 23%;
@@ -26,9 +26,6 @@ const StyledProfilePreviewContainer = styled.div`
     justify-content: center;
     width: 75%;
   }
-
-  
-  
 `;
 
 const StyledProfilePreview = styled.div`
@@ -58,6 +55,14 @@ const StyledProfilePreview = styled.div`
 
     @media (max-width: 500px) {
       width: 400px;
+    }
+
+    @media (max-width: 450px) {
+      width: 350px;
+    }
+
+    @media (max-width: 370px) {
+      width: 300px;
     }
   }
 
