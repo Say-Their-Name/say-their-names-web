@@ -17,12 +17,14 @@ const Petitions = () => {
 
   return (
     <PetitionWrapper>
+      <h1>PETITIONS</h1>
       {petitions.map((petition) => (
         <Petition
           key={petition.id}
           title={petition.title}
           description={petition.description}
           link={petition.link}
+          img={petition.image_url}
         />
       ))}
     </PetitionWrapper>
