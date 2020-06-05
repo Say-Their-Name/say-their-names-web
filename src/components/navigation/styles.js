@@ -32,7 +32,35 @@ const StyledNavigationLogo = styled.div`
 const StyledNavigationLinks = styled.div`
   a {
     color: ${Color.WHITE};
-    margin-left: 20px;
+    margin-left: 25px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  a:after {    
+    content: "";
+    background: none;
+    bottom: 0;
+    top: 1.5em;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    background: ${Color.WHITE};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+   }
+
+  a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+  @media (max-width: 615px) {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1.5em;
   }
 `;
 
