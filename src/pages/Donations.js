@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Petition from '../components/ui/petition/Petition';
 import { Wrapper } from '../components/ui/petition/styles';
 
@@ -6,9 +7,8 @@ const Donations = () => {
   const [donations, setDonations] = useState([]);
 
   const fetchDonations = async () => {
-    const res = await fetch('https://saytheirnames.dev/api/donations');
-    const json = await res.json();
-    setDonations(json.data);
+    const res = await axios.get('https://saytheirnames.dev/api/donations');
+    setDonations(res.data.data);
   };
 
   useEffect(() => {

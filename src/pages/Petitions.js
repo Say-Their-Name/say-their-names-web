@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Petition from '../components/ui/petition/Petition';
 import { Wrapper } from '../components/ui/petition/styles';
 
@@ -6,9 +7,8 @@ const Petitions = () => {
   const [petitions, setPetitions] = useState([]);
 
   const fetchPetitions = async () => {
-    const res = await fetch('https://saytheirnames.dev/api/petitions');
-    const json = await res.json();
-    setPetitions(json.data);
+    const res = await axios.get('https://saytheirnames.dev/api/petitions');
+    setPetitions(res.data.data);
   };
 
   useEffect(() => {
