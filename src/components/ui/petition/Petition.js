@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PetitionCard, PetitionLink, CardContent, Image, ImageDiv } from './styles';
+import {
+  PetitionCard, PetitionLink, CardContent, Image, ImageDiv
+} from './styles';
 
 const Petition = ({
   title, description, link, img
 }) => {
-  const imgAlt = `Petition: ${title}`
+  const imgAlt = `Petition: ${title}`;
   return (
     <PetitionCard>
       <ImageDiv>
@@ -18,7 +20,7 @@ const Petition = ({
       </CardContent>
     </PetitionCard>
   );
-}
+};
 
 Petition.propTypes = {
   title: PropTypes.string,
