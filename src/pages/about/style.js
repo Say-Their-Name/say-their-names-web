@@ -2,6 +2,32 @@ import styled from 'styled-components';
 import Color from '../../constants/Color';
 import MediaQuery from '../../styles/utils';
 
+const StyledAboutBanner = styled.div`
+
+.image-container {
+  width: 45%;
+
+  @media (max-width: 1000px) {
+    width: 50%;
+  }
+  @media (max-width: 800px) {
+    width: 80%;
+  }
+
+  @media (max-width: 650px) {
+    width: 95%;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+`;
+
 const StyledAbout = styled.div`
   line-height: 1.5;
   font-family: 'Karla', sans-serif;
@@ -19,17 +45,18 @@ const StyledAbout = styled.div`
 
   padding: 5rem 3rem;
  
-  h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: left;
-    font-weight: 'bold';
-    margin:0;
-  }
+ 
 `;
 
 const StyledAboutContainer = styled.div`
 text-align: left;
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 'bold';
+  margin: 0px 0px 0px;
+}
   h3 { 
    margin-top: 0;
   text-align: left;
@@ -44,7 +71,8 @@ text-align: left;
   }
   hr{
     padding: 0px;
-    margin: 0px;    
+    margin: 0px ;  
+    border-bottom: 1px solid grey;  
   }
 `;
 const LinkStyle = styled.a`
@@ -59,5 +87,6 @@ a:hover {
 export {
   StyledAbout,
   StyledAboutContainer,
-  LinkStyle
+  LinkStyle,
+  StyledAboutBanner
 };
