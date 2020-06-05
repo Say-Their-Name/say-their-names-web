@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
+import Share from './share/Share';
 import {
   Profile,
   PersonalInformation,
@@ -13,10 +13,8 @@ import {
   Age,
   Children,
   Location,
-  ShareSection,
   Button,
   H2,
-  Share,
   Context
 } from './styles';
 
@@ -47,7 +45,7 @@ const PersonProfile = (props) => {
             <H4>FULL NAME</H4>
             <div>
               <H2>{full_name}</H2>
-              <i className="far fa-bookmark" />
+
             </div>
           </Name>
           <Div>
@@ -69,14 +67,11 @@ const PersonProfile = (props) => {
               DONATE
             </button>
           </Button>
-          <Share>
-            <p>Share on:</p>
-            <ShareSection>
-              <p>Twitter</p>
-              <p>Facebook</p>
-              <p>Whatsapp</p>
-            </ShareSection>
-          </Share>
+          <Share
+            url={window.location.href}
+            title="#SayTheirNames"
+          />
+
         </PersonSection>
       </PersonalInformation>
       <Context>
