@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   -webkit-box-align: center;
   align-items: center;
   width: 1024px;
   margin: 24px auto 0px;
+  min-height: 80vh;
 
   p {
     margin-bottom: 36px;

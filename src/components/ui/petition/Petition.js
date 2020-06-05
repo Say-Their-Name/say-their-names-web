@@ -18,7 +18,9 @@ const Petition = ({
       <CardContent>
         <h2>{title}</h2>
         <p>{description}</p>
-        <LinkButton href={link}>FIND OUT MORE</LinkButton>
+        <LinkButton href={link} target="_blank">
+          FIND OUT MORE
+        </LinkButton>
       </CardContent>
     </Card>
   );
