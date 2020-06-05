@@ -25,7 +25,7 @@ const StyledNavigationLogo = styled.div`
     height: 40px;
     margin-right: 15px;
   }
-  h1 {
+  h4 {
     font-size: 20px;
     margin: 0;
     color: ${Color.WHITE};

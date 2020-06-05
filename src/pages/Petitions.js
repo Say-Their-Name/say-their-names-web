@@ -10,7 +10,7 @@ const Petitions = () => {
   const [petitions, setPetitions] = useState([]);
 
   const fetchPetitions = async () => {
-    const res = await axios.get(`${apiBaseUrl}/api/petitions`);
+    const res = await axios.get(`${apiBaseUrl}/petitions`);
     setPetitions(res.data.data);
   };
 

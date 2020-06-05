@@ -12,12 +12,12 @@ const BackToProfiles = ({
   const [donationsDisplay, setDonationsDisplay] = useState('none');
 
   useEffect(() => {
-    const onScroll = document.addEventListener('scroll', () => {
+    const onScroll = window.addEventListener('scroll', () => {
       const scrollHeight = window.scrollY < 100 ? 'static' : 'sticky';
       const scrollHeightDisplay = window.scrollY < 100 ? 'none' : 'flex';
       setSticky(scrollHeight);
       setDonationsDisplay(scrollHeightDisplay);
-    });
+    }, false);
     return () => {
       window.removeEventListener('scroll', onScroll, false);
     };
