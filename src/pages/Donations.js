@@ -10,7 +10,7 @@ const Donations = () => {
   const [donations, setDonations] = useState([]);
 
   const fetchDonations = async () => {
-    const res = await axios.get(`${apiBaseUrl}/api/donations`);
+    const res = await axios.get(`${apiBaseUrl}/donations`);
     setDonations(res.data.data);
   };
 
