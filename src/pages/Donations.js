@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import Spinner from "../components/common/Spinner";
-import Petition from "../components/ui/petition/Petition";
-import { Wrapper } from "../components/ui/petition/styles";
-import config from "../utils/config";
+import Spinner from '../components/common/Spinner';
+import Petition from '../components/ui/petition/Petition';
+import { Wrapper } from '../components/ui/petition/styles';
+import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 

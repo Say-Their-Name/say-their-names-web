@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../../constants/Color';
 
 const Card = styled.div`
   border: 1px solid lightgray;
@@ -67,4 +67,6 @@ const Type = styled.p`
   padding: 5px;
 `;
 
-export { Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type };
+export {
+  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
+};
