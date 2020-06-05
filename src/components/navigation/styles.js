@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -93,5 +93,5 @@ export {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  StyledNavigationLinkContainer,
+  StyledNavigationLinkContainer
 };
