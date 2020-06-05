@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Petition from '../components/ui/petition/Petition';
-import { PetitionWrapper } from '../components/ui/petition/styles';
+import { Wrapper } from '../components/ui/petition/styles';
 
 const Petitions = () => {
   const [petitions, setPetitions] = useState([]);
@@ -16,7 +16,7 @@ const Petitions = () => {
   }, []);
 
   return (
-    <PetitionWrapper>
+    <Wrapper>
       <h1>PETITIONS</h1>
       {petitions.map((petition) => (
         <Petition
@@ -25,9 +25,10 @@ const Petitions = () => {
           description={petition.description}
           link={petition.link}
           img={petition.image_url}
+          type={petition.type.type}
         />
       ))}
-    </PetitionWrapper>
+    </Wrapper>
   );
 };
 

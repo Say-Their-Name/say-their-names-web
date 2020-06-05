@@ -1,24 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  PetitionCard, PetitionLink, CardContent, Image, ImageDiv
+  Card, LinkButton, CardContent, Image, ImageDiv, Type
 } from './styles';
 
 const Petition = ({
-  title, description, link, img
+  title, description, link, img, type
 }) => {
-  const imgAlt = `Petition: ${title}`;
+  const imgAlt = `Image for ${title}`;
+  const upperType = type.toUpperCase();
   return (
-    <PetitionCard>
+    <Card>
       <ImageDiv>
+        <Type>{upperType}</Type>
         <Image src={img} alt={imgAlt} />
       </ImageDiv>
       <CardContent>
         <h2>{title}</h2>
         <p>{description}</p>
-        <PetitionLink href={link}>FIND OUT MORE</PetitionLink>
+        <LinkButton href={link}>FIND OUT MORE</LinkButton>
       </CardContent>
-    </PetitionCard>
+    </Card>
   );
 };
 
@@ -26,14 +28,16 @@ Petition.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
-  img: PropTypes.string
+  img: PropTypes.string,
+  type: PropTypes.string
 };
 
 Petition.defaultProps = {
   title: 'title',
   description: 'description',
   link: 'link',
-  img: 'image_url'
+  img: 'image_url',
+  type: 'Victim'
 };
 
 export default Petition;

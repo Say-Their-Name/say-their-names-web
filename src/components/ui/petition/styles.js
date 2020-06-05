@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PetitionCard = styled.div`
+const Card = styled.div`
   border: 3px solid lightgray;
   border-radius: 2px;
   margin-top: 30px;
@@ -12,7 +12,7 @@ const CardContent = styled.div`
   flex-direction: column;
 `;
 
-const PetitionWrapper = styled.div`
+const Wrapper = styled.div`
   width: 800px;
   margin: 0 auto;
   margin-bottom: 100px;
@@ -26,6 +26,7 @@ const ImageDiv = styled.div`
   width: 794px;
   height: 280px;
   overflow: hidden;
+  position: relative;
 
   @media (max-width: 1300px) {
     width: 100%;
@@ -37,7 +38,7 @@ const Image = styled.img`
   min-width: 100%;
 `;
 
-const PetitionLink = styled.a`
+const LinkButton = styled.a`
   padding: 15px;
   font-size: 20px;
   color: black;
@@ -50,6 +51,15 @@ const PetitionLink = styled.a`
   }
 `;
 
+const Type = styled.p`
+  position: absolute;
+  top: 5px;
+  right: 16px;
+  color: white;
+  background-color: black;
+  padding: 5px;
+`;
+
 export {
-  PetitionCard, PetitionWrapper, PetitionLink, CardContent, Image, ImageDiv
+  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
 };
