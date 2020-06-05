@@ -30,7 +30,7 @@ const ProfilePreview = ({
 export default ProfilePreview;
 
 ProfilePreview.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   fullName: PropTypes.string.isRequired,
   image: PropTypes.shape({
     image_url: PropTypes.string.isRequired

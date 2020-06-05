@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const Donations = () => (
-  <h1>Donations</h1>
-);
+const Donations = () => {
+  return <h1>Donations</h1>;
+};
 
 export default Donations;
