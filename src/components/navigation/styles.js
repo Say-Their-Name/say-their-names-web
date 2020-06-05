@@ -55,6 +55,13 @@ const StyledNavigationLinks = styled.div`
     width: 100%; 
     left: 0; 
   }
+
+  @media (max-width: 615px) {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1.5em;
+  }
 `;
 
 const StyledNavigationLinkContainer = styled.div`
