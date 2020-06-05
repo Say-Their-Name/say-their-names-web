@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Petition from '../components/ui/petition/Petition';
 import { Wrapper } from '../components/ui/petition/styles';
+import config from '../utils/config';
+
+const { apiBaseUrl } = config;
 
 const Donations = () => {
   const [donations, setDonations] = useState([]);
 
   const fetchDonations = async () => {
-    const res = await axios.get('https://saytheirnames.dev/api/donations');
+    const res = await axios.get(`${apiBaseUrl}/api/donations`);
     setDonations(res.data.data);
   };
 

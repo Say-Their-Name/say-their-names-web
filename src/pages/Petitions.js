@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Petition from '../components/ui/petition/Petition';
 import { Wrapper } from '../components/ui/petition/styles';
+import config from '../utils/config';
+
+const { apiBaseUrl } = config;
 
 const Petitions = () => {
   const [petitions, setPetitions] = useState([]);
 
   const fetchPetitions = async () => {
-    const res = await axios.get('https://saytheirnames.dev/api/petitions');
+    const res = await axios.get(`${apiBaseUrl}/api/petitions`);
     setPetitions(res.data.data);
   };
 
