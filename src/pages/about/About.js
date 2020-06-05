@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   StyledAbout, StyledAboutContainer, LinkStyle, StyledAboutBanner
-} from './style';
+} from './styles';
 import { Button } from '../../components/profileDetails/styles';
 import AboutBanner from '../../assets/about-banner.svg';
 
