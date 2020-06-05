@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Container from '../../components/common/Container';
+import Container from "../../components/common/Container";
 import {
   ContainerDiv,
   ImageCover,
   HomeButton,
   BoxContent,
-  InnerContainer
-} from './style';
-import BLM from '../../assets/blm.svg';
+  InnerContainer,
+} from "./style";
+import BLM from "../../assets/blm.svg";
 
 const NotFound = () => (
   <Container>
@@ -17,9 +17,7 @@ const NotFound = () => (
       <InnerContainer>
         <BoxContent>
           <span>
-            404
-            {' '}
-            <br />
+            404 <br />
             Page not found
           </span>
         </BoxContent>
