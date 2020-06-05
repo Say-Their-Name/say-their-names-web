@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const ActionDetails = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const ActionDetails = () => (
+  <div />
+);
 
-export default ActionDetails
+export default ActionDetails;

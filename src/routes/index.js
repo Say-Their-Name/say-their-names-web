@@ -8,7 +8,7 @@ import ProfileDetail from '../pages/ProfileDetail';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import Donations from '../pages/Donations';
-import ActionDetails from '../pages/ActionDetails'
+import ActionDetails from '../pages/ActionDetails';
 
 const AppRoutes = () => (
   <>
