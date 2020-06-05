@@ -29,10 +29,11 @@ const StyledAbout = styled.div`
 `;
 
 const StyledAboutContainer = styled.div`
+text-align: left;
   h3 { 
    margin-top: 0;
-  font-weight: 'bold';
   text-align: left;
+  text-transform: uppercase;
   }
   p{
     margin-left: auto;
@@ -40,6 +41,16 @@ const StyledAboutContainer = styled.div`
     color:#333;
     word-wrap:break-word;
     text-align: justify;  
+  }
+  ul {
+    list-style-type: none;
+    content: "–";
+    padding-left: 1em;
+  }
+  ul li:before {
+    content: "–";
+    position: absolute;
+    margin-left: -1em;
   }
   hr{
     padding: 0px;
