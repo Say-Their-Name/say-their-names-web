@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {
   StyledAbout,
   StyledAboutContainer,
   LinkStyle,
   StyledAboutBanner,
-  StyledLinkContainer,
-} from "./styles";
-import { Button } from "../../components/profileDetails/styles";
-import AboutBanner from "../../assets/about-banner.svg";
+  StyledLinkContainer
+} from './styles';
+import { Button } from '../../components/profileDetails/styles';
+import AboutBanner from '../../assets/about-banner.svg';
 
 const About = () => (
   <div>

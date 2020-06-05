@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
-import MediaQuery from "../../styles/utils";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
+import MediaQuery from '../../styles/utils';
 
 const StyledAboutBanner = styled.div`
   display: flex;
@@ -94,5 +94,5 @@ export {
   StyledAboutContainer,
   LinkStyle,
   StyledAboutBanner,
-  StyledLinkContainer,
+  StyledLinkContainer
 };
