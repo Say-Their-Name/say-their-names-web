@@ -56,12 +56,19 @@ text-align: left;
     padding: 0px;
     margin: 0px;    
   }
-  a: {
-    textDecoration: 'underline',
-  }
+  
+`;
+const LinkStyle = styled.a`
+border-bottom: 2px solid grey;
+
+a:hover {
+  background-color: transparent;
+  border-bottom: 2px solid red;
+}
 `;
 
 export {
   StyledAbout,
-  StyledAboutContainer
+  StyledAboutContainer,
+  LinkStyle
 };

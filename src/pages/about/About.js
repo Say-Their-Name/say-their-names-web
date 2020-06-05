@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledAbout, StyledAboutContainer } from './style';
+import { StyledAbout, StyledAboutContainer, LinkStyle } from './style';
 import { Button } from '../../components/profileDetails/styles';
 
 const About = () => (
@@ -32,7 +32,16 @@ const About = () => (
       <p>
         If you would like to propose an edit to a victim page or if you are a
         representative of the victim and would like the victim to be removed
-        from this directory please send us an Email.
+        from this directory please send us a message on &nbsp;
+        <LinkStyle>
+          <a
+            target="_blank"
+            href="https://twitter.com/SayTheirName_io"
+            rel="noopener noreferrer"
+          >
+            Twitter &nbsp;
+          </a>
+        </LinkStyle>
       </p>
     </StyledAboutContainer>
 
