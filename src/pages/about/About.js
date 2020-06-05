@@ -9,7 +9,7 @@ const About = () => (
       <hr />
       <p>
         Welcome to the
-        Say Their Name Project
+        Say Their Name Project.
         Our aim is to build an open-source
         platform to raise awareness of the injustice and often forgotten names
         of racial inequality at the hands of law enforcement. We strive to
