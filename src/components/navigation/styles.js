@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Color from '../../constants/Color';
+import styled from "styled-components";
+import Color from "../../constants/Color";
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -10,7 +10,7 @@ const StyledNavigation = styled.nav`
   background-color: ${Color.PRIMARY};
   width: 100%;
 
-  @media (max-width: 660px) {
+  @media (max-width: 680px) {
     justify-content: center;
   }
 `;
@@ -36,12 +36,16 @@ const StyledNavigationLogo = styled.div`
 const StyledNavigationLinks = styled.div`
   a {
     color: ${Color.WHITE};
-    margin-left: 25px;
+    margin: 0 25px;
     position: relative;
     text-decoration: none;
     padding-bottom: 0.5rem;
 
-    @media (max-width: 660px) {
+    @media (max-width: 780px) {
+      margin: 0 15px;
+    }
+
+    @media (max-width: 680px) {
       margin: 0;
     }
   }
@@ -72,7 +76,7 @@ const StyledNavigationLinks = styled.div`
     left: 0;
   }
 
-  @media (max-width: 660px) {
+  @media (max-width: 680px) {
     text-align: center;
     margin: 0 auto;
     padding: 0.5em;
@@ -89,5 +93,5 @@ export {
   StyledNavigation,
   StyledNavigationLogo,
   StyledNavigationLinks,
-  StyledNavigationLinkContainer
+  StyledNavigationLinkContainer,
 };
