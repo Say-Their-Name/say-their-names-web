@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Share from './share/Share';
 import {
   Profile,
@@ -27,12 +27,8 @@ const PersonProfile = (props) => {
     number_of_children,
     city,
     context,
-    id
+    identifier
   } = info;
-
-  const handleClick = () => {
-    props.history.push(`/donations/${id}`);
-  };
 
   return (
     <Profile>
@@ -45,7 +41,6 @@ const PersonProfile = (props) => {
             <H4>FULL NAME</H4>
             <div>
               <H2>{full_name}</H2>
-
             </div>
           </Name>
           <Div>
@@ -62,16 +57,12 @@ const PersonProfile = (props) => {
             <H4>LOCATION</H4>
             <H2>{city}</H2>
           </Location>
-          <Button>
-            <button type="button" onClick={handleClick}>
-              DONATE
-            </button>
-          </Button>
-          <Share
-            url={window.location.href}
-            title="#SayTheirNames"
-          />
-
+          <Link to={`/donations/${identifier}`}>
+            <Button>
+              <button type="button">DONATE</button>
+            </Button>
+          </Link>
+          <Share url={window.location.href} title="#SayTheirNames" />
         </PersonSection>
       </PersonalInformation>
       <Context>
@@ -98,7 +89,8 @@ PersonProfile.propTypes = {
     city: PropTypes.string.isRequired,
     context: PropTypes.string.isRequired,
     number_of_children: PropTypes.string,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    identifier: PropTypes.string.isRequired
   }),
   history: PropTypes.shape({
     push: PropTypes.func.isRequired

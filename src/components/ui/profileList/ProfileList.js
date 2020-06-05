@@ -13,7 +13,7 @@ const ProfileList = ({ profiles }) => (
           && profiles.map((profile) => (
             <PersonPreview
               key={profile.id}
-              id={profile.id}
+              id={profile.identifier}
               image={profile.images[0]}
               fullName={profile.full_name}
               dateOfIncident={profile.date_of_incident}
