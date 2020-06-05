@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
 
 const StyledProfilePreviewContainer = styled.div`
-  /* width: 250px; */
   width: 23%;
   margin: 1rem 0;
   display: flex;
@@ -16,7 +15,6 @@ const StyledProfilePreviewContainer = styled.div`
   }
 
   @media (max-width: 1100px) {
-
     width: 30%;
   }
 
@@ -25,13 +23,12 @@ const StyledProfilePreviewContainer = styled.div`
   }
 
   @media (max-width: 600px) {
-    justify-content:center;
+    justify-content: center;
     width: 75%;
   }
 
-  @media (max-width: 450px) {
-    width: 90%;
-  }
+  
+  
 `;
 
 const StyledProfilePreview = styled.div`
@@ -60,7 +57,7 @@ const StyledProfilePreview = styled.div`
     }
 
     @media (max-width: 500px) {
-      width: 300px;
+      width: 400px;
     }
   }
 
