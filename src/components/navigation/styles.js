@@ -10,7 +10,7 @@ const StyledNavigation = styled.nav`
   background-color: ${Color.PRIMARY};
   width: 100%;
 
-  @media (max-width: 615px) {
+  @media (max-width: 660px) {
     justify-content: center;
   }
 `;
@@ -39,10 +39,22 @@ const StyledNavigationLinks = styled.div`
     margin-left: 25px;
     position: relative;
     text-decoration: none;
-    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+
+    @media (max-width: 660px) {
+      margin: 0;
+    }
   }
 
-  a:after {    
+  .active {
+    border-bottom: 2px solid ${Color.WHITE};
+    &:after {
+      background: inherit;
+      transition: none;
+    }
+  }
+
+  a:after {
     content: "";
     background: none;
     bottom: 0;
@@ -53,14 +65,14 @@ const StyledNavigationLinks = styled.div`
     position: absolute;
     background: ${Color.WHITE};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
-   }
-
-  a:hover:after { 
-    width: 100%; 
-    left: 0; 
   }
 
-  @media (max-width: 615px) {
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  @media (max-width: 660px) {
     text-align: center;
     margin: 0 auto;
     padding: 0.5em;
@@ -72,7 +84,6 @@ const StyledNavigationLinkContainer = styled.div`
   flex-wrap: wrap;
   padding: 1rem;
 `;
-
 
 export {
   StyledNavigation,
