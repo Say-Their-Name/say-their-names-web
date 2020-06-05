@@ -1,31 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   StyledNavigation,
   StyledNavigationLogo,
-  StyledNavigationLinkContainer,
-} from "./styles";
-import NavigationItem from "./NavigationItem";
-import Logo from "../../assets/logo.png";
+  StyledNavigationLinkContainer
+} from './styles';
+import NavigationItem from './NavigationItem';
+import Logo from '../../assets/logo.png';
 
 const navRoutes = [
   {
-    name: "Home",
-    path: "/",
+    name: 'Home',
+    path: '/'
   },
   {
-    name: "Donations",
-    path: "/donations",
+    name: 'Donations',
+    path: '/donations'
   },
   {
-    name: "Petitions",
-    path: "/petitions",
+    name: 'Petitions',
+    path: '/petitions'
   },
   {
-    name: "About",
-    path: "/about",
-  },
+    name: 'About',
+    path: '/about'
+  }
 ];
 const Navigation = () => (
   <StyledNavigation className="navbar">
