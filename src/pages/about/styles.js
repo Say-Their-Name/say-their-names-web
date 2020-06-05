@@ -1,31 +1,28 @@
-import styled from 'styled-components';
-import Color from '../../constants/Color';
-import MediaQuery from '../../styles/utils';
+import styled from "styled-components";
+import Color from "../../constants/Color";
+import MediaQuery from "../../styles/utils";
 
 const StyledAboutBanner = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 
-.image-container {
-  width: 45%;
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
 
-  @media (max-width: 1000px) {
-    width: 50%;
+    @media (max-width: 700px) {
+      width: 90%;
+    }
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
-  @media (max-width: 800px) {
-    width: 80%;
-  }
-
-  @media (max-width: 650px) {
-    width: 95%;
-  }
-
-  @media (max-width: 500px) {
-    width: 100%;
-  }
-
   img {
     width: 100%;
   }
-}
 `;
 
 const StyledAbout = styled.div`
@@ -34,7 +31,9 @@ const StyledAbout = styled.div`
   margin: auto;
   background-color: ${Color.WHITE};
   text-align: center;
-  width: 45%;
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
 
   ${MediaQuery.xs`padding: 0.8rem 0.4rem;
   `}
@@ -45,48 +44,55 @@ const StyledAbout = styled.div`
 
   padding: 5rem 3rem;
  
- 
 `;
 
 const StyledAboutContainer = styled.div`
-text-align: left;
-
-h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 'bold';
-  margin: 0px 0px 0px;
-}
-  h3 { 
-   margin-top: 0;
   text-align: left;
-  text-transform: uppercase;
+  margin: 1rem 0;
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: "bold";
+    margin: 0px 0px 0px;
   }
-  p{
+  h3 {
+    margin-top: 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  p {
     margin-left: auto;
     margin-right: auto;
-    color:#333;
-    word-wrap:break-word;
-    text-align: justify;  
+    color: #333;
+    word-wrap: break-word;
+    text-align: justify;
   }
-  hr{
+  hr {
     padding: 0px;
-    margin: 0px ;  
-    border-bottom: 1px solid grey;  
+    margin: 0px;
+    border-bottom: 1px solid grey;
   }
 `;
-const LinkStyle = styled.a`
-border-bottom: 2px solid grey;
+const LinkStyle = styled.span`
+  border-bottom: 2px solid grey;
 
-a:hover {
-  background-color: transparent;
-  border-bottom: 2px solid red;
-}
+  a:hover {
+    background-color: transparent;
+    border-bottom: 2px solid red;
+  }
+`;
+
+const StyledLinkContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 `;
 
 export {
   StyledAbout,
   StyledAboutContainer,
   LinkStyle,
-  StyledAboutBanner
+  StyledAboutBanner,
+  StyledLinkContainer,
 };
