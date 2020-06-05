@@ -58,7 +58,7 @@ const PersonProfile = (props) => {
             <H4>LOCATION</H4>
             <H2>{city}</H2>
           </Location>
-          <Link to={`/donations/${identifier}`}>
+          <Link to={`/donate/${identifier}`}>
             <Button>
               <button type="button">DONATE</button>
             </Button>

@@ -8,7 +8,7 @@ import ProfileDetail from '../pages/ProfileDetail';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import Donations from '../pages/Donations';
-import ActionDetails from '../pages/actionDetails/ActionDetails';
+import DonationDetail from '../pages/DonationDetail';
 
 const AppRoutes = () => (
   <>
@@ -19,7 +19,7 @@ const AppRoutes = () => (
       <Route path="/profile/:id" component={ProfileDetail} exact />
       <Route path="/petitions" component={Petitions} exact />
       <Route path="/donations/:id?" component={Donations} />
-      <Route path="/donate/:id" component={ActionDetails} exact />
+      <Route path="/donate/:id" component={DonationDetail} exact />
     </Switch>
     <Footer />
   </>

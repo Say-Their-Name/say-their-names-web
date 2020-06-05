@@ -33,7 +33,7 @@ const ProfileDetail = ({ match }) => {
     };
     fetchdata();
   }, [id]);
-  // console.log(person)
+
   return (
     <>
       {loading && <Spinner />}
@@ -41,7 +41,7 @@ const ProfileDetail = ({ match }) => {
         <>
           <BackNavigation
             text="BACK TO PROFILES"
-            link="/donations"
+            link={`/donate/${person.identifier}`}
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
             backLink="/"
