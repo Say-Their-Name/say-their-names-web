@@ -28,7 +28,7 @@ const DonationDetail = () => {
     };
 
     fetchdata();
-  }, []);
+  }, [donationDetails, loading]);
   return (
     <div>
       <BackNavigation
