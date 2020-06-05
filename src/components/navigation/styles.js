@@ -9,6 +9,10 @@ const StyledNavigation = styled.nav`
   color: ${Color.WHITE};
   background-color: ${Color.PRIMARY};
   width: 100%;
+
+  @media (max-width: 615px) {
+    justify-content: center;
+  }
 `;
 
 const StyledNavigationLogo = styled.div`
@@ -58,9 +62,8 @@ const StyledNavigationLinks = styled.div`
 
   @media (max-width: 615px) {
     text-align: center;
-    width: 70%;
     margin: 0 auto;
-    padding: 1.5em;
+    padding: 0.5em;
   }
 `;
 
