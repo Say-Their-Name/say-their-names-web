@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../../constants/Color';
 
 const StyledProfilePreviewContainer = styled.div`
   width: 23%;
