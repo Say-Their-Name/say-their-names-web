@@ -28,6 +28,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    // throw new Error('asasd');
     fetchdata();
   }, [fetchdata]);
 
