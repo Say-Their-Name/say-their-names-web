@@ -33,7 +33,7 @@ const ProfileDetail = ({ match }) => {
     };
     fetchdata();
   }, [id]);
-
+  // console.log(person)
   return (
     <>
       {loading && <Spinner />}

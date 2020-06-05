@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 
 const StyledActionDetails = styled.section`
 
-`
+`;
 
-export default StyledActionDetails
+export default StyledActionDetails;
