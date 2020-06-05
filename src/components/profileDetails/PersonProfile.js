@@ -104,7 +104,7 @@ PersonProfile.propTypes = {
     identifier: PropTypes.string.isRequired,
     their_story: PropTypes.string.isRequired,
     outcome: PropTypes.string.isRequired,
-    donation_links: PropTypes.array.isRequired,
+    donation_links: PropTypes.array.isRequired
   }),
   history: PropTypes.shape({
     push: PropTypes.func.isRequired

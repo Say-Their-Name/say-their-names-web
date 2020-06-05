@@ -38,11 +38,13 @@ const Donations = () => {
             {donations.map((donation) => (
               <Petition
                 key={donation.id}
+                id={donation.id}
                 title={donation.title}
                 description={donation.description}
                 link={donation.link}
                 img={donation.image_url}
                 type={donation.type.type}
+                path="donate"
               />
             ))}
           </Wrapper>

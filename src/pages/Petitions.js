@@ -38,11 +38,13 @@ const Petitions = () => {
             {petitions.map((petition) => (
               <Petition
                 key={petition.id}
+                id={petition.id}
                 title={petition.title}
                 description={petition.description}
                 link={petition.link}
                 img={petition.image_url}
                 type={petition.type.type}
+                path="sign"
               />
             ))}
           </Wrapper>
