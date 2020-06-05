@@ -1,8 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Card, LinkButton, CardContent, Image, ImageDiv, Type } from "./styles";
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  Card, LinkButton, CardContent, Image, ImageDiv, Type
+} from './styles';
 
-const Petition = ({ id, title, description, img, type, path }) => {
+const Petition = ({
+  id, title, description, img, type, path
+}) => {
   const imgAlt = `Image for ${title}`;
   const upperType = type.toUpperCase();
   return (
@@ -26,11 +30,11 @@ Petition.propTypes = {
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  path: PropTypes.string,
+  path: PropTypes.string
 };
 
 Petition.defaultProps = {
-  path: "donate",
+  path: 'donate'
 };
 
 export default Petition;
