@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withRouter, Link } from "react-router-dom";
-import Share from "./share/Share";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter, Link } from 'react-router-dom';
+import Share from './share/Share';
 import {
   Profile,
   PersonalInformation,
@@ -15,8 +15,8 @@ import {
   Location,
   Button,
   H2,
-  Context,
-} from "./styles";
+  Context
+} from './styles';
 
 const PersonProfile = (props) => {
   const { info } = props;
@@ -27,7 +27,7 @@ const PersonProfile = (props) => {
     number_of_children,
     city,
     context,
-    identifier,
+    identifier
   } = info;
 
   return (
@@ -77,8 +77,8 @@ export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: "0",
-  }),
+    number_of_children: '0'
+  })
 };
 
 PersonProfile.propTypes = {
@@ -90,9 +90,9 @@ PersonProfile.propTypes = {
     context: PropTypes.string.isRequired,
     number_of_children: PropTypes.string,
     id: PropTypes.number.isRequired,
-    identifier: PropTypes.string.isRequired,
+    identifier: PropTypes.string.isRequired
   }),
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
