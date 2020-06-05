@@ -9,6 +9,10 @@ const StyledNavigation = styled.nav`
   color: ${Color.WHITE};
   background-color: ${Color.PRIMARY};
   width: 100%;
+
+  @media (max-width: 680px) {
+    justify-content: center;
+  }
 `;
 
 const StyledNavigationLogo = styled.div`
@@ -32,7 +36,50 @@ const StyledNavigationLogo = styled.div`
 const StyledNavigationLinks = styled.div`
   a {
     color: ${Color.WHITE};
-    margin-left: 20px;
+    margin: 0 25px;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+
+    @media (max-width: 780px) {
+      margin: 0 15px;
+    }
+
+    @media (max-width: 680px) {
+      margin: 0;
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid ${Color.WHITE};
+    &:after {
+      background: inherit;
+      transition: none;
+    }
+  }
+
+  a:after {
+    content: "";
+    background: none;
+    bottom: 0;
+    top: 1.5em;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    background: ${Color.WHITE};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  @media (max-width: 680px) {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5em;
   }
 `;
 
@@ -41,7 +88,6 @@ const StyledNavigationLinkContainer = styled.div`
   flex-wrap: wrap;
   padding: 1rem;
 `;
-
 
 export {
   StyledNavigation,
