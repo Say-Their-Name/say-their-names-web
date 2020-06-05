@@ -73,24 +73,6 @@ const About = () => (
         </a>
       </Button>
     </StyledAboutContainer>
-    <hr />
-    <StyledAboutContainer className="AboutContainer">
-      <h3> A massive Thank you to everyone involved</h3>
-      <h4> Designers</h4>
-      <ul>
-        <li> Designers 1</li>
-        <li> Designers 2</li>
-        <li> Designers 3</li>
-        <li> Designers4</li>
-      </ul>
-      <h4> Developers</h4>
-      <ul>
-        <li> Developer 1</li>
-        <li> Developer 2</li>
-        <li> Developer 3</li>
-        <li> Developer 4</li>
-      </ul>
-    </StyledAboutContainer>
   </StyledAbout>
 );
 export default About;

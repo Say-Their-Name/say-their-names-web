@@ -42,21 +42,10 @@ text-align: left;
     word-wrap:break-word;
     text-align: justify;  
   }
-  ul {
-    list-style-type: none;
-    content: "–";
-    padding-left: 1em;
-  }
-  ul li:before {
-    content: "–";
-    position: absolute;
-    margin-left: -1em;
-  }
   hr{
     padding: 0px;
     margin: 0px;    
   }
-  
 `;
 const LinkStyle = styled.a`
 border-bottom: 2px solid grey;
