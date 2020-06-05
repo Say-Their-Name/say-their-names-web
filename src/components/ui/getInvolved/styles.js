@@ -39,7 +39,7 @@ const StyledGetInvolved = styled.div`
   }
 
   .details {
-    width: 30%;
+    width: 45%;
     display: flex;
     flex-wrap: wrap;
     margin-left: 3rem;

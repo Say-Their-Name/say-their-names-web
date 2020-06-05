@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import Spinner from '../components/common/Spinner';
 import Profile from '../components/profileDetails/PersonProfile';
-import BackToProfile from '../components/profileDetails/button/Button';
+import BackNavigation from '../components/backNavigation/BackNavigation';
 import MediaList from '../components/ui/mediaList/MediaList';
 
 import Container from '../components/common/Container';
@@ -35,18 +35,26 @@ const ProfileDetail = ({ match }) => {
   }, [id]);
 
   return (
-    <Container>
+    <>
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
-          <BackToProfile />
-          <Profile info={person} />
-          <MediaList mediaList={person.media_links} />
-          <HashTags hashtags={person.social_media} />
-          <ToastContainer />
+          <BackNavigation
+            text="BACK TO PROFILES"
+            link="/donations"
+            longText="Donate now to end Police brutality on minorities"
+            linkText="DONATE"
+            backLink="/"
+          />
+          <Container>
+            <Profile info={person} />
+            <MediaList mediaList={person.media_links} />
+            <HashTags hashtags={person.social_media} />
+            <ToastContainer />
+          </Container>
         </>
       )}
-    </Container>
+    </>
   );
 };
 
