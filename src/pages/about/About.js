@@ -10,6 +10,7 @@ import {
 } from './styles';
 import { Button } from '../../components/profileDetails/styles';
 import AboutBanner from '../../assets/about-banner.svg';
+import Variables from '../../constants/Variables';
 
 const About = () => (
   <Container>
@@ -53,7 +54,7 @@ const About = () => (
           <LinkStyle>
             <a
               target="_blank"
-              href="https://twitter.com/SayTheirName_io"
+              href={Variables.TWITTER_URL}
               rel="noopener noreferrer"
             >
               Twitter &nbsp;

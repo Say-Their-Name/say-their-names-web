@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import ErrorBoundry from '../components/common/ErrorBoundry';
 import Home from '../pages/Home';
@@ -13,8 +14,19 @@ import NotFound from '../pages/notFound/NotFound';
 import DonationDetail from '../pages/DonationDetail';
 import PetitionDetail from '../pages/PetitionDetail';
 
-const AppRoutes = () => {
+import { trackInitialPageView } from '../utils/gaTracker';
+
+const AppRoutes = (props) => {
+  const { initialLoadProp, setInitialLoadProp } = props;
   const location = useLocation();
+
+  useEffect(() => {
+    if (!initialLoadProp) {
+      setInitialLoadProp();
+      trackInitialPageView(location.pathname);
+    }
+  });
+
   return (
     <>
       <Navigation />
@@ -33,6 +45,11 @@ const AppRoutes = () => {
       <Footer />
     </>
   );
+};
+
+AppRoutes.propTypes = {
+  initialLoadProp: PropTypes.bool.isRequired,
+  setInitialLoadProp: PropTypes.func.isRequired
 };
 
 export default AppRoutes;

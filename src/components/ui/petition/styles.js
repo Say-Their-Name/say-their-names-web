@@ -15,6 +15,20 @@ const CardContent = styled.div`
     font-size: 2rem;
     margin: 0;
   }
+
+  a {
+    padding: 15px;
+    font-size: 20px;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: ${Color.PRIMARY};
+      color: ${Color.WHITE};
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -47,20 +61,6 @@ const Image = styled.img`
   min-width: 100%;
 `;
 
-const LinkButton = styled.a`
-  padding: 15px;
-  font-size: 20px;
-  color: black;
-  border: 2px solid black;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: ${Color.PRIMARY};
-    color: ${Color.WHITE};
-  }
-`;
-
 const Type = styled.p`
   position: absolute;
   top: 5px;
@@ -71,5 +71,5 @@ const Type = styled.p`
 `;
 
 export {
-  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
+  Card, Wrapper, CardContent, Image, ImageDiv, Type
 };
