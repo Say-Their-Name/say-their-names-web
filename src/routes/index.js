@@ -1,15 +1,15 @@
-import React from "react";
-import { Switch, Route, useLocation } from "react-router-dom";
+import React from 'react';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
-import ErrorBoundry from "../components/common/ErrorBoundry";
-import Home from "../pages/Home";
-import About from "../pages/about/About";
-import Petitions from "../pages/Petitions";
-import ProfileDetail from "../pages/ProfileDetail";
-import Navigation from "../components/navigation/Navigation";
-import Footer from "../components/footer/Footer";
-import Donations from "../pages/Donations";
-import NotFound from "../pages/notFound/NotFound";
+import ErrorBoundry from '../components/common/ErrorBoundry';
+import Home from '../pages/Home';
+import About from '../pages/about/About';
+import Petitions from '../pages/Petitions';
+import ProfileDetail from '../pages/ProfileDetail';
+import Navigation from '../components/navigation/Navigation';
+import Footer from '../components/footer/Footer';
+import Donations from '../pages/Donations';
+import NotFound from '../pages/notFound/NotFound';
 
 const AppRoutes = () => {
   const location = useLocation();

@@ -1,21 +1,21 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import { StyledNavigationLinks } from "./styles";
+import { StyledNavigationLinks } from './styles';
 
 const NavigationItem = ({ name, path }) => {
   const location = useLocation();
-  let active = "";
+  let active = '';
   // console.log(path, location);
 
-  if (path !== "/" && location.pathname.includes(path)) {
+  if (path !== '/' && location.pathname.includes(path)) {
     // console.log(path);
-    active = "active";
+    active = 'active';
   }
 
-  if (path === "/" && path === location.pathname) {
-    active = "active";
+  if (path === '/' && path === location.pathname) {
+    active = 'active';
   }
 
   return (
@@ -31,5 +31,5 @@ export default NavigationItem;
 
 NavigationItem.propTypes = {
   name: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 };
