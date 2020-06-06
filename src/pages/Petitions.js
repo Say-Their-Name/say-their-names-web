@@ -30,19 +30,21 @@ const Petitions = () => {
   return (
     <>
       {loading ? (
-        <Spinner height="80vh" />
+        <Spinner height="95vh" />
       ) : (
         <>
           <Wrapper>
-            <h1>PETITIONS</h1>
+            <h2>PETITIONS</h2>
             {petitions.map((petition) => (
               <Petition
                 key={petition.id}
+                id={petition.id}
                 title={petition.title}
                 description={petition.description}
                 link={petition.link}
                 img={petition.image_url}
                 type={petition.type.type}
+                path="sign"
               />
             ))}
           </Wrapper>

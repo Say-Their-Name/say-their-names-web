@@ -10,15 +10,7 @@ const StyledAboutBanner = styled.div`
   a {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
-
-    @media (max-width: 700px) {
-      width: 90%;
-    }
-
-    @media (max-width: 500px) {
-      width: 100%;
-    }
+    width: 100%;
   }
   img {
     width: 100%;
@@ -31,9 +23,17 @@ const StyledAbout = styled.div`
   margin: auto;
   background-color: ${Color.WHITE};
   text-align: center;
-  width: 75%;
+  width: 65%;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 800px) {
+      width: 75%;
+    }
+
+    @media (max-width: 700px) {
+      width: 95%;
+    }
 
   ${MediaQuery.xs`padding: 0.8rem 0.4rem;
   `}

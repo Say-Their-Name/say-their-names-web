@@ -5,7 +5,7 @@ import {
 } from './styles';
 
 const Petition = ({
-  title, description, link, img, type
+  id, title, description, img, type, path
 }) => {
   const imgAlt = `Image for ${title}`;
   const upperType = type.toUpperCase();
@@ -16,30 +16,25 @@ const Petition = ({
         <Image src={img} alt={imgAlt} />
       </ImageDiv>
       <CardContent>
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{description}</p>
-        <LinkButton href={link} target="_blank">
-          FIND OUT MORE
-        </LinkButton>
+        <LinkButton href={`/${path}/${id}`}>FIND OUT MORE</LinkButton>
       </CardContent>
     </Card>
   );
 };
 
 Petition.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  link: PropTypes.string,
-  img: PropTypes.string,
-  type: PropTypes.string
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  path: PropTypes.string
 };
 
 Petition.defaultProps = {
-  title: 'title',
-  description: 'description',
-  link: 'link',
-  img: 'image_url',
-  type: 'Victim'
+  path: 'donate'
 };
 
 export default Petition;

@@ -4,7 +4,7 @@ const StyledMediaList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   @media (max-width: 600px) {
     justify-content: center;

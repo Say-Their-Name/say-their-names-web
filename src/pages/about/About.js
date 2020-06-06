@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Container from '../../components/common/Container';
 import {
   StyledAbout,
   StyledAboutContainer,
@@ -10,7 +12,7 @@ import { Button } from '../../components/profileDetails/styles';
 import AboutBanner from '../../assets/about-banner.svg';
 
 const About = () => (
-  <div>
+  <Container>
     <StyledAbout className="About">
       <StyledAboutBanner className="image-container hover">
         <a
@@ -24,7 +26,6 @@ const About = () => (
 
       <StyledAboutContainer className="AboutContainer">
         <h2> About this project </h2>
-        <hr />
         <p>
           Welcome to the Say Their Names Project. Our aim is to build an
           open-source platform to raise awareness of the injustice and often
@@ -36,7 +37,7 @@ const About = () => (
       <StyledAboutContainer className="AboutContainer">
         <h3>History on the Say Their Names Movement </h3>
         <p>
-          The Say Their Names is a social movement to raise awareness for all
+          Say Their Names is a social movement to raise awareness for all
           the black victims of police brutality all around the world. This
           movement is in response to the Black Lives Matter movement and aims to
           highlight Individuals affected by anti-Black Violence. Say Their Names
@@ -112,12 +113,12 @@ const About = () => (
               href="https://twitter.com/SayTheirName_io"
               rel="noopener noreferrer"
             >
-              <button type="button">Follow Us</button>
+              <button type="button">FOLLOW US</button>
             </a>
           </Button>
         </StyledAboutContainer>
       </StyledLinkContainer>
     </StyledAbout>
-  </div>
+  </Container>
 );
 export default About;
