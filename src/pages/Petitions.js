@@ -17,7 +17,6 @@ const Petitions = () => {
       try {
         const res = await axios.get(`${apiBaseUrl}/petitions`);
         setPetitions(res.data.data);
-        window.scrollTo(0, 0);
       } catch (error) {
         // set error and show error page
       } finally {

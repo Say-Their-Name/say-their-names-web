@@ -24,7 +24,6 @@ const ProfileDetail = ({ match }) => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
         setPerson(response.data.data);
-        window.scrollTo(0, 0);
       } catch (error) {
         toast(error.message);
       } finally {

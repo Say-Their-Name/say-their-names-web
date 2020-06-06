@@ -21,7 +21,6 @@ const DonationDetail = ({ match }) => {
       try {
         const response = await axios.get(`${apiBaseUrl}/donations/${id}`);
         setDonationDetails(response.data.data);
-        window.scrollTo(0, 0);
       } catch (error) {
         // set error and show error page
       } finally {

@@ -89,7 +89,8 @@ export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: '0'
+    number_of_children: '0',
+    outcome: null
   })
 };
 
@@ -103,7 +104,7 @@ PersonProfile.propTypes = {
     id: PropTypes.number.isRequired,
     identifier: PropTypes.string.isRequired,
     their_story: PropTypes.string.isRequired,
-    outcome: PropTypes.string.isRequired,
+    outcome: PropTypes.string,
     donation_links: PropTypes.array.isRequired
   }),
   history: PropTypes.shape({

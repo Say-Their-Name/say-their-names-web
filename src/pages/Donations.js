@@ -25,7 +25,6 @@ const Donations = ({ match }) => {
       try {
         const res = await axios.get(API_URL);
         setDonations(res.data.data);
-        window.scrollTo(0, 0);
       } catch (error) {
         // set error and show error page
       } finally {
