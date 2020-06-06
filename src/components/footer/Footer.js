@@ -23,7 +23,7 @@ const Footer = () => (
           <h2>LINKS</h2>
           <StyledFooterLinks>
             <Link to="/">Home</Link>
-            <Link to="/donation">Donation</Link>
+            <Link to="/donations">Donations</Link>
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
           </StyledFooterLinks>
@@ -33,7 +33,7 @@ const Footer = () => (
           <StyledFooterMissions>
             <p>
               SAY THEIR NAMES is a place to commemorate the death of our black
-              kings and queens murdered by police brutality. SAY THEIR NAME
+              kings and queens murdered by police brutality. SAY THEIR NAMES
               makes it easy to donate, raise awareness, and sign petitions.
               <br />
               <br />
