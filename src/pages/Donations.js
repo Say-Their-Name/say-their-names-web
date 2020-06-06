@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
-import Spinner from '../components/common/Spinner';
-import Petition from '../components/ui/petition/Petition';
-import { Wrapper } from '../components/ui/petition/styles';
-import config from '../utils/config';
-import utils from '../utils';
+import Spinner from "../components/common/Spinner";
+import Petition from "../components/ui/petition/Petition";
+import { Wrapper } from "../components/ui/petition/styles";
+import config from "../utils/config";
+import utils from "../utils";
 
-const {convertIdentifierToName} = utils;
+const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
 
 const Donations = ({ match }) => {
@@ -42,7 +42,17 @@ const Donations = ({ match }) => {
       ) : (
         <>
           <Wrapper>
-            <h2>{identifier ? `DONATIONS FOR ${convertIdentifierToName(identifier)}` : 'DONATIONS'}</h2>
+            <h2>
+              {donations.length === 0 && !loading ? (
+                <h2 className="not-found">NO DONATION FOUND</h2>
+              ) : (
+                <>
+                  {identifier
+                    ? `DONATIONS FOR ${convertIdentifierToName(identifier)}`
+                    : "DONATIONS"}
+                </>
+              )}
+            </h2>
             {donations.map((donation) => (
               <Petition
                 key={donation.id}
@@ -64,11 +74,10 @@ const Donations = ({ match }) => {
 
 export default Donations;
 
-
 Donations.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      identifier: PropTypes.string
-    }).isRequired
-  }).isRequired
+      identifier: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };

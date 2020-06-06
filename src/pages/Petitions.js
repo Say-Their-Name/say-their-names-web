@@ -34,7 +34,7 @@ const Petitions = () => {
       ) : (
         <>
           <Wrapper>
-            <h1>PETITIONS</h1>
+            <h2>PETITIONS</h2>
             {petitions.map((petition) => (
               <Petition
                 key={petition.id}

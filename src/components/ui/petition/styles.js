@@ -26,6 +26,15 @@ const Wrapper = styled.div`
     width: 90%;
   }
 
+  .not-found {
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
   
 `;
 
