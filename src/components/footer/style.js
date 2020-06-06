@@ -6,15 +6,35 @@ const StyledFooterContainer = styled.footer`
   flex-wrap: wrap;
   width: 100%;
   border-top: 2px solid ${Color.GREY};
+  justify-content: center;
+`;
+
+const FooterContainer = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  
+  @media (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 const StyledFooter = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  font-weight: normal;
-  align-items: "center";
-  justify-content: space-between;
+  flex-direction: column;
+  width: ${(props) => (props.width ? props.width : '20%')} ;
+  margin-right: 3rem;
+
+  h2 {
+    margin: 0px;
+    font-size: 17px;
+    line-height: 20px;
+  };
   background-color: ${Color.WHITE};
-  padding: 2rem 0;
+
+  @media (max-width: 780px) {
+    width: 90%;
+    align-items: center;
+  }
 `;
 
 const StyledFooterLinks = styled.div`
@@ -22,18 +42,9 @@ const StyledFooterLinks = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   margin: 1rem 0;
-
-  @media (max-width: 700px) {
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 500px) {
-    width: 90%;
-  }
   a {
 
+    padding: 0.3rem 0rem;
     color: ${Color.PRIMARY};
 
     &:hover {
@@ -123,28 +134,28 @@ const StyleFooterForm = styled.form`
   }
 `;
 const StyledFooterMissions = styled.div`
-  width: 35%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  margin: 1rem 0;
 
-  @media (max-width: 700px) {
-    text-align: center;
-    width: 70%;
-    margin: 3rem auto 0 auto;
-  }
-
-  @media (max-width: 500px) {
-    width: 90%;
-  }
-
-  h4 {
-    margin-top: 0;
+  @media (max-width: 780px) {
+    width: 100%;
+    margin: 1rem;
   }
   p {
     margin-bottom: 0;
-    text-align: justify;
+    @media (max-width: 780px) {
+    text-align: center;
+    
+  }
+  }
+`;
+
+const DowloadLogo = styled.div`
+  display: flex;
+  img {
+    width: 45%;
+    padding: 0.3rem;
   }
 `;
 
@@ -153,5 +164,7 @@ export {
   StyledFooter,
   StyledFooterLinks,
   StyledFooterMissions,
-  StyleFooterForm
+  StyleFooterForm,
+  FooterContainer,
+  DowloadLogo
 };
