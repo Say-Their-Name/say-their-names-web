@@ -11,16 +11,16 @@ import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
-const DonationDetail = ({ match }) => {
+const PetitionDetail = ({ match }) => {
   const { id } = match.params;
-  const [donationDetails, setDonationDetails] = useState([]); // this will hold the profles list fetched from the API
+  const [petitionDetails, setDonationDetail] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/donations/${id}`);
-        setDonationDetails(response.data.data);
+        setDonationDetail(response.data.data);
         window.scrollTo(0, 0);
       } catch (error) {
         // set error and show error page
@@ -39,25 +39,25 @@ const DonationDetail = ({ match }) => {
       ) : (
         <>
           <BackNavigation
-            text="BACK TO DONATIONS"
-            link={donationDetails.link}
-            longText="Donate now to end Police brutality on minorities"
-            linkText="DONATE NOW"
-            backLink="/donations"
+            text="BACK TO PETITIONS"
+            link={petitionDetails.link}
+            longText="Sign now to end Police brutality on minorities"
+            linkText="SIGN THIS PETITION"
+            backLink="/petitions"
             external
           />
           <Container>
             <ActionDetailsHeader
-              title={donationDetails.title}
-              link={donationDetails.link}
-              bannerImageUrl={donationDetails.banner_img_url}
-              action="DONATE NOW"
+              title={petitionDetails.title}
+              link={petitionDetails.link}
+              bannerImageUrl={petitionDetails.banner_img_url}
+              action="SIGN THIS PETITION"
             />
             <ActionDetailsContent
-              description={donationDetails.description}
-              outcome={donationDetails.outcome}
-              outcomeImageUrl={donationDetails.outcome_img_url}
-              hashTags={donationDetails.hash_tags}
+              description={petitionDetails.description}
+              outcome={petitionDetails.outcome}
+              outcomeImageUrl={petitionDetails.outcome_img_url}
+              hashTags={petitionDetails.hash_tags}
             />
           </Container>
         </>
@@ -66,10 +66,10 @@ const DonationDetail = ({ match }) => {
   );
 };
 
-export default DonationDetail;
+export default PetitionDetail;
 
 
-DonationDetail.propTypes = {
+PetitionDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired

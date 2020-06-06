@@ -10,13 +10,13 @@ const NavigationItem = ({ name, path }) => {
   // console.log(path, location);
 
   if (path !== '/' && location.pathname.includes(path)) {
-    // console.log(path);
     active = 'active';
   }
 
   if (path === '/' && path === location.pathname) {
     active = 'active';
   }
+
 
   return (
     <StyledNavigationLinks>

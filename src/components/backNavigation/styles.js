@@ -19,6 +19,9 @@ const BackProfile = styled.section`
     align-items: center;
     transition: all 0.3s ease-in-out;
 
+    button {
+      width: auto;
+    }
     i {
       margin-right: 0.5rem;
     }
