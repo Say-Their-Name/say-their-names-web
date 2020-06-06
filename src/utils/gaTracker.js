@@ -8,6 +8,10 @@ export const initializeGA = () => {
   ReactGA.initialize(gaTrackingId, { debug: isDevelopment });
 };
 
+export const trackInitialPageView = (pathname) => {
+  ReactGA.pageview(pathname);
+};
+
 export const trackPageView = (history, options = {}) => {
   history.listen((location) => {
     const { pathname } = location || window.location;
@@ -22,9 +26,4 @@ export const trackEvent = (category, action, label) => {
     action,
     label
   });
-};
-
-export default {
-  initializeGA,
-  trackPageView
 };
