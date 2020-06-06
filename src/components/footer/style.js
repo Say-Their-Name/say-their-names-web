@@ -12,7 +12,7 @@ const StyledFooterContainer = styled.footer`
 const FooterContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   
   @media (max-width: 780px) {
     flex-direction: column;
@@ -34,6 +34,7 @@ const StyledFooter = styled.div`
   @media (max-width: 780px) {
     width: 90%;
     align-items: center;
+    margin: 0.5rem;
   }
 `;
 

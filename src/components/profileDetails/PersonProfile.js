@@ -67,7 +67,7 @@ const PersonProfile = (props) => {
         </PersonSection>
       </PersonalInformation>
       <Context>
-        <h2>Context</h2>
+        <h2>THEIR STORY</h2>
         <p>{context}</p>
       </Context>
     </Profile>

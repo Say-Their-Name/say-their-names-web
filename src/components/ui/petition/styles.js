@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Color from '../../../constants/Color';
 
 const Card = styled.div`
-  border: 3px solid lightgray;
+  border: 1px solid lightgray;
   border-radius: 2px;
   margin-top: 30px;
 `;
@@ -20,10 +21,14 @@ const Wrapper = styled.div`
   @media (max-width: 1300px) {
     width: 80%;
   }
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 const ImageDiv = styled.div`
-  width: 794px;
+  width: 100%;
   height: 280px;
   overflow: hidden;
   position: relative;
@@ -45,9 +50,11 @@ const LinkButton = styled.a`
   border: 2px solid black;
   border-radius: 2px;
   text-align: center;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: lightgray;
+    background-color: ${Color.PRIMARY};
+    color: ${Color.WHITE}
   }
 `;
 
