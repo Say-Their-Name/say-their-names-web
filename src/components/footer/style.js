@@ -22,7 +22,6 @@ const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
   width: ${(props) => (props.width ? props.width : '20%')} ;
-  margin-right: 3rem;
 
   h2 {
     margin: 0px;
@@ -32,7 +31,7 @@ const StyledFooter = styled.div`
   background-color: ${Color.WHITE};
 
   @media (max-width: 780px) {
-    width: 90%;
+    width: 100%;
     align-items: center;
     margin: 0.5rem;
   }
@@ -55,6 +54,10 @@ const StyledFooterLinks = styled.div`
   }
   a:not(:first-child) {
     margin-top: 0.5rem;
+  }
+
+  @media (max-width: 780px) {
+    align-items: center;
   }
 `;
 

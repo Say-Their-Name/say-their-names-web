@@ -32,7 +32,7 @@ const Footer = () => (
           <h2>Our Mission</h2>
           <StyledFooterMissions>
             <p>
-              SAY THEIR NAME is a place to commemorate the death of our black
+              SAY THEIR NAMES is a place to commemorate the death of our black
               kings and queens murdered by police brutality. SAY THEIR NAME
               makes it easy to donate, raise awareness, and sign petitions.
               <br />
