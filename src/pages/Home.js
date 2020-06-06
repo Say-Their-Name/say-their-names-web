@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 
-import GetInvolved from '../components/ui/getInvolved/GetInvolved';
-import ProfileList from '../components/ui/profileList/ProfileList';
-import Spinner from '../components/common/Spinner';
-import Pagination from '../components/pagination/Pagination';
-import config from '../utils/config';
+import GetInvolved from "../components/ui/getInvolved/GetInvolved";
+import ProfileList from "../components/ui/profileList/ProfileList";
+import Spinner from "../components/common/Spinner";
+import Pagination from "../components/pagination/Pagination";
+import config from "../utils/config";
 
 const { apiBaseUrl } = config;
 
@@ -39,7 +39,9 @@ const Home = () => {
       ) : (
         <>
           <ProfileList profiles={profiles} />
-          <Pagination paginationData={paginationData} fetchdata={fetchdata} />
+          {profiles.length > 0 && (
+            <Pagination paginationData={paginationData} fetchdata={fetchdata} />
+          )}
         </>
       )}
     </div>

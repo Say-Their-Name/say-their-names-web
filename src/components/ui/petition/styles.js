@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
 
 const Card = styled.div`
   border: 1px solid lightgray;
@@ -25,17 +25,6 @@ const Wrapper = styled.div`
   @media (max-width: 600px) {
     width: 90%;
   }
-
-  .not-found {
-    height: 70vh;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  
 `;
 
 const ImageDiv = styled.div`
@@ -65,7 +54,7 @@ const LinkButton = styled.a`
 
   &:hover {
     background-color: ${Color.PRIMARY};
-    color: ${Color.WHITE}
+    color: ${Color.WHITE};
   }
 `;
 
@@ -78,6 +67,4 @@ const Type = styled.p`
   padding: 5px;
 `;
 
-export {
-  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
-};
+export { Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type };
