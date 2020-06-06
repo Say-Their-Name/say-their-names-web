@@ -5,7 +5,7 @@ const StyledMedia = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 23%;
-  margin: 1rem 0;
+  margin: 1rem 1rem 1rem 0;
 
   @media (max-width: 1300px) {
     width: 30%;
@@ -22,6 +22,7 @@ const StyledMedia = styled.div`
   @media (max-width: 600px) {
     width: 80%;
     justify-content: center;
+    margin: 1rem;
   }
 
   @media (max-width: 500px) {
@@ -37,6 +38,12 @@ const StyledMedia = styled.div`
   h3,
   h4 {
     padding: 0 1rem;
+  }
+
+  a {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 `;
 

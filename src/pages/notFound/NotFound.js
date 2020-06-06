@@ -25,7 +25,8 @@ const NotFound = ({ message, longMessage }) => (
           </span>
         </BoxContent>
         <p>
-          {longMessage || 'Not all those who wander are lost, but it seems you may have taken a wrong turn.'}
+          {longMessage
+            || 'Not all those who wander are lost, but it seems you may have taken a wrong turn.'}
         </p>
         <HomeButton>
           <Link to="/">
@@ -41,6 +42,12 @@ const NotFound = ({ message, longMessage }) => (
 export default NotFound;
 
 NotFound.propTypes = {
-  message: PropTypes.string.isRequired,
-  longMessage: PropTypes.string.isRequired
+  message: PropTypes.string,
+  longMessage: PropTypes.string
+};
+
+NotFound.defaultProps = {
+  message: ' Page not found',
+  longMessage:
+    'Not all those who wander are lost, but it seems you may have taken a wrong turn.'
 };

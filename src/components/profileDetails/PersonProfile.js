@@ -27,8 +27,10 @@ const PersonProfile = (props) => {
     age,
     number_of_children,
     city,
-    context,
-    identifier
+    identifier,
+    their_story,
+    outcome,
+    donation_links
   } = info;
 
   return (
@@ -58,18 +60,27 @@ const PersonProfile = (props) => {
             <H4>LOCATION</H4>
             <H2>{city}</H2>
           </Location>
-          <Link to={`/donations/${identifier}`}>
-            <Button>
-              <button type="button">DONATE</button>
-            </Button>
-          </Link>
+          {donation_links.length > 0 && (
+            <Link to={`/donations/${identifier}`}>
+              <Button>
+                <button type="button">DONATE</button>
+              </Button>
+            </Link>
+          )}
           <Share url={window.location.href} title="#SayTheirNames" />
         </PersonSection>
       </PersonalInformation>
       <Context>
         <h2>THEIR STORY</h2>
-        <p>{context}</p>
+        <p>{their_story}</p>
       </Context>
+
+      {outcome && (
+        <Context>
+          <h2>Context</h2>
+          <p>{outcome}</p>
+        </Context>
+      )}
     </Profile>
   );
 };
@@ -88,10 +99,12 @@ PersonProfile.propTypes = {
     full_name: PropTypes.string.isRequired,
     age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
-    context: PropTypes.string.isRequired,
     number_of_children: PropTypes.string,
     id: PropTypes.number.isRequired,
-    identifier: PropTypes.string.isRequired
+    identifier: PropTypes.string.isRequired,
+    their_story: PropTypes.string.isRequired,
+    outcome: PropTypes.string.isRequired,
+    donation_links: PropTypes.array.isRequired
   }),
   history: PropTypes.shape({
     push: PropTypes.func.isRequired

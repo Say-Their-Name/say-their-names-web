@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Color from '../../../constants/Color';
 
 const StyledHashTags = styled.section`
   display: flex;
@@ -21,7 +22,8 @@ const StyledHashTags = styled.section`
   }
 
   a {
-    background-color: #e1e1e1;
+    background-color: ${Color.WHITE};
+    border: 1.5px solid ${Color.PRIMARY};
     padding: 0.3rem;
     margin: 0.5rem 0.5rem 0.5rem 0;
     color: black;
