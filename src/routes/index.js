@@ -10,6 +10,7 @@ import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import Donations from '../pages/Donations';
 import NotFound from '../pages/notFound/NotFound';
+import DonationDetail from '../pages/DonationDetail';
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const AppRoutes = () => {
           <Route path="/profile/:id" component={ProfileDetail} exact />
           <Route path="/petitions" component={Petitions} exact />
           <Route path="/donations/:identifier?" component={Donations} exact />
+          <Route path="/donate/:id" component={DonationDetail} exact />
           <Route path="*" component={NotFound} exact />
         </Switch>
       </ErrorBoundry>

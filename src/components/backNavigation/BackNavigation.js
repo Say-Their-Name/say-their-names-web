@@ -6,18 +6,27 @@ import { Button } from '../profileDetails/styles';
 import BackProfile from './styles';
 
 const BackToProfiles = ({
-  text, link, longText, linkText, backLink
+  text,
+  link,
+  longText,
+  linkText,
+  backLink,
+  external
 }) => {
   const [sticky, setSticky] = useState('static');
   const [donationsDisplay, setDonationsDisplay] = useState('none');
 
   useEffect(() => {
-    const onScroll = window.addEventListener('scroll', () => {
-      const scrollHeight = window.scrollY < 100 ? 'static' : 'sticky';
-      const scrollHeightDisplay = window.scrollY < 100 ? 'none' : 'flex';
-      setSticky(scrollHeight);
-      setDonationsDisplay(scrollHeightDisplay);
-    }, false);
+    const onScroll = window.addEventListener(
+      'scroll',
+      () => {
+        const scrollHeight = window.scrollY < 100 ? 'static' : 'sticky';
+        const scrollHeightDisplay = window.scrollY < 100 ? 'none' : 'flex';
+        setSticky(scrollHeight);
+        setDonationsDisplay(scrollHeightDisplay);
+      },
+      false
+    );
     return () => {
       window.removeEventListener('scroll', onScroll, false);
     };
@@ -29,14 +38,21 @@ const BackToProfiles = ({
         <i className="fas fa-chevron-left" />
         <p>{text}</p>
       </Link>
-
       <div className="donate" style={{ display: donationsDisplay }}>
         <p>{longText}</p>
-        <Link to={link}>
-          <Button width="100px" padding="0.8rem">
-            <button type="button">{linkText}</button>
-          </Button>
-        </Link>
+        {external ? (
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <Button width="100px" padding="0.8rem">
+              <button type="button">{linkText}</button>
+            </Button>
+          </a>
+        ) : (
+          <Link to={link}>
+            <Button width="100px" padding="0.8rem">
+              <button type="button">{linkText}</button>
+            </Button>
+          </Link>
+        )}
       </div>
     </BackProfile>
   );
@@ -44,11 +60,14 @@ const BackToProfiles = ({
 
 export default BackToProfiles;
 
+BackToProfiles.defaultProps = {
+  external: false
+};
 BackToProfiles.propTypes = {
   text: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   longText: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
-  backLink: PropTypes.string.isRequired
-
+  backLink: PropTypes.string.isRequired,
+  external: PropTypes.bool
 };
