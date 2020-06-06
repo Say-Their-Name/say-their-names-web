@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { useHistory } from 'react-router-dom';
 import Routes from './routes';
-import useTracking from './hooks/useTracking';
+import { trackPageView, initializeGA } from './utils/gaTracker';
 
 const App = () => {
-  useTracking();
+  const history = useHistory();
+  initializeGA();
+
+  useEffect(() => {
+    trackPageView(history);
+  }, [history]);
 
   return (
     <div className="App">
