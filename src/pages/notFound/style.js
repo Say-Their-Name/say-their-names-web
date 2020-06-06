@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Color from "../../constants/Color";
+import styled from 'styled-components';
+import Color from '../../constants/Color';
 
 const ContainerDiv = styled.div`
   display: flex;
@@ -103,5 +103,5 @@ export {
   ImageContainer,
   HomeButton,
   BoxContent,
-  InnerContainer,
+  InnerContainer
 };

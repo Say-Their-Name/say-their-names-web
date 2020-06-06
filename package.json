@@ -16,7 +16,6 @@
     "react-scripts": "3.4.1",
     "react-share": "^4.1.0",
     "react-tiny-link": "^3.4.0",
-    "react-toastify": "^6.0.5",
     "styled-components": "^5.1.1"
   },
   "scripts": {

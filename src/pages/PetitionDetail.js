@@ -6,6 +6,7 @@ import ActionDetailsHeader from '../components/ui/actionDetailsHeader/ActionDeta
 import BackNavigation from '../components/backNavigation/BackNavigation';
 import ActionDetailsContent from '../components/ui/actionDetailsContent/ActionDetailsContent';
 import Container from '../components/common/Container';
+import NotFound from './notFound/NotFound';
 import Spinner from '../components/common/Spinner';
 import config from '../utils/config';
 
@@ -15,14 +16,16 @@ const PetitionDetail = ({ match }) => {
   const { id } = match.params;
   const [petitionDetails, setDonationDetail] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/donations/${id}`);
         setDonationDetail(response.data.data);
-      } catch (error) {
+      } catch (err) {
         // set error and show error page
+        setError('Error Occured');
       } finally {
         setLoading(false);
       }
@@ -33,6 +36,12 @@ const PetitionDetail = ({ match }) => {
 
   return (
     <>
+      {error && (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load petition detail"
+      />
+      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (

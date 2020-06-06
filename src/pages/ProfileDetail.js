@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { ToastContainer, toast } from 'react-toastify';
 
+import NotFound from './notFound/NotFound';
 import Spinner from '../components/common/Spinner';
 import Profile from '../components/profileDetails/PersonProfile';
 import BackNavigation from '../components/backNavigation/BackNavigation';
@@ -18,14 +18,15 @@ const ProfileDetail = ({ match }) => {
   const { id } = match.params;
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
         setPerson(response.data.data);
-      } catch (error) {
-        toast(error.message);
+      } catch (err) {
+        setError('Error occured');
       } finally {
         setLoading(false);
       }
@@ -35,6 +36,12 @@ const ProfileDetail = ({ match }) => {
 
   return (
     <>
+      {error && (
+        <NotFound
+          message="Oops!!! Something went wrong"
+          longMessage="Unable to load profile detail"
+        />
+      )}
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
@@ -49,7 +56,6 @@ const ProfileDetail = ({ match }) => {
             <Profile info={person} />
             <MediaList mediaList={person.media_links} />
             <HashTags hashtags={person.hash_tags} />
-            <ToastContainer />
           </Container>
         </>
       )}

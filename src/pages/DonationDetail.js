@@ -6,6 +6,7 @@ import ActionDetailsHeader from '../components/ui/actionDetailsHeader/ActionDeta
 import BackNavigation from '../components/backNavigation/BackNavigation';
 import ActionDetailsContent from '../components/ui/actionDetailsContent/ActionDetailsContent';
 import Container from '../components/common/Container';
+import NotFound from './notFound/NotFound';
 import Spinner from '../components/common/Spinner';
 import config from '../utils/config';
 
@@ -15,13 +16,15 @@ const DonationDetail = ({ match }) => {
   const { id } = match.params;
   const [donationDetails, setDonationDetails] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/donations/${id}`);
         setDonationDetails(response.data.data);
-      } catch (error) {
+      } catch (err) {
+        setError('Error occured');
         // set error and show error page
       } finally {
         setLoading(false);
@@ -33,6 +36,12 @@ const DonationDetail = ({ match }) => {
 
   return (
     <>
+      {error && (
+        <NotFound
+          message="Oops!!! Something went wrong"
+          longMessage="Unable to load donation detail"
+        />
+      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -66,7 +75,6 @@ const DonationDetail = ({ match }) => {
 };
 
 export default DonationDetail;
-
 
 DonationDetail.propTypes = {
   match: PropTypes.shape({
