@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const useTracking = () => {
-  const trackingId = 'UA-149891372-1';
+  const trackingId = 'G-0P757MTVT6';
   const { listen } = useHistory();
 
   useEffect(() => {
