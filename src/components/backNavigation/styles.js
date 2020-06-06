@@ -19,8 +19,25 @@ const BackProfile = styled.section`
     align-items: center;
     transition: all 0.3s ease-in-out;
 
+    @media screen and (max-width: 400px) {
+        margin: 0.4rem;
+      }
+    p {
+      @media screen and (max-width: 400px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    button {
+      width: auto;
+
+      @media screen and (max-width: 400px) {
+        font-size: 0.7rem;
+      }
+    }
     i {
       margin-right: 0.5rem;
+      
     }
 
     &:hover {

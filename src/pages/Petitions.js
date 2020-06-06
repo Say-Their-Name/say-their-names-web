@@ -42,7 +42,7 @@ const Petitions = () => {
                 title={petition.title}
                 description={petition.description}
                 link={petition.link}
-                img={petition.image_url}
+                img={petition.banner_img_url}
                 type={petition.type.type}
                 path="sign"
               />
