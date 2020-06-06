@@ -153,7 +153,7 @@ const Location = styled.div`
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  width: 217px;
+  width: 100%;
   margin: 10px;
 
   @media screen and (max-width: 750px) {

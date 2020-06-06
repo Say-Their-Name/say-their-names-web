@@ -30,6 +30,7 @@ const PersonProfile = (props) => {
     identifier,
     their_story,
     outcome,
+    country,
     donation_links
   } = info;
 
@@ -58,7 +59,8 @@ const PersonProfile = (props) => {
           </Div>
           <Location>
             <H4>LOCATION</H4>
-            <H2>{city}</H2>
+            <H2>{`${city}, ${country}`}</H2>
+
           </Location>
           {donation_links.length > 0 && (
             <Link to={`/donations/${identifier}`}>
@@ -89,7 +91,8 @@ export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: '0'
+    number_of_children: '0',
+    outcome: null
   })
 };
 
@@ -103,7 +106,8 @@ PersonProfile.propTypes = {
     id: PropTypes.number.isRequired,
     identifier: PropTypes.string.isRequired,
     their_story: PropTypes.string.isRequired,
-    outcome: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    outcome: PropTypes.string,
     donation_links: PropTypes.array.isRequired
   }),
   history: PropTypes.shape({
