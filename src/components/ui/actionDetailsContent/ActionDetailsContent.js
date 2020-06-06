@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import StyledActionDetailsContent from "./style";
-import { Context } from "../../profileDetails/styles";
+import StyledActionDetailsContent from './style';
+import { Context } from '../../profileDetails/styles';
 
 const ActionDetailsContent = ({ description, outcome }) => (
   <StyledActionDetailsContent>
@@ -32,5 +32,5 @@ export default ActionDetailsContent;
 
 ActionDetailsContent.propTypes = {
   description: PropTypes.string.isRequired,
-  outcome: PropTypes.string.isRequired,
+  outcome: PropTypes.string.isRequired
 };

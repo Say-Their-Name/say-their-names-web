@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import StyledActionDetailsHeader from "./style";
-import Share from "../share/Share";
-import { Button } from "../../profileDetails/styles";
+import StyledActionDetailsHeader from './style';
+import Share from '../share/Share';
+import { Button } from '../../profileDetails/styles';
 // import HashTags from '../../components/ui/hashtags/HashTags';
 
 const ActionDetailsHeader = ({ title, link, action }) => (
@@ -33,5 +33,5 @@ export default ActionDetailsHeader;
 ActionDetailsHeader.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  action: PropTypes.string.isRequired,
+  action: PropTypes.string.isRequired
 };
