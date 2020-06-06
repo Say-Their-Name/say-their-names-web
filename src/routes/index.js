@@ -20,8 +20,7 @@ const AppRoutes = () => (
         <Route path="/about" component={About} exact />
         <Route path="/profile/:id" component={ProfileDetail} exact />
         <Route path="/petitions" component={Petitions} exact />
-        <Route path="/donations/:id" component={Donations} exact />
-        <Route path="/donations" component={Donations} exact />
+        <Route path="/donations/:identifier?" component={Donations} exact />
         <Route path="*" component={NotFound} exact />
       </Switch>
     </ErrorBoundry>

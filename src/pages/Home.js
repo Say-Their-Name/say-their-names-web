@@ -35,7 +35,7 @@ const Home = () => {
     <div className="App">
       <GetInvolved />
       {loading ? (
-        <Spinner height="40vh" />
+        <Spinner height="60vh" />
       ) : (
         <>
           <ProfileList profiles={profiles} />
