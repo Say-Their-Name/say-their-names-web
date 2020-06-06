@@ -1,16 +1,20 @@
-import styled from 'styled-components';
-import Color from '../../../constants/Color';
+import styled from "styled-components";
+import Color from "../../../constants/Color";
 
 const Card = styled.div`
   border: 1px solid lightgray;
-  border-radius: 2px;
   margin-top: 30px;
 `;
 
 const CardContent = styled.div`
-  padding: 40px;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
+
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -19,7 +23,7 @@ const Wrapper = styled.div`
   margin-bottom: 100px;
 
   @media (max-width: 1300px) {
-    width: 80%;
+    width: 70%;
   }
 
   @media (max-width: 600px) {
@@ -48,7 +52,6 @@ const LinkButton = styled.a`
   font-size: 20px;
   color: black;
   border: 2px solid black;
-  border-radius: 2px;
   text-align: center;
   transition: all 0.3s ease-in-out;
 
@@ -67,6 +70,4 @@ const Type = styled.p`
   padding: 5px;
 `;
 
-export {
-  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
-};
+export { Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type };

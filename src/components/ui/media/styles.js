@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledMedia = styled.div`
   display: flex;
@@ -38,6 +38,12 @@ const StyledMedia = styled.div`
   h3,
   h4 {
     padding: 0 1rem;
+  }
+
+  a {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 `;
 

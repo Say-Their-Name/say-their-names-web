@@ -4,7 +4,7 @@ const StyledGetInvolved = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 1000px) {

@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Container from '../../components/common/Container'
 import {
   StyledAbout,
   StyledAboutContainer,
@@ -10,7 +12,7 @@ import { Button } from '../../components/profileDetails/styles';
 import AboutBanner from '../../assets/about-banner.svg';
 
 const About = () => (
-  <div>
+  <Container>
     <StyledAbout className="About">
       <StyledAboutBanner className="image-container hover">
         <a
@@ -112,12 +114,12 @@ const About = () => (
               href="https://twitter.com/SayTheirName_io"
               rel="noopener noreferrer"
             >
-              <button type="button">Follow Us</button>
+              <button type="button">FOLLOW US</button>
             </a>
           </Button>
         </StyledAboutContainer>
       </StyledLinkContainer>
     </StyledAbout>
-  </div>
+  </Container>
 );
 export default About;
