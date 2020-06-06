@@ -137,7 +137,7 @@ const StyledFooterMissions = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
+  width: 80%;
   @media (max-width: 780px) {
     width: 100%;
     margin: 1rem;
