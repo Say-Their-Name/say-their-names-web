@@ -2,10 +2,10 @@ import ReactGA from 'react-ga';
 
 import config from './config';
 
-const { gaTrackingId, isDevelopment } = config;
+const { gaTrackingId, isDevelopment, isTest } = config;
 
 export const initializeGA = () => {
-  ReactGA.initialize(gaTrackingId, { debug: isDevelopment });
+  ReactGA.initialize(gaTrackingId, { debug: isDevelopment, testMode: isTest });
 };
 
 export const trackInitialPageView = (pathname) => {
