@@ -49,7 +49,7 @@ const ProfileDetail = ({ match }) => {
           <Container>
             <Profile info={person} />
             <MediaList mediaList={person.media_links} />
-            <HashTags hashtags={person.social_media} />
+            <HashTags hashtags={person.hash_tags} />
             <ToastContainer />
           </Container>
         </>

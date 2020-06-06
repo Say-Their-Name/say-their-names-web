@@ -6,13 +6,12 @@ import Share from '../share/Share';
 import { Button } from '../../profileDetails/styles';
 // import HashTags from '../../components/ui/hashtags/HashTags';
 
-const ActionDetailsHeader = ({ title, link, action }) => (
+const ActionDetailsHeader = ({
+  title, link, action, bannerImageUrl
+}) => (
   <StyledActionDetailsHeader>
     <div className="banner">
-      <img
-        src="https://images.pexels.com/photos/163046/welcome-to-our-home-welcome-tablet-an-array-of-163046.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-        alt="banner"
-      />
+      <img src={bannerImageUrl} alt="banner" />
     </div>
 
     <h2>{title}</h2>
@@ -33,5 +32,6 @@ export default ActionDetailsHeader;
 ActionDetailsHeader.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  action: PropTypes.string.isRequired
+  action: PropTypes.string.isRequired,
+  bannerImageUrl: PropTypes.string.isRequired
 };

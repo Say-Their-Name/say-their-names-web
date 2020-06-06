@@ -50,11 +50,14 @@ const DonationDetail = ({ match }) => {
             <ActionDetailsHeader
               title={donationDetails.title}
               link={donationDetails.link}
+              bannerImageUrl={donationDetails.banner_img_url}
               action="DONATE"
             />
             <ActionDetailsContent
               description={donationDetails.description}
               outcome={donationDetails.outcome}
+              outcomeImageUrl={donationDetails.outcome_img_url}
+              hashTags={donationDetails.hash_tags}
             />
           </Container>
         </>
