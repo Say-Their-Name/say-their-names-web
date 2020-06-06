@@ -38,7 +38,7 @@ const Donations = ({ match }) => {
   return (
     <>
       {loading ? (
-        <Spinner height="80vh" />
+        <Spinner height="95vh" />
       ) : (
         <>
           <Wrapper>
