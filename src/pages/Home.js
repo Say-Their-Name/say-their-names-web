@@ -5,6 +5,7 @@ import GetInvolved from '../components/ui/getInvolved/GetInvolved';
 import ProfileList from '../components/ui/profileList/ProfileList';
 import Spinner from '../components/common/Spinner';
 import Pagination from '../components/pagination/Pagination';
+import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
 const { apiBaseUrl } = config;
@@ -12,6 +13,7 @@ const { apiBaseUrl } = config;
 const Home = () => {
   const [profiles, setProfiles] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
   const [paginationData, setPaginationData] = useState({});
 
   const fetchdata = useCallback(async (page = 1) => {
@@ -20,7 +22,8 @@ const Home = () => {
       setPaginationData(response.data.meta);
       setProfiles(response.data.data);
       window.scrollTo(0, 0);
-    } catch (error) {
+    } catch (err) {
+      setError('Error occured');
       // set error and show error page
     } finally {
       setLoading(false);
@@ -33,14 +36,26 @@ const Home = () => {
 
   return (
     <div className="App">
-      <GetInvolved />
-      {loading ? (
-        <Spinner height="60vh" />
+      {error ? (
+        <NotFound
+          message="Oops!!! Something went wrong"
+          longMessage="Unable to load profiles"
+        />
       ) : (
         <>
-          <ProfileList profiles={profiles} />
-          {profiles.length > 0 && (
-            <Pagination paginationData={paginationData} fetchdata={fetchdata} />
+          <GetInvolved />
+          {loading ? (
+            <Spinner height="60vh" />
+          ) : (
+            <>
+              <ProfileList profiles={profiles} />
+              {profiles.length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  fetchdata={fetchdata}
+                />
+              )}
+            </>
           )}
         </>
       )}

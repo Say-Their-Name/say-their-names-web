@@ -157,8 +157,9 @@ const StyledFooterMissions = styled.div`
 
 const DowloadLogo = styled.div`
   display: flex;
+justify-content: flex-start;
   img {
-    width: 45%;
+    width: 80%;
     padding: 0.3rem;
   }
 `;

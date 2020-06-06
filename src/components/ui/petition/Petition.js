@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import {
-  Card, LinkButton, CardContent, Image, ImageDiv, Type
+  Card, CardContent, Image, ImageDiv, Type
 } from './styles';
 
 const Petition = ({
@@ -18,7 +19,7 @@ const Petition = ({
       <CardContent>
         <h3>{title}</h3>
         <p>{description}</p>
-        <LinkButton href={`/${path}/${id}`}>FIND OUT MORE</LinkButton>
+        <Link to={`/${path}/${id}`}>FIND OUT MORE</Link>
       </CardContent>
     </Card>
   );
