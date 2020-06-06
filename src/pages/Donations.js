@@ -60,7 +60,7 @@ const Donations = ({ match }) => {
                 title={donation.title}
                 description={donation.description}
                 link={donation.link}
-                img={donation.image_url}
+                img={donation.banner_img_url}
                 type={donation.type.type}
                 path="donate"
               />

@@ -41,7 +41,7 @@ const ProfileDetail = ({ match }) => {
         <>
           <BackNavigation
             text="BACK TO PROFILES"
-            link="/donations"
+            link={`/donate/${person.identifier}`}
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
             backLink="/"
@@ -49,7 +49,7 @@ const ProfileDetail = ({ match }) => {
           <Container>
             <Profile info={person} />
             <MediaList mediaList={person.media_links} />
-            <HashTags hashtags={person.social_media} />
+            <HashTags hashtags={person.hash_tags} />
             <ToastContainer />
           </Container>
         </>

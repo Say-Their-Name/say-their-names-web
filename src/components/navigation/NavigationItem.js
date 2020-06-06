@@ -7,14 +7,20 @@ import { StyledNavigationLinks } from './styles';
 const NavigationItem = ({ name, path }) => {
   const location = useLocation();
   let active = '';
-  // console.log(path, location);
 
   if (path !== '/' && location.pathname.includes(path)) {
-    // console.log(path);
     active = 'active';
   }
 
   if (path === '/' && path === location.pathname) {
+    active = 'active';
+  }
+
+  if (path === '/donations' && location.pathname.includes('donate')) {
+    active = 'active';
+  }
+
+  if (path === '/petitions' && location.pathname.includes('sign')) {
     active = 'active';
   }
 

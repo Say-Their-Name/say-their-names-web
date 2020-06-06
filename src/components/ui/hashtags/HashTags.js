@@ -13,7 +13,7 @@ const HashTags = ({ hashtags }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p>{hashtag.title}</p>
+        <p>{hashtag.tag}</p>
       </a>
     ))}
   </StyledHashTags>
@@ -25,7 +25,7 @@ HashTags.propTypes = {
   hashtags: PropTypes.arrayOf(
     PropTypes.shape({
       link: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
+      tag: PropTypes.string.isRequired
     }).isRequired
   ).isRequired
 };
