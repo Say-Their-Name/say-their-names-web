@@ -7,7 +7,7 @@ import {
   StyledNavigationLinkContainer
 } from './styles';
 import NavigationItem from './NavigationItem';
-import Logo from '../../assets/logo.svg';
+import Logo from '../../assets/logo.png';
 
 const navRoutes = [
   {
@@ -32,6 +32,7 @@ const Navigation = () => (
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
         <img src={Logo} alt="Say Their Names Logo" />
+        <h4>SAY THEIR NAMES</h4>
       </Link>
     </StyledNavigationLogo>
 

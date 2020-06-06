@@ -1,0 +1,72 @@
+import styled from 'styled-components';
+import Color from '../../../constants/Color';
+
+const Card = styled.div`
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  margin-top: 30px;
+`;
+
+const CardContent = styled.div`
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Wrapper = styled.div`
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+
+  @media (max-width: 1300px) {
+    width: 80%;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+`;
+
+const ImageDiv = styled.div`
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
+`;
+
+const Image = styled.img`
+  min-height: 100%;
+  min-width: 100%;
+`;
+
+const LinkButton = styled.a`
+  padding: 15px;
+  font-size: 20px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 2px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: ${Color.PRIMARY};
+    color: ${Color.WHITE}
+  }
+`;
+
+const Type = styled.p`
+  position: absolute;
+  top: 5px;
+  right: 16px;
+  color: white;
+  background-color: black;
+  padding: 5px;
+`;
+
+export {
+  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
+};
