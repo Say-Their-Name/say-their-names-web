@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from '../../components/common/Container'
+import Container from '../../components/common/Container';
 import {
   StyledAbout,
   StyledAboutContainer,
@@ -26,7 +26,6 @@ const About = () => (
 
       <StyledAboutContainer className="AboutContainer">
         <h2> About this project </h2>
-        <hr />
         <p>
           Welcome to the Say Their Names Project. Our aim is to build an
           open-source platform to raise awareness of the injustice and often
