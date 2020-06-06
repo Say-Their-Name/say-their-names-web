@@ -26,10 +26,9 @@ const Footer = () => (
             <Link to="/donation">Donation</Link>
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
-            <Link to="/">Settings</Link>
           </StyledFooterLinks>
         </StyledFooter>
-        <StyledFooter width="25%">
+        <StyledFooter width="30%">
           <h2>Our Mission</h2>
           <StyledFooterMissions>
             <p>
@@ -57,9 +56,9 @@ const Footer = () => (
         </StyledFooter>
         <StyledFooter>
           <h2>JOIN US ON SOCIAL MEDIA</h2>
-          <div style={{ marginTop: '1rem' }}>
+          <a style={{ marginTop: '1rem', textDecoration: 'none' }} href="#/twitter.com">
             <img src={Twitter} alt="twitter-handle" />
-          </div>
+          </a>
         </StyledFooter>
       </FooterContainer>
     </Container>
