@@ -9,7 +9,7 @@ import {
   StyledLinkContainer
 } from './styles';
 import { Button } from '../../components/profileDetails/styles';
-import AboutBanner from '../../assets/about-banner.svg';
+import aboutbanner from '../../assets/aboutbanner.svg';
 import Variables from '../../constants/Variables';
 
 const About = () => (
@@ -21,7 +21,7 @@ const About = () => (
           href="https://twitter.com/SayTheirName_io"
           rel="noopener noreferrer"
         >
-          <img src={AboutBanner} alt="Black Lives Matter" />
+          <img src={aboutbanner} alt="Black Lives Matter" />
         </a>
       </StyledAboutBanner>
 
