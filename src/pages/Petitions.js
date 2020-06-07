@@ -43,6 +43,8 @@ const Petitions = () => {
         <>
           <Wrapper>
             <h2>PETITIONS</h2>
+            <p>Petitions are another way to show the level of public support for the Black Lives Matter movement.</p>
+            <p>SAY THEIR NAMES online and demonstrate to those in power that cause is important to you and you demand justice and change.</p>
             {petitions.map((petition) => (
               <Petition
                 key={petition.id}
