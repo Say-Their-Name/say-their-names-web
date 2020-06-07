@@ -9,7 +9,7 @@ import {
   StyledLinkContainer
 } from './styles';
 import { Button } from '../../components/profileDetails/styles';
-import AboutBanner from '../../assets/about-banner.svg';
+import AboutBanner from '../../assets/About-banner.svg';
 import Variables from '../../constants/Variables';
 
 const About = () => (
