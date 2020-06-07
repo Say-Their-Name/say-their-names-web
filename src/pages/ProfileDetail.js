@@ -19,12 +19,15 @@ const ProfileDetail = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
   const [error, setError] = useState();
+  const [donation, setDonation] = useState({});
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
-        setPerson(response.data.data);
+        const { data } = response.data;
+        setPerson(data);
+        setDonation(data.donation_links[0]);
       } catch (err) {
         setError('Error occured');
       } finally {
@@ -33,6 +36,7 @@ const ProfileDetail = ({ match }) => {
     };
     fetchdata();
   }, [id]);
+
 
   return (
     <>
@@ -49,7 +53,7 @@ const ProfileDetail = ({ match }) => {
             text="BACK TO PROFILES"
             link={
               person.donation_links.length > 0
-                ? `/donations/${person.identifier}`
+                ? `/donate/${donation.identifier}`
                 : ''
             }
             longText="Donate now to end Police brutality on minorities"
@@ -57,7 +61,7 @@ const ProfileDetail = ({ match }) => {
             backLink="/"
           />
           <Container>
-            <Profile info={person} />
+            <Profile info={person} donation={donation} />
             <NewsList newsList={person.media_links} />
             <HashTags hashtags={person.hash_tags} />
           </Container>

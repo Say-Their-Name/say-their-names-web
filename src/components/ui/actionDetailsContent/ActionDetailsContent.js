@@ -35,9 +35,13 @@ const ActionDetailsContent = ({
 
 export default ActionDetailsContent;
 
+ActionDetailsContent.defaultProps = {
+  outcome: ''
+};
+
 ActionDetailsContent.propTypes = {
   description: PropTypes.string.isRequired,
-  outcome: PropTypes.string.isRequired,
+  outcome: PropTypes.string,
   outcomeImageUrl: PropTypes.string.isRequired,
   hashTags: PropTypes.arrayOf(
     PropTypes.shape({
