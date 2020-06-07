@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import App from './App';
+import Home from './Home';
 
 test('renders Home Page', () => {
   const history = createMemoryHistory();
@@ -10,7 +10,7 @@ test('renders Home Page', () => {
 
   const { getByText } = render(
     <Router history={history}>
-      <App />
+      <Home />
     </Router>
   );
 

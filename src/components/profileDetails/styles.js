@@ -153,7 +153,7 @@ const Location = styled.div`
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  width: 217px;
+  width: 100%;
   margin: 10px;
 
   @media screen and (max-width: 750px) {
@@ -172,7 +172,6 @@ const Button = styled.div`
     color: white;
     background-color: black;
     border: none;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     outline: none;

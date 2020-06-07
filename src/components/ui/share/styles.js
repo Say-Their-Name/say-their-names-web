@@ -11,6 +11,14 @@ const ShareSection = styled.section`
     opacity: 0.7;
   }
 
+  button {
+    :focus {
+      background-color: red;
+      border: 1px solid red;
+      outline: none;
+    }
+  }
+
   i {
     font-size: 32px;
     margin-right: 0.5rem;

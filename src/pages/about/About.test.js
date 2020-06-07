@@ -2,17 +2,18 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import App from './App';
 
-test('renders Home Page', () => {
+import About from './About';
+
+test('renders About Page', () => {
   const history = createMemoryHistory();
   history.push('/');
 
   const { getByText } = render(
     <Router history={history}>
-      <App />
+      <About />
     </Router>
   );
 
-  expect(getByText(/Delayed justice is injustice/i)).toBeInTheDocument();
+  expect(getByText(/About this project/i)).toBeInTheDocument();
 });

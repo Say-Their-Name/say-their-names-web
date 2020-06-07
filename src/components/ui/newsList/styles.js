@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const StyledMediaList = styled.div`
+const StyledNewsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   @media (max-width: 600px) {
     justify-content: center;
@@ -22,4 +22,4 @@ const StyledMediaList = styled.div`
   }
 `;
 
-export default StyledMediaList;
+export default StyledNewsList;

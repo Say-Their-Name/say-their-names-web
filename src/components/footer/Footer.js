@@ -1,70 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
-import config from '../../utils/config';
 import Container from '../common/Container';
+import Geogle from '../../assets/GooglePlaybadge.svg';
+import Apple from '../../assets/AppStorebadge.svg';
+import Twitter from '../../assets/twitter.svg';
+import Variables from '../../constants/Variables';
+
 import {
   StyledFooterContainer,
   StyledFooter,
   StyledFooterLinks,
+  FooterContainer,
   StyledFooterMissions,
-  StyleFooterForm
+  DowloadLogo
 } from './style';
 
-const { apiBaseUrl } = config;
-
-const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [savedEmailResponse, setSavedEmailResponse] = useState();
-
-  const onSaveNewsLetterHandler = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(`${apiBaseUrl}/join/newsletter`, {
-        email
-      });
-      setSavedEmailResponse('Subscribed successfully');
-    } catch (error) {
-      setSavedEmailResponse('Unable to subscribe, please try again');
-    }
-  };
-
-  return (
-    <StyledFooterContainer>
-      <Container>
-        <StyledFooter className="footer">
-          <StyledFooterLinks className="footer__links">
+const Footer = () => (
+  <StyledFooterContainer>
+    <Container>
+      <FooterContainer>
+        <StyledFooter width="10%">
+          <h2>LINKS</h2>
+          <StyledFooterLinks>
             <Link to="/">Home</Link>
-            <Link to="/donation">Donation</Link>
+            <Link to="/donations">Donations</Link>
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
           </StyledFooterLinks>
-          <StyleFooterForm
-            style={{ display: 'none' }}
-            onSubmit={onSaveNewsLetterHandler}
-            className="footer__form"
-          >
-            <h4>Sign up to our Newsletter</h4>
-
-            <div className="form-container">
-              <input
-                placeholder="Email Address"
-                required
-                id="email"
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <button type="submit">Submit</button>
-            </div>
-            <span>{savedEmailResponse && savedEmailResponse}</span>
-          </StyleFooterForm>
-
-          <StyledFooterMissions className="footer_missions">
-            <h4>Our Mission</h4>
+        </StyledFooter>
+        <StyledFooter width="30%">
+          <h2>Our Mission</h2>
+          <StyledFooterMissions>
             <p>
-              SAY THEIR NAME is a place to commemorate the death of our black
-              kings and queens murdered by police brutality. SAY THEIR NAME
+              SAY THEIR NAMES is a place to commemorate the death of our black
+              kings and queens murdered by police brutality. SAY THEIR NAMES
               makes it easy to donate, raise awareness, and sign petitions.
               <br />
               <br />
@@ -72,9 +42,36 @@ const Footer = () => {
             </p>
           </StyledFooterMissions>
         </StyledFooter>
-      </Container>
-    </StyledFooterContainer>
-  );
-};
+        <StyledFooter width="25%">
+          <h2>DOWNLOADS</h2>
+          <p>
+            Download the app
+            <br />
+            SAY THEIR NAMES app
+          </p>
+          <DowloadLogo>
+            <a href={Variables.IOS_URL}>
+              <img src={Geogle} alt="google-playstore" />
+            </a>
+            <a href={Variables.ANDROID_URL}>
+              <img src={Apple} alt="apple-store" />
+            </a>
+          </DowloadLogo>
+        </StyledFooter>
+        <StyledFooter>
+          <h2>JOIN US ON SOCIAL MEDIA</h2>
+          <a
+            style={{ marginTop: '1rem', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={Variables.TWITTER_URL}
+          >
+            <img src={Twitter} alt="twitter-handle" />
+          </a>
+        </StyledFooter>
+      </FooterContainer>
+    </Container>
+  </StyledFooterContainer>
+);
 
 export default Footer;

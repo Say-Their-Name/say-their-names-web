@@ -3,14 +3,32 @@ import Color from '../../../constants/Color';
 
 const Card = styled.div`
   border: 1px solid lightgray;
-  border-radius: 2px;
   margin-top: 30px;
 `;
 
 const CardContent = styled.div`
-  padding: 40px;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
+
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  a {
+    padding: 15px;
+    font-size: 20px;
+    color: black;
+    border: 2px solid black;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: ${Color.PRIMARY};
+      color: ${Color.WHITE};
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -19,7 +37,7 @@ const Wrapper = styled.div`
   margin-bottom: 100px;
 
   @media (max-width: 1300px) {
-    width: 80%;
+    width: 70%;
   }
 
   @media (max-width: 600px) {
@@ -43,21 +61,6 @@ const Image = styled.img`
   min-width: 100%;
 `;
 
-const LinkButton = styled.a`
-  padding: 15px;
-  font-size: 20px;
-  color: black;
-  border: 2px solid black;
-  border-radius: 2px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: ${Color.PRIMARY};
-    color: ${Color.WHITE}
-  }
-`;
-
 const Type = styled.p`
   position: absolute;
   top: 5px;
@@ -68,5 +71,5 @@ const Type = styled.p`
 `;
 
 export {
-  Card, Wrapper, LinkButton, CardContent, Image, ImageDiv, Type
+  Card, Wrapper, CardContent, Image, ImageDiv, Type
 };

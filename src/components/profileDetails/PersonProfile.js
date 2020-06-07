@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
-import Share from './share/Share';
+import Share from '../ui/share/Share';
 import {
   Profile,
   PersonalInformation,
@@ -20,15 +20,17 @@ import {
 } from './styles';
 
 const PersonProfile = (props) => {
-  const { info } = props;
+  const { info, donation } = props;
   const {
     images,
     full_name,
     age,
     number_of_children,
     city,
-    context,
-    identifier
+    their_story,
+    outcome,
+    country,
+    donation_links
   } = info;
 
   return (
@@ -56,20 +58,29 @@ const PersonProfile = (props) => {
           </Div>
           <Location>
             <H4>LOCATION</H4>
-            <H2>{city}</H2>
+            <H2>{`${city}, ${country}`}</H2>
           </Location>
-          <Link to={`/donations/${identifier}`}>
-            <Button>
-              <button type="button">DONATE</button>
-            </Button>
-          </Link>
+          {donation_links.length > 0 && (
+            <Link to={`/donate/${donation.identifier}`}>
+              <Button>
+                <button type="button">DONATE</button>
+              </Button>
+            </Link>
+          )}
           <Share url={window.location.href} title="#SayTheirNames" />
         </PersonSection>
       </PersonalInformation>
       <Context>
         <h2>THEIR STORY</h2>
-        <p>{context}</p>
+        <p>{their_story}</p>
       </Context>
+
+      {outcome && (
+        <Context>
+          <h2>Context</h2>
+          <p>{outcome}</p>
+        </Context>
+      )}
     </Profile>
   );
 };
@@ -78,8 +89,15 @@ export default withRouter(PersonProfile);
 
 PersonProfile.defaultProps = {
   info: PropTypes.shape({
-    number_of_children: '0'
+    number_of_children: '0',
+    outcome: null
   })
+};
+
+PersonProfile.defaultProps = {
+  donation: {
+    identifier: ''
+  }
 };
 
 PersonProfile.propTypes = {
@@ -88,10 +106,16 @@ PersonProfile.propTypes = {
     full_name: PropTypes.string.isRequired,
     age: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
-    context: PropTypes.string.isRequired,
     number_of_children: PropTypes.string,
     id: PropTypes.number.isRequired,
-    identifier: PropTypes.string.isRequired
+    identifier: PropTypes.string.isRequired,
+    their_story: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    outcome: PropTypes.string,
+    donation_links: PropTypes.array.isRequired
+  }),
+  donation: PropTypes.shape({
+    identifier: PropTypes.string
   }),
   history: PropTypes.shape({
     push: PropTypes.func.isRequired

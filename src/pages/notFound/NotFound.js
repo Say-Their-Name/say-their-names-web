@@ -8,7 +8,8 @@ import {
   ImageCover,
   HomeButton,
   BoxContent,
-  InnerContainer
+  InnerContainer,
+  ImageContainer
 } from './style';
 import BLM from '../../assets/blm.svg';
 
@@ -17,15 +18,14 @@ const NotFound = ({ message, longMessage }) => (
     <ContainerDiv>
       <InnerContainer>
         <BoxContent>
-          <span>
-            404
-            {' '}
-            <br />
-            {message || ' Page not found'}
-          </span>
+          <h1>404</h1>
+          {' '}
+          <br />
+          <h4>{message || ' Page not found'}</h4>
         </BoxContent>
         <p>
-          {longMessage || 'Not all those who wander are lost, but it seems you may have taken a wrong turn.'}
+          {longMessage
+            || 'Not all those who wander are lost, but it seems you may have taken a wrong turn.'}
         </p>
         <HomeButton>
           <Link to="/">
@@ -33,7 +33,9 @@ const NotFound = ({ message, longMessage }) => (
           </Link>
         </HomeButton>
       </InnerContainer>
-      <ImageCover src={BLM} alt="not found  svg" />
+      <ImageContainer>
+        <ImageCover src={BLM} alt="not found  svg" />
+      </ImageContainer>
     </ContainerDiv>
   </Container>
 );
@@ -41,6 +43,12 @@ const NotFound = ({ message, longMessage }) => (
 export default NotFound;
 
 NotFound.propTypes = {
-  message: PropTypes.string.isRequired,
-  longMessage: PropTypes.string.isRequired
+  message: PropTypes.string,
+  longMessage: PropTypes.string
+};
+
+NotFound.defaultProps = {
+  message: ' Page not found',
+  longMessage:
+    'Not all those who wander are lost, but it seems you may have taken a wrong turn.'
 };
