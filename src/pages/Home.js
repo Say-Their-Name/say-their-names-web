@@ -39,28 +39,23 @@ const Home = () => {
     }
   }, [data]);
 
-  const renderData = () => (!data ? (
-    <Spinner height="60vh" />
-  ) : (
-    <ProfileList profiles={profiles} />
-  ));
-
-  const renderError = () => (
+  const renderData = () => (!data && error.request?.status === 0 ? (
     <NotFound
       message="Oops!!! Something went wrong"
       longMessage="Unable to load profiles"
     />
-  );
+  ) : (
+    <ProfileList profiles={profiles} />
+  ));
+
 
   return (
     <div className="App">
       <GetInvolved />
       <div ref={profileListRef}>
         {
-          error
-            ? renderError()
-            : renderData()
-            }
+          !data && error?.request?.status !== 0 ? <Spinner height="60vh" /> : renderData()
+        }
       </div>
       {data && <Pagination currentPage={currentPage} updateCurrentPage={updateCurrentPage} paginationData={paginationData} />}
     </div>
