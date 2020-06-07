@@ -17,7 +17,7 @@ describe('<Footer />', () => {
 
     expect(getByText('LINKS'));
     expect(getByText('Home'));
-    expect(getByText('Donation'));
+    expect(getByText('Donations'));
     expect(getByText('Bookmarks'));
     expect(getByText('Petitions'));
 
@@ -38,7 +38,7 @@ describe('<Footer />', () => {
     fireEvent.click(getByText('Home'));
     expect(history.location.pathname).toBe('/');
 
-    fireEvent.click(getByText('Donation'));
+    fireEvent.click(getByText('Donations'));
     expect(history.location.pathname).toBe('/donations');
 
     fireEvent.click(getByText('Bookmarks'));
