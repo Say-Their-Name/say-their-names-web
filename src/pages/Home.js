@@ -20,6 +20,8 @@ const Home = () => {
     async (url) => {
       const response = await axios.get(`${apiBaseUrl + url}`);
       return response.data;
+    }, {
+      revalidateOnFocus: false
     }
   );
 
