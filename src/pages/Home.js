@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useState, useRef
-} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -13,60 +11,42 @@ import config from '../utils/config';
 const { apiBaseUrl } = config;
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(0);
-  const { data = { data: [], meta: {} } } = useSWR(
+  const profileListRef = useRef(null);
+  const isInitialPage = useRef(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data } = useSWR(
     `/people?page=${currentPage}`,
-    async () => {
-      const response = await axios.get(`${apiBaseUrl}/people?page=${currentPage}`);
-      // This prevents a quick flash of the loader when using the cache or on super fast connections
-      setTimeout(() => {
-        if (!response.data) setLoading(true);
-      }, 100);
-      if (response.data) {
-        setLoading(false);
-      }
+    async (url) => {
+      const response = await axios.get(`${apiBaseUrl + url}`);
       return response.data;
     }
   );
 
-  const { data: profiles, meta: paginationData } = data;
-
-  const profileListRef = useRef(null);
+  const profiles = data?.data;
+  const paginationData = data?.meta;
 
   const updateCurrentPage = (page) => {
     setCurrentPage(page);
   };
 
-  const handleDataChange = useCallback(() => {
-    if (profiles.length > 0) {
-      window.scrollTo(0, profileListRef.current.offsetTop ?? 0);
-    }
-  }, [profiles.length]);
-
   useEffect(() => {
-    handleDataChange();
-  }, [data, handleDataChange]);
-
-  const renderError = () => (
-    <p>Domething went wrong. Please, reload the page.</p>
-  );
+    if (!isInitialPage.current && currentPage !== 1) {
+      window.scrollTo(0, profileListRef.current.offsetTop);
+    }
+    isInitialPage.current = false;
+  }, [data]);
 
   return (
     <div className="App">
       <GetInvolved />
       <div ref={profileListRef}>
-        {loading ? (
-          <Spinner height="40vh" />
+        {!data ? (
+          <Spinner height="50vh" />
         ) : (
-          <>
-            {profiles
-              ? <ProfileList profiles={profiles} />
-              : renderError()}
-          </>
+          <ProfileList profiles={profiles} />
         )}
       </div>
-      <Pagination currentPage={currentPage} updateCurrentPage={updateCurrentPage} paginationData={paginationData} />
+      {data && <Pagination currentPage={currentPage} updateCurrentPage={updateCurrentPage} paginationData={paginationData} />}
     </div>
   );
 };

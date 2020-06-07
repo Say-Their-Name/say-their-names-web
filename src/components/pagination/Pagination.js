@@ -6,12 +6,15 @@ import Container from '../common/Container';
 import StyledPagination from './styles';
 
 const Pagination = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const { paginationData, currentPage, updateCurrentPage } = props;
   const { last_page } = paginationData;
 
+  // eslint-disable-next-line no-unused-vars
   const onChange = (touched) => {
     updateCurrentPage(touched.selected + 1);
   };
+
 
   return (
     <Container>
@@ -20,7 +23,7 @@ const Pagination = (props) => {
           previousLabel={'<'}
           nextLabel={'>'}
           breakLabel="..."
-          initialPage={currentPage}
+          initialPage={currentPage - 1}
           breakClassName="break-me"
           pageCount={last_page}
           onPageChange={onChange}
