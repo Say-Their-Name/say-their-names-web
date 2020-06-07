@@ -3,27 +3,25 @@ import { render, fireEvent } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
-import Footer from './Footer';
+import Navigation from './Navigation';
 
-describe('<Footer />', () => {
-  test('renders Footer', () => {
+describe('<Navigation />', () => {
+  test('renders Navigation', () => {
     const history = createMemoryHistory();
 
-    const { getByText } = render(
+    const { getByText, getByAltText } = render(
       <Router history={history}>
-        <Footer />
+        <Navigation />
       </Router>
     );
 
-    expect(getByText('LINKS'));
-    expect(getByText('Home'));
-    expect(getByText('Donation'));
-    expect(getByText('Bookmarks'));
-    expect(getByText('Petitions'));
+    expect(getByText('SAY THEIR NAMES'));
+    expect(getByAltText('Say Their Names Logo'));
 
-    expect(getByText('Our Mission'));
-    expect(getByText('DOWNLOADS'));
-    expect(getByText('JOIN US ON SOCIAL MEDIA'));
+    expect(getByText('Home'));
+    expect(getByText('Donations'));
+    expect(getByText('Petitions'));
+    expect(getByText('About'));
   });
 
   test('renders correct links', () => {
@@ -31,20 +29,20 @@ describe('<Footer />', () => {
 
     const { getByText } = render(
       <Router history={history}>
-        <Footer />
+        <Navigation />
       </Router>
     );
 
     fireEvent.click(getByText('Home'));
     expect(history.location.pathname).toBe('/');
 
-    fireEvent.click(getByText('Donation'));
+    fireEvent.click(getByText('Donations'));
     expect(history.location.pathname).toBe('/donations');
-
-    fireEvent.click(getByText('Bookmarks'));
-    expect(history.location.pathname).toBe('/bookmarks');
 
     fireEvent.click(getByText('Petitions'));
     expect(history.location.pathname).toBe('/petitions');
+
+    fireEvent.click(getByText('About'));
+    expect(history.location.pathname).toBe('/about');
   });
 });

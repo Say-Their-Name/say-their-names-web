@@ -8,7 +8,8 @@ import {
   ImageCover,
   HomeButton,
   BoxContent,
-  InnerContainer
+  InnerContainer,
+  ImageContainer
 } from './style';
 import BLM from '../../assets/blm.svg';
 
@@ -17,12 +18,10 @@ const NotFound = ({ message, longMessage }) => (
     <ContainerDiv>
       <InnerContainer>
         <BoxContent>
-          <span>
-            404
-            {' '}
-            <br />
-            {message || ' Page not found'}
-          </span>
+          <h1>404</h1>
+          {' '}
+          <br />
+          <h4>{message || ' Page not found'}</h4>
         </BoxContent>
         <p>
           {longMessage
@@ -34,7 +33,9 @@ const NotFound = ({ message, longMessage }) => (
           </Link>
         </HomeButton>
       </InnerContainer>
-      <ImageCover src={BLM} alt="not found  svg" />
+      <ImageContainer>
+        <ImageCover src={BLM} alt="not found  svg" />
+      </ImageContainer>
     </ContainerDiv>
   </Container>
 );
