@@ -74,7 +74,9 @@ const Petitions = ({ match }) => {
               </h2>
             )}
             <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
-            {petitions.map((petition) => (
+            {petitions.filter((petition) => (
+              activeTab !== undefined ? petition.type.type === tabData[activeTab].type : petition
+            )).map((petition) => (
               <Petition
                 key={petition.id}
                 id={petition.id}
@@ -82,7 +84,7 @@ const Petitions = ({ match }) => {
                 description={petition.description}
                 link={petition.link}
                 img={petition.banner_img_url}
-                type={petition.type.type}
+                type={petition.type ? petition.type.type : null}
                 path="sign"
               />
             ))}

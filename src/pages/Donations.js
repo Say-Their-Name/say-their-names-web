@@ -74,7 +74,9 @@ const Donations = ({ match }) => {
               </h2>
             )}
             <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
-            {donations.map((donation) => (
+            {donations.filter((donation) => (
+              activeTab !== undefined ? donation.type.type === tabData[activeTab].type : donation
+            )).map((donation) => (
               <Petition
                 key={donation.id}
                 id={donation.id}
@@ -82,7 +84,7 @@ const Donations = ({ match }) => {
                 description={donation.description}
                 link={donation.link}
                 img={donation.banner_img_url}
-                type={donation.type.type}
+                type={donation.type ? donation.type.type : null}
                 path="donate"
               />
             ))}

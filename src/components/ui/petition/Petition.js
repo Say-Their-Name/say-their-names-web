@@ -9,11 +9,15 @@ const Petition = ({
   id, title, description, img, type, path
 }) => {
   const imgAlt = `Image for ${title}`;
-  const upperType = type.toUpperCase();
+  const upperType = type ? type.toUpperCase() : null;
   return (
     <Card>
       <ImageDiv>
-        <Type>{upperType}</Type>
+        {upperType ? (
+          <Type>{upperType}</Type>
+        ) : (
+          <></>
+        )}
         <Image src={img} alt={imgAlt} />
       </ImageDiv>
       <CardContent>
