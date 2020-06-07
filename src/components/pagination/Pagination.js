@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 import Container from '../common/Container';
 import StyledPagination from './styles';
 
-const Pagination = ({ paginationData, fetchdata }) => {
+const Pagination = (props) => {
+  const { paginationData, currentPage, updateCurrentPage } = props;
   const { last_page } = paginationData;
 
   const onChange = (touched) => {
-    fetchdata(touched.selected + 1);
+    updateCurrentPage(touched.selected + 1);
   };
+
 
   return (
     <Container>
@@ -19,6 +21,7 @@ const Pagination = ({ paginationData, fetchdata }) => {
           previousLabel={'<'}
           nextLabel={'>'}
           breakLabel="..."
+          initialPage={currentPage - 1}
           breakClassName="break-me"
           pageCount={last_page}
           onPageChange={onChange}
@@ -37,5 +40,6 @@ Pagination.propTypes = {
   paginationData: PropTypes.shape({
     last_page: PropTypes.number.isRequired
   }).isRequired,
-  fetchdata: PropTypes.func.isRequired
+  currentPage: PropTypes.number.isRequired,
+  updateCurrentPage: PropTypes.func.isRequired
 };
