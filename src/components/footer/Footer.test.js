@@ -17,7 +17,7 @@ describe('<Footer />', () => {
 
     expect(getByText('LINKS'));
     expect(getByText('Home'));
-    expect(getByText('Donation'));
+    expect(getByText('Donations'));
     expect(getByText('Bookmarks'));
     expect(getByText('Petitions'));
 
