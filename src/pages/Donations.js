@@ -64,12 +64,12 @@ const Donations = ({ match }) => {
             {donations.map((donation) => (
               <Petition
                 key={donation.id}
-                id={donation.id}
+                id={donation.identifier}
                 title={donation.title}
                 description={donation.description}
                 link={donation.link}
                 img={donation.banner_img_url}
-                type={donation.type.type}
+                type={donation.type?.type}
                 path="donate"
               />
             ))}

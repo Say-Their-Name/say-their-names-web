@@ -21,7 +21,7 @@ const PetitionDetail = ({ match }) => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/donations/${id}`);
+        const response = await axios.get(`${apiBaseUrl}/petitions/${id}`);
         setDonationDetail(response.data.data);
       } catch (err) {
         // set error and show error page

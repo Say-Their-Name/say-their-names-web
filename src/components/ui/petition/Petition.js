@@ -9,11 +9,10 @@ const Petition = ({
   id, title, description, img, type, path
 }) => {
   const imgAlt = `Image for ${title}`;
-  const upperType = type.toUpperCase();
   return (
     <Card>
       <ImageDiv>
-        <Type>{upperType}</Type>
+        {type && <Type>{type.toUpperCase()}</Type>}
         <Image src={img} alt={imgAlt} />
       </ImageDiv>
       <CardContent>
@@ -30,12 +29,13 @@ Petition.propTypes = {
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  type: PropTypes.string,
   path: PropTypes.string
 };
 
 Petition.defaultProps = {
-  path: 'donate'
+  path: 'donate',
+  type: ''
 };
 
 export default Petition;

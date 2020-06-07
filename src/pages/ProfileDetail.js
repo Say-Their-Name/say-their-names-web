@@ -6,7 +6,7 @@ import NotFound from './notFound/NotFound';
 import Spinner from '../components/common/Spinner';
 import Profile from '../components/profileDetails/PersonProfile';
 import BackNavigation from '../components/backNavigation/BackNavigation';
-import MediaList from '../components/ui/mediaList/MediaList';
+import NewsList from '../components/ui/newsList/NewsList';
 
 import Container from '../components/common/Container';
 import config from '../utils/config';
@@ -47,14 +47,18 @@ const ProfileDetail = ({ match }) => {
         <>
           <BackNavigation
             text="BACK TO PROFILES"
-            link={`/donate/${person.identifier}`}
+            link={
+              person.donation_links.length > 0
+                ? `/donations/${person.identifier}`
+                : ''
+            }
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
             backLink="/"
           />
           <Container>
             <Profile info={person} />
-            <MediaList mediaList={person.media_links} />
+            <NewsList newsList={person.media_links} />
             <HashTags hashtags={person.hash_tags} />
           </Container>
         </>
