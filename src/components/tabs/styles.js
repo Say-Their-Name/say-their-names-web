@@ -18,23 +18,28 @@ const TabActive = styled.a`
     border-width: 16px 16px 0px 0;
     border-style: solid;
     border-color: #fff #000000;
-}
+  }
 `;
 
 const TabInactive = styled.a`
   position: relative;
-    color: #000000;
-    width: 30%;
-    padding: 13px 32px;
-    font-size: 16px;
-    border: 2px solid #000000;
-    text-transform: uppercase;
-    margin-right: 5px;
-}
+  color: #000000;
+  width: 30%;
+  padding: 13px 32px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  text-transform: uppercase;
+  margin-right: 5px;
+  cursor: pointer;
 `;
 
+const TabNav = styled.nav`
+  margin-top: 50px;
+  margin-bottom: 50px;
+`;
 
 export {
   TabActive,
-  TabInactive
+  TabInactive,
+  TabNav
 };
