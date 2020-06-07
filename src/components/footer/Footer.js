@@ -5,6 +5,7 @@ import Container from '../common/Container';
 import Geogle from '../../assets/GooglePlaybadge.svg';
 import Apple from '../../assets/AppStorebadge.svg';
 import Twitter from '../../assets/twitter.svg';
+import Variables from '../../constants/Variables';
 
 import {
   StyledFooterContainer,
@@ -23,7 +24,10 @@ const Footer = () => (
           <h2>LINKS</h2>
           <StyledFooterLinks>
             <Link to="/">Home</Link>
-            <Link to="/donations">Donations</Link>
+<<<<<<< HEAD
+=======
+            <Link to="/donations">Donation</Link>
+>>>>>>> upstream/development
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
           </StyledFooterLinks>
@@ -39,10 +43,9 @@ const Footer = () => (
               <br />
               Join the fight for justice and donate today.
             </p>
-
           </StyledFooterMissions>
         </StyledFooter>
-        <StyledFooter>
+        <StyledFooter width="25%">
           <h2>DOWNLOADS</h2>
           <p>
             Download the app
@@ -50,13 +53,22 @@ const Footer = () => (
             SAY THEIR NAMES app
           </p>
           <DowloadLogo>
-            <img src={Geogle} alt="google-playstore" />
-            <img src={Apple} alt="apple-store" />
+            <a href={Variables.IOS_URL}>
+              <img src={Geogle} alt="google-playstore" />
+            </a>
+            <a href={Variables.ANDROID_URL}>
+              <img src={Apple} alt="apple-store" />
+            </a>
           </DowloadLogo>
         </StyledFooter>
         <StyledFooter>
           <h2>JOIN US ON SOCIAL MEDIA</h2>
-          <a style={{ marginTop: '1rem', textDecoration: 'none' }} href="#/twitter.com">
+          <a
+            style={{ marginTop: '1rem', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={Variables.TWITTER_URL}
+          >
             <img src={Twitter} alt="twitter-handle" />
           </a>
         </StyledFooter>

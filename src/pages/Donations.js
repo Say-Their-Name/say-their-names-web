@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
 import { Wrapper } from '../components/ui/petition/styles';
+import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 import utils from '../utils';
 
@@ -15,6 +16,7 @@ const Donations = ({ match }) => {
   const { identifier } = match.params;
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchPetitions = async () => {
@@ -25,8 +27,8 @@ const Donations = ({ match }) => {
       try {
         const res = await axios.get(API_URL);
         setDonations(res.data.data);
-        window.scrollTo(0, 0);
-      } catch (error) {
+      } catch (err) {
+        setError('Error occured');
         // set error and show error page
       } finally {
         setLoading(false);
@@ -37,6 +39,12 @@ const Donations = ({ match }) => {
 
   return (
     <>
+      {error && (
+        <NotFound
+          message="Oops!!! Something went wrong"
+          longMessage="Unable to load donations"
+        />
+      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
