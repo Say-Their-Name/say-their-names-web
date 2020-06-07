@@ -12,7 +12,7 @@ const { apiBaseUrl } = config;
 
 const Home = () => {
   const profileListRef = useRef(null);
-  const isInitialPage = useRef(true);
+  const isSubsequentVisit = useRef(false);
   const [currentPage, setCurrentPage] = useState(1);
   const { data } = useSWR(
     `/people?page=${currentPage}`,
@@ -30,10 +30,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!isInitialPage.current && currentPage !== 1) {
+    if (isSubsequentVisit.current && data?.data) {
       window.scrollTo(0, profileListRef.current.offsetTop);
     }
-    isInitialPage.current = false;
+    if (data) {
+      isSubsequentVisit.current = true;
+    }
   }, [data]);
 
   return (

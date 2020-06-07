@@ -6,11 +6,9 @@ import Container from '../common/Container';
 import StyledPagination from './styles';
 
 const Pagination = (props) => {
-  // eslint-disable-next-line no-unused-vars
   const { paginationData, currentPage, updateCurrentPage } = props;
   const { last_page } = paginationData;
 
-  // eslint-disable-next-line no-unused-vars
   const onChange = (touched) => {
     updateCurrentPage(touched.selected + 1);
   };
