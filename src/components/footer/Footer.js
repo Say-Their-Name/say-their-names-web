@@ -24,7 +24,7 @@ const Footer = () => (
           <h2>LINKS</h2>
           <StyledFooterLinks>
             <Link to="/">Home</Link>
-            <Link to="/donations">Donation</Link>
+            <Link to="/donations">Donations</Link>
             <Link to="/bookmarks">Bookmarks</Link>
             <Link to="/petitions">Petitions</Link>
           </StyledFooterLinks>
