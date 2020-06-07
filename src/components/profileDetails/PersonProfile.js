@@ -20,14 +20,13 @@ import {
 } from './styles';
 
 const PersonProfile = (props) => {
-  const { info } = props;
+  const { info, donation } = props;
   const {
     images,
     full_name,
     age,
     number_of_children,
     city,
-    identifier,
     their_story,
     outcome,
     country,
@@ -60,10 +59,9 @@ const PersonProfile = (props) => {
           <Location>
             <H4>LOCATION</H4>
             <H2>{`${city}, ${country}`}</H2>
-
           </Location>
           {donation_links.length > 0 && (
-            <Link to={`/donations/${identifier}`}>
+            <Link to={`/donate/${donation.identifier}`}>
               <Button>
                 <button type="button">DONATE</button>
               </Button>
@@ -96,6 +94,12 @@ PersonProfile.defaultProps = {
   })
 };
 
+PersonProfile.defaultProps = {
+  donation: {
+    identifier: ''
+  }
+};
+
 PersonProfile.propTypes = {
   info: PropTypes.shape({
     images: PropTypes.array.isRequired,
@@ -109,6 +113,9 @@ PersonProfile.propTypes = {
     country: PropTypes.string.isRequired,
     outcome: PropTypes.string,
     donation_links: PropTypes.array.isRequired
+  }),
+  donation: PropTypes.shape({
+    identifier: PropTypes.string
   }),
   history: PropTypes.shape({
     push: PropTypes.func.isRequired

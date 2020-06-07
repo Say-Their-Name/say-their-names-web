@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledMediaList = styled.div`
+const StyledNewsList = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -22,4 +22,4 @@ const StyledMediaList = styled.div`
   }
 `;
 
-export default StyledMediaList;
+export default StyledNewsList;

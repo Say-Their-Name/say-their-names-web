@@ -79,12 +79,12 @@ const Donations = ({ match }) => {
             )).map((donation) => (
               <Petition
                 key={donation.id}
-                id={donation.id}
+                id={donation.identifier}
                 title={donation.title}
                 description={donation.description}
                 link={donation.link}
                 img={donation.banner_img_url}
-                type={donation.type ? donation.type.type : null}
+                type={donation.type?.type}
                 path="donate"
               />
             ))}

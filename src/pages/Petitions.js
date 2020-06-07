@@ -79,12 +79,12 @@ const Petitions = ({ match }) => {
             )).map((petition) => (
               <Petition
                 key={petition.id}
-                id={petition.id}
+                id={petition.identifier}
                 title={petition.title}
                 description={petition.description}
                 link={petition.link}
                 img={petition.banner_img_url}
-                type={petition.type ? petition.type.type : null}
+                type={petition.type?.type}
                 path="sign"
               />
             ))}
