@@ -22,20 +22,26 @@ const ActionDetailsContent = ({
         <img src={outcomeImageUrl} alt="Outcome" />
       </div>
 
-      <Context>
-        <h2>Outcome</h2>
-        <p>{outcome}</p>
-      </Context>
+      {outcome && (
+        <Context>
+          <h2>Outcome</h2>
+          <p>{outcome}</p>
+        </Context>
+      )}
     </div>
-    <HashTags hashtags={hashTags} />
+    {hashTags.length > 0 && <HashTags hashtags={hashTags} />}
   </StyledActionDetailsContent>
 );
 
 export default ActionDetailsContent;
 
+ActionDetailsContent.defaultProps = {
+  outcome: ''
+};
+
 ActionDetailsContent.propTypes = {
   description: PropTypes.string.isRequired,
-  outcome: PropTypes.string.isRequired,
+  outcome: PropTypes.string,
   outcomeImageUrl: PropTypes.string.isRequired,
   hashTags: PropTypes.arrayOf(
     PropTypes.shape({

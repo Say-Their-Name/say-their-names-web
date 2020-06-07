@@ -6,7 +6,7 @@ import NotFound from './notFound/NotFound';
 import Spinner from '../components/common/Spinner';
 import Profile from '../components/profileDetails/PersonProfile';
 import BackNavigation from '../components/backNavigation/BackNavigation';
-import MediaList from '../components/ui/mediaList/MediaList';
+import NewsList from '../components/ui/newsList/NewsList';
 
 import Container from '../components/common/Container';
 import config from '../utils/config';
@@ -19,12 +19,15 @@ const ProfileDetail = ({ match }) => {
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
   const [error, setError] = useState();
+  const [donation, setDonation] = useState({});
 
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/people/${id}`);
-        setPerson(response.data.data);
+        const { data } = response.data;
+        setPerson(data);
+        setDonation(data.donation_links[0]);
       } catch (err) {
         setError('Error occured');
       } finally {
@@ -33,6 +36,7 @@ const ProfileDetail = ({ match }) => {
     };
     fetchdata();
   }, [id]);
+
 
   return (
     <>
@@ -47,14 +51,18 @@ const ProfileDetail = ({ match }) => {
         <>
           <BackNavigation
             text="BACK TO PROFILES"
-            link={`/donate/${person.identifier}`}
+            link={
+              person.donation_links.length > 0
+                ? `/donate/${donation.identifier}`
+                : ''
+            }
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
             backLink="/"
           />
           <Container>
-            <Profile info={person} />
-            <MediaList mediaList={person.media_links} />
+            <Profile info={person} donation={donation} />
+            <NewsList newsList={person.media_links} />
             <HashTags hashtags={person.hash_tags} />
           </Container>
         </>

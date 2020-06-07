@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledMedia = styled.div`
+const StyledNews = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -47,4 +47,4 @@ const StyledMedia = styled.div`
   }
 `;
 
-export default StyledMedia;
+export default StyledNews;
