@@ -70,11 +70,9 @@ const Donations = ({ match }) => {
               justice.
             </p>
             <p>
-              {' '}
               All donations sources on SAY THEIR NAMES are verified so you can
               ensure that the money you are donating will be going towards the
               movement.
-              {' '}
             </p>
             <Tabs
               locations={tabData.map((type) => type.type)}
@@ -83,7 +81,7 @@ const Donations = ({ match }) => {
             />
             <h2>
               {donations.length === 0 && !loading ? (
-                <h2 className="not-found">NO DONATION FOUND</h2>
+                <h2 className="not-found">NO DONATIONS FOUND</h2>
               ) : (
                 <>
                   {identifier
