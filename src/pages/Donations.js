@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
+import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
@@ -17,9 +18,11 @@ const Donations = ({ match }) => {
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+  const [activeTab, setActiveTab] = useState();
+  const [tabData, setTabData] = useState([]);
 
   useEffect(() => {
-    const fetchPetitions = async () => {
+    const fetchDonations = async () => {
       let API_URL = `${apiBaseUrl}/donations`;
       if (identifier) {
         API_URL = `${apiBaseUrl}/donations?name=${identifier}`;
@@ -34,7 +37,18 @@ const Donations = ({ match }) => {
         setLoading(false);
       }
     };
-    fetchPetitions();
+    const fetchDonationType = async () => {
+      const API_URL = `${apiBaseUrl}/donation-types`;
+      try {
+        const res = await axios.get(API_URL);
+        // const typeArr = res.data.data.map((data) => data.type);
+        setTabData(res.data.data);
+      } catch (err) {
+        setError('Error occured');
+      }
+    };
+    fetchDonations();
+    fetchDonationType();
   }, [identifier]);
 
   return (
@@ -63,7 +77,10 @@ const Donations = ({ match }) => {
             </h2>
             <p>Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice.</p>
             <p> All donations sources on SAY THEIR NAMES are verified so you can ensure that the money you are donating will be going towards the movement. </p>
-            {donations.map((donation) => (
+            <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
+            {donations.filter((donation) => (
+              activeTab !== undefined ? donation.type.type === tabData[activeTab].type : donation
+            )).map((donation) => (
               <Petition
                 key={donation.id}
                 id={donation.identifier}
