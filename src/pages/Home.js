@@ -55,8 +55,8 @@ const Home = () => {
   return (
     <div className="App">
       <Seo
-        title="Profiles"
-        image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/meta-data/meta-data/logo.png"
+        title="Home"
+        image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/logo.png"
         description=""
       />
       <GetInvolved />
