@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Routes from './routes';
+import Routes from './routes/index';
 
 import { trackPageView, initializeGA } from './utils/gaTracker';
 
