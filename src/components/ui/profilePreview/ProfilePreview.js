@@ -9,7 +9,7 @@ const ProfilePreview = ({
   id, fullName, dateOfIncident, image
 }) => (
   <StyledProfilePreviewContainer>
-    <Link to={`/profile/${id}`}>
+    <Link to={{ pathname: `/profile/${id}`, state: { currentPage: 2 } }}>
       <StyledProfilePreview>
         <div className="image-container">
           <img src={image.image_url} alt={fullName} />

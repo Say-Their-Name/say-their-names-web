@@ -14,8 +14,9 @@ import HashTags from '../components/ui/hashtags/HashTags';
 
 const { apiBaseUrl } = config;
 
-const ProfileDetail = ({ match }) => {
+const ProfileDetail = ({ match, location }) => {
   const { id } = match.params;
+  const { currentPage } = location.state;
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
   const [error, setError] = useState();
@@ -58,7 +59,7 @@ const ProfileDetail = ({ match }) => {
             }
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
-            backLink="/"
+            backLink={`/?page=${currentPage}`}
           />
           <Container>
             <Profile info={person} donation={donation} />
@@ -77,6 +78,11 @@ ProfileDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
+    })
+  }).isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      currentPage: PropTypes.number.isRequired
     })
   }).isRequired
 };
