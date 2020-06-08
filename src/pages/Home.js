@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import useSWR from 'swr';
 
 import GetInvolved from '../components/ui/getInvolved/GetInvolved';
 import ProfileList from '../components/ui/profileList/ProfileList';
@@ -11,54 +12,54 @@ import config from '../utils/config';
 const { apiBaseUrl } = config;
 
 const Home = () => {
-  const [profiles, setProfiles] = useState([]); // this will hold the profles list fetched from the API
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
-  const [paginationData, setPaginationData] = useState({});
-
-  const fetchdata = useCallback(async (page = 1) => {
-    try {
-      const response = await axios.get(`${apiBaseUrl}/people?page=${page}`);
-      setPaginationData(response.data.meta);
-      setProfiles(response.data.data);
-      window.scrollTo(0, 0);
-    } catch (err) {
-      setError('Error occured');
-      // set error and show error page
-    } finally {
-      setLoading(false);
+  const profileListRef = useRef(null);
+  const isSubsequentVisit = useRef(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, error } = useSWR(
+    `/people?page=${currentPage}`,
+    async (url) => {
+      const response = await axios.get(`${apiBaseUrl + url}`);
+      return response.data;
+    }, {
+      revalidateOnFocus: false
     }
-  }, []);
+  );
+
+  const profiles = data?.data;
+  const paginationData = data?.meta;
+
+  const updateCurrentPage = (page) => {
+    setCurrentPage(page);
+  };
 
   useEffect(() => {
-    fetchdata();
-  }, [fetchdata]);
+    if (isSubsequentVisit.current && data?.data) {
+      window.scrollTo(0, profileListRef.current.offsetTop);
+    }
+    if (data) {
+      isSubsequentVisit.current = true;
+    }
+  }, [data]);
+
+  const renderData = () => (!data && error.request?.status === 0 ? (
+    <NotFound
+      message="Oops!!! Something went wrong"
+      longMessage="Unable to load profiles"
+    />
+  ) : (
+    <ProfileList profiles={profiles} />
+  ));
+
 
   return (
     <div className="App">
-      {error ? (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load profiles"
-        />
-      ) : (
-        <>
-          <GetInvolved />
-          {loading ? (
-            <Spinner height="60vh" />
-          ) : (
-            <>
-              <ProfileList profiles={profiles} />
-              {profiles.length > 0 && (
-                <Pagination
-                  paginationData={paginationData}
-                  fetchdata={fetchdata}
-                />
-              )}
-            </>
-          )}
-        </>
-      )}
+      <GetInvolved />
+      <div ref={profileListRef}>
+        {
+          !data && error?.request?.status !== 0 ? <Spinner height="60vh" /> : renderData()
+        }
+      </div>
+      {data && <Pagination currentPage={currentPage} updateCurrentPage={updateCurrentPage} paginationData={paginationData} />}
     </div>
   );
 };
