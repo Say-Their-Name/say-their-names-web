@@ -5,7 +5,7 @@ import PersonPreview from '../profilePreview/ProfilePreview';
 import { StyledProfileList, H2 } from './styles';
 import Container from '../../common/Container';
 
-const ProfileList = ({ profiles }) => (
+const ProfileList = ({ profiles, currentPage }) => (
   <Container>
     {profiles.length === 0 && (
       <H2 className="not-found">No profiles found</H2>
@@ -19,6 +19,7 @@ const ProfileList = ({ profiles }) => (
             image={profile.images[0]}
             fullName={profile.full_name}
             dateOfIncident={profile.date_of_incident}
+            currentPage={currentPage}
           />
         ))}
     </StyledProfileList>
@@ -35,5 +36,6 @@ ProfileList.propTypes = {
       full_name: PropTypes.string.isRequired,
       date_of_incident: PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  currentPage: PropTypes.number.isRequired
 };
