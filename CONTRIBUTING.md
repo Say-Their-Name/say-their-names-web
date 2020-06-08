@@ -8,8 +8,8 @@ Below is a set of guidelines for contributing to the [`Say-Their-Name/web`](http
 
 This project is run by a community of volunteers. The community communicates via a slack workspace, and to-dos are maintained on respective Trello boards.
 
-- If you would like to join the Slack workspace, use this [link](https://app.slack.com/client/T014JL5B3SN/C014X92G997).
-- If you would like to join the Trello board, use this [link](https://trello.com/b/8x3mo2V5/say-their-names-web).
+- If you would like to join the Slack workspace, use this [link](https://join.slack.com/t/saytheirnames/shared_invite/zt-eqjuatz7-fgh3zPRXIKiiXsC1Vf3oZA).
+- If you would like to join the Trello board, use this [link](https://trello.com/invite/b/8x3mo2V5/9a325fa7f23aeebad114e15acaea7bf0/say-their-names-web).
 
 Please, keep discussions in issues and pull requests positive, productive, and respectful. We're all humans afterall.
 
