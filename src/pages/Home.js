@@ -45,7 +45,7 @@ const Home = () => {
       isSubsequentVisit.current = true;
     }
 
-    // Clear the location state to prevent always restoring the previous old page on manual browser refresh
+    // Clear the location state to prevent always restoring the previous old page on manual browser refresh, or browser back button from a profile page
     history.replace('/', null);
   }, [data, history]);
 
