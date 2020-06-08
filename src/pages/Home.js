@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import useSWR from 'swr';
 
-import Seo from '../components/common/Seo'
+import Seo from '../components/common/Seo';
 import GetInvolved from '../components/ui/getInvolved/GetInvolved';
 import ProfileList from '../components/ui/profileList/ProfileList';
 import Spinner from '../components/common/Spinner';
