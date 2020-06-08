@@ -11,11 +11,9 @@ const TabActive = styled.a`
   margin-right: 5px;
   
   &:before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
-    border-width: 16px 16px 0px 0;
     border-style: solid;
     border-color: #fff #000000;
   }
