@@ -19,7 +19,9 @@ Please, keep discussions in issues and pull requests positive, productive, and r
 
 The main branch is development, where all ongoing development work converges. master branch is reserved for some more finished version of the app.
 
-When working on something, create a new branch from development, and make a PR back into development branch.
+To get all setup, fork this repo and do all of your work there.
+
+When working on something, create a new branch from development, and make a PR back into the development branch in the main repo.
 
 There are multiple people working from different timezones, so it's good to try to keep your branch up-to-date by rebasing it on top of latest development.
 
