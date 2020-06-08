@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
-import Seo from "../components/common/Seo";
-import Spinner from "../components/common/Spinner";
-import Petition from "../components/ui/petition/Petition";
-import Tabs from "../components/tabs/Tabs";
-import { Wrapper } from "../components/ui/petition/styles";
-import NotFound from "./notFound/NotFound";
-import config from "../utils/config";
-import utils from "../utils";
+import Seo from '../components/common/Seo';
+import Spinner from '../components/common/Spinner';
+import Petition from '../components/ui/petition/Petition';
+import Tabs from '../components/tabs/Tabs';
+import { Wrapper } from '../components/ui/petition/styles';
+import NotFound from './notFound/NotFound';
+import config from '../utils/config';
+import utils from '../utils';
 
 const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
@@ -32,7 +32,7 @@ const Petitions = ({ match }) => {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
       } catch (err) {
-        setError("Error occured");
+        setError('Error occured');
         // set error and show error page
       } finally {
         setLoading(false);
@@ -45,7 +45,7 @@ const Petitions = ({ match }) => {
         // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
-        setError("Error occured");
+        setError('Error occured');
       }
     };
     fetchPetitions();
@@ -76,7 +76,7 @@ const Petitions = ({ match }) => {
               <h2>
                 {identifier
                   ? `PETITIONS FOR ${convertIdentifierToName(identifier)}`
-                  : "PETITIONS"}
+                  : 'PETITIONS'}
               </h2>
             )}
             <p>
@@ -93,11 +93,9 @@ const Petitions = ({ match }) => {
               currentTab={activeTab}
             />
             {petitions
-              .filter((petition) =>
-                activeTab !== undefined
-                  ? petition.type.type === tabData[activeTab].type
-                  : petition
-              )
+              .filter((petition) => (activeTab !== undefined
+                ? petition.type.type === tabData[activeTab].type
+                : petition))
               .map((petition) => (
                 <Petition
                   key={petition.id}
@@ -122,7 +120,7 @@ export default Petitions;
 Petitions.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      identifier: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
+      identifier: PropTypes.string
+    }).isRequired
+  }).isRequired
 };
