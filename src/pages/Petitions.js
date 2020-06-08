@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
-import Spinner from '../components/common/Spinner';
-import Petition from '../components/ui/petition/Petition';
-import Tabs from '../components/tabs/Tabs';
-import { Wrapper } from '../components/ui/petition/styles';
-import NotFound from './notFound/NotFound';
-import config from '../utils/config';
-import utils from '../utils';
+import Seo from "../components/common/Seo";
+import Spinner from "../components/common/Spinner";
+import Petition from "../components/ui/petition/Petition";
+import Tabs from "../components/tabs/Tabs";
+import { Wrapper } from "../components/ui/petition/styles";
+import NotFound from "./notFound/NotFound";
+import config from "../utils/config";
+import utils from "../utils";
 
 const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
@@ -31,7 +32,7 @@ const Petitions = ({ match }) => {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
       } catch (err) {
-        setError('Error occured');
+        setError("Error occured");
         // set error and show error page
       } finally {
         setLoading(false);
@@ -44,7 +45,7 @@ const Petitions = ({ match }) => {
         // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
-        setError('Error occured');
+        setError("Error occured");
       }
     };
     fetchPetitions();
@@ -63,6 +64,11 @@ const Petitions = ({ match }) => {
         <Spinner height="95vh" />
       ) : (
         <>
+          <Seo
+            title="Petitions"
+            description="Petitions are another way to show the level of public support for the Black Lives Matter movement"
+            image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/petition.png"
+          />
           <Wrapper>
             {petitions.length === 0 && !loading ? (
               <h2 className="not-found">NO PETITIONS FOUND</h2>
@@ -70,26 +76,40 @@ const Petitions = ({ match }) => {
               <h2>
                 {identifier
                   ? `PETITIONS FOR ${convertIdentifierToName(identifier)}`
-                  : 'PETITIONS'}
+                  : "PETITIONS"}
               </h2>
             )}
-            <p>Petitions are another way to show the level of public support for the Black Lives Matter movement.</p>
-            <p>SAY THEIR NAMES online and demonstrate to those in power that cause is important to you and you demand justice and change.</p>
-            <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
-            {petitions.filter((petition) => (
-              activeTab !== undefined ? petition.type.type === tabData[activeTab].type : petition
-            )).map((petition) => (
-              <Petition
-                key={petition.id}
-                id={petition.identifier}
-                title={petition.title}
-                description={petition.description}
-                link={petition.link}
-                img={petition.banner_img_url}
-                type={petition.type?.type}
-                path="sign"
-              />
-            ))}
+            <p>
+              Petitions are another way to show the level of public support for
+              the Black Lives Matter movement.
+            </p>
+            <p>
+              SAY THEIR NAMES online and demonstrate to those in power that
+              cause is important to you and you demand justice and change.
+            </p>
+            <Tabs
+              locations={tabData.map((type) => type.type)}
+              setState={setActiveTab}
+              currentTab={activeTab}
+            />
+            {petitions
+              .filter((petition) =>
+                activeTab !== undefined
+                  ? petition.type.type === tabData[activeTab].type
+                  : petition
+              )
+              .map((petition) => (
+                <Petition
+                  key={petition.id}
+                  id={petition.identifier}
+                  title={petition.title}
+                  description={petition.description}
+                  link={petition.link}
+                  img={petition.banner_img_url}
+                  type={petition.type?.type}
+                  path="sign"
+                />
+              ))}
           </Wrapper>
         </>
       )}
@@ -102,7 +122,7 @@ export default Petitions;
 Petitions.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      identifier: PropTypes.string
-    }).isRequired
-  }).isRequired
+      identifier: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
