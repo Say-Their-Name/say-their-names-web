@@ -64,6 +64,23 @@ const Donations = ({ match }) => {
       ) : (
         <>
           <Wrapper>
+            <p>
+              Donations provide financial support and power to the Black Lives
+              Movement to keep the pressure so we can change the system and get
+              justice.
+            </p>
+            <p>
+              {' '}
+              All donations sources on SAY THEIR NAMES are verified so you can
+              ensure that the money you are donating will be going towards the
+              movement.
+              {' '}
+            </p>
+            <Tabs
+              locations={tabData.map((type) => type.type)}
+              setState={setActiveTab}
+              currentTab={activeTab}
+            />
             <h2>
               {donations.length === 0 && !loading ? (
                 <h2 className="not-found">NO DONATION FOUND</h2>
@@ -75,23 +92,22 @@ const Donations = ({ match }) => {
                 </>
               )}
             </h2>
-            <p>Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice.</p>
-            <p> All donations sources on SAY THEIR NAMES are verified so you can ensure that the money you are donating will be going towards the movement. </p>
-            <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
-            {donations.filter((donation) => (
-              activeTab !== undefined ? donation.type.type === tabData[activeTab].type : donation
-            )).map((donation) => (
-              <Petition
-                key={donation.id}
-                id={donation.identifier}
-                title={donation.title}
-                description={donation.description}
-                link={donation.link}
-                img={donation.banner_img_url}
-                type={donation.type?.type}
-                path="donate"
-              />
-            ))}
+            {donations
+              .filter((donation) => (activeTab !== undefined
+                ? donation.type.type === tabData[activeTab].type
+                : donation))
+              .map((donation) => (
+                <Petition
+                  key={donation.id}
+                  id={donation.identifier}
+                  title={donation.title}
+                  description={donation.description}
+                  link={donation.link}
+                  img={donation.banner_img_url}
+                  type={donation.type?.type}
+                  path="donate"
+                />
+              ))}
           </Wrapper>
         </>
       )}
