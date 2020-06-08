@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import ErrorBoundry from '../components/common/ErrorBoundry';
 import Home from '../pages/Home';
-import About from '../pages/about/About';
+import About from '../pages/AboutPage';
 import Petitions from '../pages/Petitions';
 import ProfileDetail from '../pages/ProfileDetail';
+import AboutMobile from '../components/about/About';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import Donations from '../pages/Donations';
@@ -27,6 +27,15 @@ const AppRoutes = (props) => {
     }
   });
 
+  if (location.pathname === '/about-mobile') {
+    return (
+      <>
+        <Switch>
+          <Route path="/about-mobile" component={AboutMobile} exact />
+        </Switch>
+      </>
+    );
+  }
   return (
     <>
       <Navigation />

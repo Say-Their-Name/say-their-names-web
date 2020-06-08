@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from '../../components/common/Container';
+import Container from '../common/Container';
 import {
   StyledAbout,
   StyledAboutContainer,
@@ -8,7 +8,7 @@ import {
   StyledAboutBanner,
   StyledLinkContainer
 } from './styles';
-import { Button } from '../../components/profileDetails/styles';
+import { Button } from '../profileDetails/styles';
 import aboutbanner from '../../assets/aboutbanner.svg';
 import Variables from '../../constants/Variables';
 
