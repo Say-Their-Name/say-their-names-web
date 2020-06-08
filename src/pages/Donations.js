@@ -77,7 +77,10 @@ const Donations = ({ match }) => {
             </h2>
             <p>Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice.</p>
             <p> All donations sources on SAY THEIR NAMES are verified so you can ensure that the money you are donating will be going towards the movement. </p>
-            {donations.map((donation) => (
+            <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
+            {donations.filter((donation) => (
+              activeTab !== undefined ? donation.type.type === tabData[activeTab].type : donation
+            )).map((donation) => (
               <Petition
                 key={donation.id}
                 id={donation.identifier}
