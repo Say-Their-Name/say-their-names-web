@@ -16,7 +16,7 @@ const { apiBaseUrl } = config;
 
 const ProfileDetail = ({ match, location }) => {
   const { id } = match.params;
-  const { oldCurrentPage } = location.state;
+  const oldCurrentPage = location?.state?.oldCurrentPage;
 
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
