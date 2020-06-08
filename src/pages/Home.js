@@ -18,7 +18,7 @@ const Home = () => {
   const isSubsequentVisit = useRef(false);
   const location = useLocation();
   const history = useHistory();
-  const [currentPage, setCurrentPage] = useState(location?.state?.oldCurrentPage === undefined ? 1 : location.state.oldCurrentPage);
+  const [currentPage, setCurrentPage] = useState(location?.state?.oldCurrentPage ? location.state.oldCurrentPage : 1);
 
   const { data, error } = useSWR(
     `/people?page=${currentPage}`,
