@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import Seo from '../components/common/Seo';
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
 import Tabs from '../components/tabs/Tabs';
@@ -63,6 +64,11 @@ const Donations = ({ match }) => {
         <Spinner height="95vh" />
       ) : (
         <>
+          <Seo
+            title="Donations"
+            image=""
+            description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
+          />
           <Wrapper>
             <h2>
               {donations.length === 0 && !loading ? (
@@ -75,23 +81,39 @@ const Donations = ({ match }) => {
                 </>
               )}
             </h2>
-            <p>Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice.</p>
-            <p> All donations sources on SAY THEIR NAMES are verified so you can ensure that the money you are donating will be going towards the movement. </p>
-            <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
-            {donations.filter((donation) => (
-              activeTab !== undefined ? donation.type.type === tabData[activeTab].type : donation
-            )).map((donation) => (
-              <Petition
-                key={donation.id}
-                id={donation.identifier}
-                title={donation.title}
-                description={donation.description}
-                link={donation.link}
-                img={donation.banner_img_url}
-                type={donation.type?.type}
-                path="donate"
-              />
-            ))}
+            <p>
+              Donations provide financial support and power to the Black Lives
+              Movement to keep the pressure so we can change the system and get
+              justice.
+            </p>
+            <p>
+              {' '}
+              All donations sources on SAY THEIR NAMES are verified so you can
+              ensure that the money you are donating will be going towards the
+              movement.
+              {' '}
+            </p>
+            <Tabs
+              locations={tabData.map((type) => type.type)}
+              setState={setActiveTab}
+              currentTab={activeTab}
+            />
+            {donations
+              .filter((donation) => (activeTab !== undefined
+                ? donation.type.type === tabData[activeTab].type
+                : donation))
+              .map((donation) => (
+                <Petition
+                  key={donation.id}
+                  id={donation.identifier}
+                  title={donation.title}
+                  description={donation.description}
+                  link={donation.link}
+                  img={donation.banner_img_url}
+                  type={donation.type?.type}
+                  path="donate"
+                />
+              ))}
           </Wrapper>
         </>
       )}

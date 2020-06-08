@@ -28,7 +28,7 @@ const Petition = ({
 Petition.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   type: PropTypes.string,
   path: PropTypes.string

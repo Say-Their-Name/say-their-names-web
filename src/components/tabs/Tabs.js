@@ -19,21 +19,24 @@ const Tabs = ({ locations, currentTab, setState }) => {
     <TabNav>
       <Tab index={undefined} label="All" />
       {locations.map((item, i) => (
-        <Tab index={i} label={item} />
+        <Tab key={item} index={i} label={item} />
       ))}
     </TabNav>
   );
 };
-
 
 // Example Usage
 // const sampleData = ['One', 'Two', 'Three'];
 // const [activeTab, setActiveTab] = useState();
 // <Tabs locations={sampleData} setState={setActiveTab} currentTab={activeTab}/>
 
+Tabs.defaultProps = {
+  currentTab: ''
+};
+
 Tabs.propTypes = {
   locations: PropTypes.instanceOf(Array).isRequired,
-  currentTab: PropTypes.number.isRequired,
+  currentTab: PropTypes.string,
   setState: PropTypes.func.isRequired
 };
 

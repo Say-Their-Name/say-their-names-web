@@ -57,6 +57,7 @@ const Home = () => {
       <Seo
         title="Profiles"
         image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/meta-data/meta-data/logo.png"
+        description=""
       />
       <GetInvolved />
       <div ref={profileListRef}>
