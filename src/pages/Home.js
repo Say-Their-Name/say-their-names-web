@@ -57,7 +57,7 @@ const Home = () => {
       <Seo
         title="Home"
         image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/logo.png"
-        description=""
+        description="Our aim is to build an open-source platform that raises awareness of the injustice and often forgotten names of racial inequality"
       />
       <GetInvolved />
       <div ref={profileListRef}>
