@@ -73,6 +73,8 @@ const Petitions = ({ match }) => {
                   : 'PETITIONS'}
               </h2>
             )}
+            <p>Petitions are another way to show the level of public support for the Black Lives Matter movement.</p>
+            <p>SAY THEIR NAMES online and demonstrate to those in power that cause is important to you and you demand justice and change.</p>
             <Tabs locations={tabData.map((type) => type.type)} setState={setActiveTab} currentTab={activeTab} />
             {petitions.filter((petition) => (
               activeTab !== undefined ? petition.type.type === tabData[activeTab].type : petition
