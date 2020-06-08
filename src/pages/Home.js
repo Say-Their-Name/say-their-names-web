@@ -21,7 +21,8 @@ const Home = () => {
     async (url) => {
       const response = await axios.get(`${apiBaseUrl + url}`);
       return response.data;
-    }, {
+    },
+    {
       revalidateOnFocus: false
     }
   );
@@ -51,17 +52,27 @@ const Home = () => {
     <ProfileList profiles={profiles} />
   ));
 
-
   return (
     <div className="App">
-      <Seo />
+      <Seo
+        title="Profiles"
+        image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/meta-data/meta-data/logo.png"
+      />
       <GetInvolved />
       <div ref={profileListRef}>
-        {
-          !data && error?.request?.status !== 0 ? <Spinner height="60vh" /> : renderData()
-        }
+        {!data && error?.request?.status !== 0 ? (
+          <Spinner height="60vh" />
+        ) : (
+          renderData()
+        )}
       </div>
-      {data && <Pagination currentPage={currentPage} updateCurrentPage={updateCurrentPage} paginationData={paginationData} />}
+      {data && (
+        <Pagination
+          currentPage={currentPage}
+          updateCurrentPage={updateCurrentPage}
+          paginationData={paginationData}
+        />
+      )}
     </div>
   );
 };

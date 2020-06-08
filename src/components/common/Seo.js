@@ -1,42 +1,32 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Favicon from "../../assets/logo.png";
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 
-const Seo = () => (
+const Seo = ({ title, image, description }) => (
   <Helmet>
-    {/* <title>Meta Tags — Preview, Edit and Generate</title> */}
-    <meta name="title" content="Profiles" />
-    <meta name="description" content="Profiles" />
+    <meta name="title" content={`${title} | Say Their Names`} />
+    <meta name="description" content={description} />
 
     {/* Open Graph / Facebook - */}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metatags.io/" />
-    <meta
-      property="og:title"
-      content="Meta Tags — Preview, Edit and Generate"
-    />
-    <meta
-      property="og:description"
-      content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!"
-    />
-    <meta property="og:image" content={Favicon} />
+    <meta property="og:url" content="http://saytheirnames.io" />
+    <meta property="og:title" content={`${title} | Say Their Names`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
 
     {/* Twitter  */}
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://metatags.io/" />
-    <meta
-      property="twitter:title"
-      content="Meta Tags — Preview, Edit and Generate"
-    />
-    <meta
-      property="twitter:description"
-      content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!"
-    />
-    <meta
-      property="twitter:image"
-      content={Favicon}
-    />
+    <meta property="twitter:url" content="http://saytheirnames.io" />
+    <meta property="twitter:title" content={`${title} | Say Their Names`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
   </Helmet>
 );
 
 export default Seo;
+
+Seo.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};

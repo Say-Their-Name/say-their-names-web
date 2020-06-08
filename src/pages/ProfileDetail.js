@@ -7,7 +7,7 @@ import Spinner from '../components/common/Spinner';
 import Profile from '../components/profileDetails/PersonProfile';
 import BackNavigation from '../components/backNavigation/BackNavigation';
 import NewsList from '../components/ui/newsList/NewsList';
-
+import Seo from '../components/common/Seo';
 import Container from '../components/common/Container';
 import config from '../utils/config';
 import HashTags from '../components/ui/hashtags/HashTags';
@@ -37,7 +37,6 @@ const ProfileDetail = ({ match }) => {
     fetchdata();
   }, [id]);
 
-
   return (
     <>
       {error && (
@@ -49,6 +48,7 @@ const ProfileDetail = ({ match }) => {
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
+          <Seo title={person.full_name} image={person.images[0].image_url} description={person.their_story} />
           <BackNavigation
             text="BACK TO PROFILES"
             link={
