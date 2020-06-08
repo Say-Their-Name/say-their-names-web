@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TabActive, TabInactive } from './styles';
+import { TabActive, TabInactive, TabNav } from './styles';
 
 const Tabs = ({ locations, currentTab, setState }) => {
   const Tab = ({ index, label }) => {
@@ -16,12 +16,12 @@ const Tabs = ({ locations, currentTab, setState }) => {
   };
 
   return (
-    <nav style={{ marginTop: '100px' }}>
+    <TabNav>
       <Tab index={undefined} label="All" />
       {locations.map((item, i) => (
         <Tab index={i} label={item} />
       ))}
-    </nav>
+    </TabNav>
   );
 };
 
@@ -36,3 +36,5 @@ Tabs.propTypes = {
   currentTab: PropTypes.number.isRequired,
   setState: PropTypes.func.isRequired
 };
+
+export default Tabs;
