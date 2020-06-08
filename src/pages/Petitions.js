@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 import Seo from '../components/common/Seo';
 import Spinner from '../components/common/Spinner';
@@ -9,13 +8,10 @@ import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
-import utils from '../utils';
 
-const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
 
-const Petitions = ({ match }) => {
-  const { identifier } = match.params;
+const Petitions = () => {
   const [petitions, setPetitions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -24,10 +20,8 @@ const Petitions = ({ match }) => {
 
   useEffect(() => {
     const fetchPetitions = async () => {
-      let API_URL = `${apiBaseUrl}/petitions`;
-      if (identifier) {
-        API_URL = `${apiBaseUrl}/donations?name=${identifier}`;
-      }
+      const API_URL = `${apiBaseUrl}/petitions`;
+
       try {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
@@ -50,7 +44,7 @@ const Petitions = ({ match }) => {
     };
     fetchPetitions();
     fetchPetitionType();
-  }, [identifier]);
+  }, []);
 
   return (
     <>
@@ -73,11 +67,7 @@ const Petitions = ({ match }) => {
             {petitions.length === 0 && !loading ? (
               <h2 className="not-found">NO PETITIONS FOUND</h2>
             ) : (
-              <h2>
-                {identifier
-                  ? `PETITIONS FOR ${convertIdentifierToName(identifier)}`
-                  : 'PETITIONS'}
-              </h2>
+              <h2>PETITIONS</h2>
             )}
             <p>
               Petitions are another way to show the level of public support for
@@ -87,11 +77,13 @@ const Petitions = ({ match }) => {
               SAY THEIR NAMES online and demonstrate to those in power that
               cause is important to you and you demand justice and change.
             </p>
-            <Tabs
-              locations={tabData.map((type) => type.type)}
-              setState={setActiveTab}
-              currentTab={activeTab}
-            />
+            {petitions.length > 0 && !loading && (
+              <Tabs
+                locations={tabData.map((type) => type.type)}
+                setState={setActiveTab}
+                currentTab={activeTab}
+              />
+            )}
             {petitions
               .filter((petition) => (activeTab !== undefined
                 ? petition.type.type === tabData[activeTab].type
@@ -116,11 +108,3 @@ const Petitions = ({ match }) => {
 };
 
 export default Petitions;
-
-Petitions.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      identifier: PropTypes.string
-    }).isRequired
-  }).isRequired
-};

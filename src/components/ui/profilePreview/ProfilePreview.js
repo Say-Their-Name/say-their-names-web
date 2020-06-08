@@ -6,10 +6,10 @@ import { StyledProfilePreviewContainer, StyledProfilePreview } from './styles';
 
 
 const ProfilePreview = ({
-  id, fullName, dateOfIncident, image
+  id, fullName, dateOfIncident, image, currentPage
 }) => (
   <StyledProfilePreviewContainer>
-    <Link to={`/profile/${id}`}>
+    <Link to={{ pathname: `/profile/${id}`, state: { oldCurrentPage: currentPage } }}>
       <StyledProfilePreview>
         <div className="image-container">
           <img src={image.image_url} alt={fullName} />
@@ -35,5 +35,6 @@ ProfilePreview.propTypes = {
   image: PropTypes.shape({
     image_url: PropTypes.string.isRequired
   }).isRequired,
-  dateOfIncident: PropTypes.string.isRequired
+  dateOfIncident: PropTypes.string.isRequired,
+  currentPage: PropTypes.number.isRequired
 };

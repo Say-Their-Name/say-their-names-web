@@ -9,13 +9,10 @@ import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
-import utils from '../utils';
 
-const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
 
-const Donations = ({ match }) => {
-  const { identifier } = match.params;
+const Donations = () => {
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -24,10 +21,8 @@ const Donations = ({ match }) => {
 
   useEffect(() => {
     const fetchDonations = async () => {
-      let API_URL = `${apiBaseUrl}/donations`;
-      if (identifier) {
-        API_URL = `${apiBaseUrl}/donations?name=${identifier}`;
-      }
+      const API_URL = `${apiBaseUrl}/donations`;
+
       try {
         const res = await axios.get(API_URL);
         setDonations(res.data.data);
@@ -50,7 +45,7 @@ const Donations = ({ match }) => {
     };
     fetchDonations();
     fetchDonationType();
-  }, [identifier]);
+  }, []);
 
   return (
     <>
@@ -71,33 +66,30 @@ const Donations = ({ match }) => {
           />
           <Wrapper>
             <h2>
-              {donations.length === 0 && !loading ? (
-                <h2 className="not-found">NO DONATION FOUND</h2>
-              ) : (
-                <>
-                  {identifier
-                    ? `DONATIONS FOR ${convertIdentifierToName(identifier)}`
-                    : 'DONATIONS'}
-                </>
-              )}
+              <>DONATIONS</>
             </h2>
+
             <p>
               Donations provide financial support and power to the Black Lives
               Movement to keep the pressure so we can change the system and get
               justice.
             </p>
             <p>
-              {' '}
               All donations sources on SAY THEIR NAMES are verified so you can
               ensure that the money you are donating will be going towards the
               movement.
-              {' '}
             </p>
-            <Tabs
-              locations={tabData.map((type) => type.type)}
-              setState={setActiveTab}
-              currentTab={activeTab}
-            />
+            {donations.length > 0 && !loading && (
+              <Tabs
+                locations={tabData.map((type) => type.type)}
+                setState={setActiveTab}
+                currentTab={activeTab}
+              />
+            )}
+
+            {donations.length === 0 && !loading && (
+              <h2 className="not-found">NO DONATIONS FOUND</h2>
+            )}
             {donations
               .filter((donation) => (activeTab !== undefined
                 ? donation.type.type === tabData[activeTab].type

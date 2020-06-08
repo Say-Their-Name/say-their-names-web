@@ -45,7 +45,7 @@ const AppRoutes = (props) => {
           <Route path="/about" component={About} exact />
           <Route path="/profile/:id" component={ProfileDetail} exact />
           <Route path="/petitions" component={Petitions} exact />
-          <Route path="/donations/:identifier?" component={Donations} exact />
+          <Route path="/donations" component={Donations} exact />
           <Route path="/donate/:id" component={DonationDetail} exact />
           <Route path="/sign/:id" component={PetitionDetail} exact />
           <Route path="*" component={NotFound} exact />

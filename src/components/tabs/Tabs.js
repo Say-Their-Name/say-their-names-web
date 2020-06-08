@@ -31,12 +31,12 @@ const Tabs = ({ locations, currentTab, setState }) => {
 // <Tabs locations={sampleData} setState={setActiveTab} currentTab={activeTab}/>
 
 Tabs.defaultProps = {
-  currentTab: ''
+  currentTab: null
 };
 
 Tabs.propTypes = {
   locations: PropTypes.instanceOf(Array).isRequired,
-  currentTab: PropTypes.string,
+  currentTab: PropTypes.number,
   setState: PropTypes.func.isRequired
 };
 

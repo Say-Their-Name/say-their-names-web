@@ -11,6 +11,7 @@ const BackToProfiles = ({
   longText,
   linkText,
   backLink,
+  backState,
   external
 }) => {
   const [sticky, setSticky] = useState('static');
@@ -34,7 +35,7 @@ const BackToProfiles = ({
 
   return (
     <BackProfile style={{ position: sticky, top: 0 }}>
-      <Link to={backLink}>
+      <Link to={{ pathname: backLink, state: backState }}>
         <i className="fas fa-chevron-left" />
         <p>{text}</p>
       </Link>
@@ -64,6 +65,7 @@ export default BackToProfiles;
 
 BackToProfiles.defaultProps = {
   external: false,
+  backState: {},
   link: ''
 };
 BackToProfiles.propTypes = {
@@ -72,5 +74,6 @@ BackToProfiles.propTypes = {
   longText: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
   backLink: PropTypes.string.isRequired,
+  backState: PropTypes.shape({}),
   external: PropTypes.bool
 };
