@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import ErrorBoundry from '../components/common/ErrorBoundry';
 import Home from '../pages/Home';
-import About from '../pages/about/About';
+import About from '../pages/AboutPage';
 import Petitions from '../pages/Petitions';
 import ProfileDetail from '../pages/ProfileDetail';
 import Navigation from '../components/navigation/Navigation';
