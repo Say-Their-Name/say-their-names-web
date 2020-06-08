@@ -9,6 +9,7 @@ const Petition = ({
   id, title, description, img, type, path
 }) => {
   const imgAlt = `Image for ${title}`;
+
   return (
     <Card>
       <ImageDiv>
