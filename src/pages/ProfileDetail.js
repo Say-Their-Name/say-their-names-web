@@ -16,7 +16,8 @@ const { apiBaseUrl } = config;
 
 const ProfileDetail = ({ match, location }) => {
   const { id } = match.params;
-  const { currentPage } = location.state;
+  const { oldCurrentPage } = location.state;
+
   const [loading, setLoading] = useState(true);
   const [person, setPerson] = useState({});
   const [error, setError] = useState();
@@ -59,7 +60,8 @@ const ProfileDetail = ({ match, location }) => {
             }
             longText="Donate now to end Police brutality on minorities"
             linkText="DONATE"
-            backLink={`/?page=${currentPage}`}
+            backLink="/"
+            backState={{ oldCurrentPage }}
           />
           <Container>
             <Profile info={person} donation={donation} />
@@ -82,7 +84,7 @@ ProfileDetail.propTypes = {
   }).isRequired,
   location: PropTypes.shape({
     state: PropTypes.shape({
-      currentPage: PropTypes.number.isRequired
+      oldCurrentPage: PropTypes.number.isRequired
     })
   }).isRequired
 };

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -9,12 +10,16 @@ import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
+
 const { apiBaseUrl } = config;
 
 const Home = () => {
   const profileListRef = useRef(null);
   const isSubsequentVisit = useRef(false);
-  const [currentPage, setCurrentPage] = useState(1);
+  const location = useLocation();
+  const history = useHistory();
+  const [currentPage, setCurrentPage] = useState(location?.state?.oldCurrentPage === undefined ? 1 : location.state.oldCurrentPage);
+
   const { data, error } = useSWR(
     `/people?page=${currentPage}`,
     async (url) => {
@@ -39,7 +44,10 @@ const Home = () => {
     if (data) {
       isSubsequentVisit.current = true;
     }
-  }, [data]);
+
+    // Clear the location state to prevent always restoring the previous old page on manual browser refresh
+    history.replace('/', null);
+  }, [data, history]);
 
   const renderData = () => (!data && error.request?.status === 0 ? (
     <NotFound
@@ -47,7 +55,7 @@ const Home = () => {
       longMessage="Unable to load profiles"
     />
   ) : (
-    <ProfileList profiles={profiles} />
+    <ProfileList currentPage={currentPage} profiles={profiles} />
   ));
 
 
