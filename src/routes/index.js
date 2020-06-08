@@ -19,6 +19,7 @@ import { trackInitialPageView } from '../utils/gaTracker';
 const AppRoutes = (props) => {
   const { initialLoadProp, setInitialLoadProp } = props;
   const location = useLocation();
+
   useEffect(() => {
     if (!initialLoadProp) {
       setInitialLoadProp();
