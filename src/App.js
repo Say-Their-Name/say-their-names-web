@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Routes from './routes/index';
-import WebRoutes from './routes/Webview';
 
 import { trackPageView, initializeGA } from './utils/gaTracker';
 
@@ -18,7 +17,6 @@ const App = () => {
   return (
     <div className="App">
       <Routes initialLoadProp={initialLoad} setInitialLoadProp={() => setInitialLoad(true)} />
-      <WebRoutes initialLoadProp={initialLoad} setInitialLoadProp={() => setInitialLoad(true)} />
     </div>
   );
 };

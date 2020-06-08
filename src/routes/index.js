@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import About from '../pages/AboutPage';
 import Petitions from '../pages/Petitions';
 import ProfileDetail from '../pages/ProfileDetail';
+import AboutMobile from '../components/about/About';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
 import Donations from '../pages/Donations';
@@ -18,7 +19,6 @@ import { trackInitialPageView } from '../utils/gaTracker';
 const AppRoutes = (props) => {
   const { initialLoadProp, setInitialLoadProp } = props;
   const location = useLocation();
-
   useEffect(() => {
     if (!initialLoadProp) {
       setInitialLoadProp();
@@ -26,6 +26,15 @@ const AppRoutes = (props) => {
     }
   });
 
+  if (location.pathname === '/about-mobile') {
+    return (
+      <>
+        <Switch>
+          <Route path="/about-mobile" component={AboutMobile} exact />
+        </Switch>
+      </>
+    );
+  }
   return (
     <>
       <Navigation />
