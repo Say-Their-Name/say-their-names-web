@@ -19,7 +19,7 @@ const Tabs = ({ locations, currentTab, setState }) => {
     <TabNav>
       <Tab index={undefined} label="All" />
       {locations.map((item, i) => (
-        <Tab index={i} label={item} />
+        <Tab key={item} index={i} label={item} />
       ))}
     </TabNav>
   );
