@@ -1,6 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "yarn run lint:fix",
-    "pre-push": "yarn run test:all"
+    "pre-commit": "yarn run lint:fix"
   }
 }
