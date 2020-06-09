@@ -75,7 +75,7 @@ const Petitions = () => {
             </p>
             <p>
               SAY THEIR NAMES online and demonstrate to those in power that
-              cause is important to you and you demand justice and change.
+              the cause is important to you and you demand justice and change.
             </p>
             {petitions.length > 0 && !loading && (
               <Tabs
