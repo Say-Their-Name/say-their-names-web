@@ -40,8 +40,8 @@ const About = () => (
         <p>
           Say Their Names is a social movement to raise awareness for all
           the black victims of racial inequality all around the world. This
-          movement is in response to the Black Lives Matter movement and aims to
-          highlight Individuals affected by anti-Black Violence. Say Their Names
+          movement is in support of the overall Black Lives Matter movement and aims to
+          highlight individuals affected by anti-Black Violence. Say Their Names
           movement calls attention and demands justice for all victims.
         </p>
       </StyledAboutContainer>
@@ -57,7 +57,7 @@ const About = () => (
               href={Variables.TWITTER_URL}
               rel="noopener noreferrer"
             >
-              Twitter
+              Twitter.
             </a>
           </LinkStyle>
         </p>
@@ -66,18 +66,15 @@ const About = () => (
       <StyledLinkContainer>
         <StyledAboutContainer className="AboutContainer">
           <h3> DID WE MISS SOMEONE?</h3>
-          <p>
-            Request to add a name &nbsp;
-            <LinkStyle>
-              <a
-                target="_blank"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSc_AnI5Ix4wySnFvio1PKrdJNmX86JU4oF2pEWKHp7HXjBZ4w/viewform"
-                rel="noopener noreferrer"
-              >
-                here
-              </a>
-            </LinkStyle>
-          </p>
+          <Button>
+            <a
+              target="_blank"
+              href="https://airtable.com/shr6Da28410B2Muy3"
+              rel="noopener noreferrer"
+            >
+              <button type="button">Request to Add a Name</button>
+            </a>
+          </Button>
         </StyledAboutContainer>
 
         <StyledAboutContainer className="AboutContainer">
