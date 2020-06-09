@@ -64,7 +64,7 @@ const Home = () => {
     <div className="App">
       <Seo
         title="Home"
-        image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/logo.png"
+        image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/stn-logo.png"
         description="Our aim is to build an open-source platform that raises awareness of the injustice and often forgotten names of racial inequality"
       />
       <GetInvolved />

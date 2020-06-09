@@ -6,7 +6,7 @@ const Tabs = ({ locations, currentTab, setState }) => {
   const Tab = ({ index, label }) => {
     Tab.propTypes = {
       index: PropTypes.number.isRequired,
-      label: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired
     };
 
     if (index === currentTab) {
@@ -31,13 +31,13 @@ const Tabs = ({ locations, currentTab, setState }) => {
 // <Tabs locations={sampleData} setState={setActiveTab} currentTab={activeTab}/>
 
 Tabs.defaultProps = {
-  currentTab: null,
+  currentTab: null
 };
 
 Tabs.propTypes = {
   locations: PropTypes.instanceOf(Array).isRequired,
   currentTab: PropTypes.number,
-  setState: PropTypes.func.isRequired,
+  setState: PropTypes.func.isRequired
 };
 
 export default Tabs;
