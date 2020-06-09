@@ -25,15 +25,18 @@ const Tabs = ({ locations, currentTab, setState }) => {
   );
 };
 
-
 // Example Usage
 // const sampleData = ['One', 'Two', 'Three'];
 // const [activeTab, setActiveTab] = useState();
 // <Tabs locations={sampleData} setState={setActiveTab} currentTab={activeTab}/>
 
+Tabs.defaultProps = {
+  currentTab: null
+};
+
 Tabs.propTypes = {
   locations: PropTypes.instanceOf(Array).isRequired,
-  currentTab: PropTypes.number.isRequired,
+  currentTab: PropTypes.number,
   setState: PropTypes.func.isRequired
 };
 

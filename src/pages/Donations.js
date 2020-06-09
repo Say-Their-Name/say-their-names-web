@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import Seo from '../components/common/Seo';
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
 import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
-import utils from '../utils';
 
-const { convertIdentifierToName } = utils;
 const { apiBaseUrl } = config;
 
-const Donations = ({ match }) => {
-  const { identifier } = match.params;
+const Donations = () => {
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -23,10 +21,8 @@ const Donations = ({ match }) => {
 
   useEffect(() => {
     const fetchDonations = async () => {
-      let API_URL = `${apiBaseUrl}/donations`;
-      if (identifier) {
-        API_URL = `${apiBaseUrl}/donations?name=${identifier}`;
-      }
+      const API_URL = `${apiBaseUrl}/donations`;
+
       try {
         const res = await axios.get(API_URL);
         setDonations(res.data.data);
@@ -49,7 +45,7 @@ const Donations = ({ match }) => {
     };
     fetchDonations();
     fetchDonationType();
-  }, [identifier]);
+  }, []);
 
   return (
     <>
@@ -63,7 +59,16 @@ const Donations = ({ match }) => {
         <Spinner height="95vh" />
       ) : (
         <>
+          <Seo
+            title="Donations"
+            image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/petition.png"
+            description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
+          />
           <Wrapper>
+            <h2>
+              <>DONATIONS</>
+            </h2>
+
             <p>
               Donations provide financial support and power to the Black Lives
               Movement to keep the pressure so we can change the system and get
@@ -74,22 +79,17 @@ const Donations = ({ match }) => {
               ensure that the money you are donating will be going towards the
               movement.
             </p>
-            <Tabs
-              locations={tabData.map((type) => type.type)}
-              setState={setActiveTab}
-              currentTab={activeTab}
-            />
-            <h2>
-              {donations.length === 0 && !loading ? (
-                <h2 className="not-found">NO DONATIONS FOUND</h2>
-              ) : (
-                <>
-                  {identifier
-                    ? `DONATIONS FOR ${convertIdentifierToName(identifier)}`
-                    : 'DONATIONS'}
-                </>
-              )}
-            </h2>
+            {donations.length > 0 && !loading && (
+              <Tabs
+                locations={tabData.map((type) => type.type)}
+                setState={setActiveTab}
+                currentTab={activeTab}
+              />
+            )}
+
+            {donations.length === 0 && !loading && (
+              <h2 className="not-found">NO DONATIONS FOUND</h2>
+            )}
             {donations
               .filter((donation) => (activeTab !== undefined
                 ? donation.type.type === tabData[activeTab].type
