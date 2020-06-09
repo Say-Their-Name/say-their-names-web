@@ -55,7 +55,7 @@ const DonationDetail = ({ match }) => {
           <BackNavigation
             text="BACK TO DONATIONS"
             link={donationDetails.link}
-            longText="Donate now to end Police brutality on minorities"
+            longText="Donate now to end racial inequality on minorities"
             linkText="DONATE NOW"
             backLink="/donations"
             external

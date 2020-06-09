@@ -58,7 +58,7 @@ const ProfileDetail = ({ match, location }) => {
                 ? `/donate/${donation.identifier}`
                 : ''
             }
-            longText="Donate now to end Police brutality on minorities"
+            longText="Donate now to end racial inequality on minorities"
             linkText="DONATE"
             backLink="/"
             backState={{ oldCurrentPage }}
