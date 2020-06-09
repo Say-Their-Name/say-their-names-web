@@ -31,7 +31,7 @@ const StyledHashTags = styled.section`
     
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      transform: scale(1.01);
     }
 
     p {
