@@ -49,7 +49,7 @@ const PetitionDetail = ({ match }) => {
           <BackNavigation
             text="BACK TO PETITIONS"
             link={petitionDetails.link}
-            longText="Sign now to end Police brutality on minorities"
+            longText="Sign now to end racial inequality on minorities"
             linkText="SIGN THIS PETITION"
             backLink="/petitions"
             external

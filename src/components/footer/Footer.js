@@ -34,7 +34,7 @@ const Footer = () => (
           <StyledFooterMissions>
             <p>
               SAY THEIR NAMES is a place to commemorate the death of our black
-              kings and queens murdered by police brutality. SAY THEIR NAMES
+              kings and queens who were victims of racial inequality. SAY THEIR NAMES
               makes it easy to donate, raise awareness, and sign petitions.
               <br />
               <br />
