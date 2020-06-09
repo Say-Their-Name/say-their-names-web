@@ -32,7 +32,7 @@ const PersonProfile = (props) => {
     country,
     donation_links
   } = info;
-console.log(info)
+
   return (
     <Profile>
       <PersonalInformation>
