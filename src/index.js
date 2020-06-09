@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+// import { HelmetProvider } from 'react-helmet-async';
 
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
@@ -10,18 +10,47 @@ import GlobalStyle from './styles';
 import ScrollToTop from './components/common/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.hydrate(
-  <React.StrictMode>
-    <HelmetProvider>
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrate(
+    <React.StrictMode>
+      {/* <HelmetProvider> */}
       <Router>
         <GlobalStyle whiteColor />
         <ScrollToTop />
         <App />
       </Router>
-    </HelmetProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+      {/* </HelmetProvider> */}
+    </React.StrictMode>,
+    rootElement
+  );
+} else {
+  ReactDOM.render(
+    <React.StrictMode>
+      {/* <HelmetProvider> */}
+      <Router>
+        <GlobalStyle whiteColor />
+        <ScrollToTop />
+        <App />
+      </Router>
+      {/* </HelmetProvider> */}
+    </React.StrictMode>,
+    rootElement
+  );
+}
+
+// ReactDOM.hydrate(
+//   <React.StrictMode>
+//     {/* <HelmetProvider> */}
+//     <Router>
+//       <GlobalStyle whiteColor />
+//       <ScrollToTop />
+//       <App />
+//     </Router>
+//     {/* </HelmetProvider> */}
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
