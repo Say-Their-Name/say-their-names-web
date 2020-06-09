@@ -65,7 +65,7 @@ const ProfileDetail = ({ match, location }) => {
           />
           <Container>
             <Profile info={person} donation={donation} />
-            <NewsList newsList={person.media_links} />
+            <NewsList newsList={person.news} />
             <HashTags hashtags={person.hash_tags} />
           </Container>
         </>
