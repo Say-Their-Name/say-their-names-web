@@ -104,9 +104,9 @@ PersonProfile.propTypes = {
   info: PropTypes.shape({
     images: PropTypes.array.isRequired,
     full_name: PropTypes.string.isRequired,
-    age: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired,
     city: PropTypes.string.isRequired,
-    number_of_children: PropTypes.string,
+    number_of_children: PropTypes.number,
     id: PropTypes.number.isRequired,
     identifier: PropTypes.string.isRequired,
     their_story: PropTypes.string.isRequired,
