@@ -57,7 +57,7 @@ const About = () => (
               href={Variables.TWITTER_URL}
               rel="noopener noreferrer"
             >
-              Twitter &nbsp;
+              Twitter
             </a>
           </LinkStyle>
         </p>
@@ -74,7 +74,7 @@ const About = () => (
                 href="https://docs.google.com/forms/d/e/1FAIpQLSc_AnI5Ix4wySnFvio1PKrdJNmX86JU4oF2pEWKHp7HXjBZ4w/viewform"
                 rel="noopener noreferrer"
               >
-                here &nbsp;
+                here
               </a>
             </LinkStyle>
           </p>
