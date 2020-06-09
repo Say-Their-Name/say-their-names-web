@@ -8,45 +8,22 @@ import GlobalStyle from './styles';
 import ScrollToTop from './components/common/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
+const app = (
+  <React.StrictMode>
+    <Router>
+      <GlobalStyle whiteColor />
+      <ScrollToTop />
+      <App />
+    </Router>
+  </React.StrictMode>
+);
+
 const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(
-    <React.StrictMode>
-      <Router>
-        <GlobalStyle whiteColor />
-        <ScrollToTop />
-        <App />
-      </Router>
-    </React.StrictMode>,
-    rootElement
-  );
+  ReactDOM.hydrate(app, rootElement);
 } else {
-  ReactDOM.render(
-    <React.StrictMode>
-      {/* <HelmetProvider> */}
-      <Router>
-        <GlobalStyle whiteColor />
-        <ScrollToTop />
-        <App />
-      </Router>
-      {/* </HelmetProvider> */}
-    </React.StrictMode>,
-    rootElement
-  );
+  ReactDOM.render(app, rootElement);
 }
-
-// ReactDOM.hydrate(
-//   <React.StrictMode>
-//     {/* <HelmetProvider> */}
-//     <Router>
-//       <GlobalStyle whiteColor />
-//       <ScrollToTop />
-//       <App />
-//     </Router>
-//     {/* </HelmetProvider> */}
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
