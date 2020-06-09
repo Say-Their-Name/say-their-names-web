@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const Seo = ({ title, image, description }) => (
   <Helmet>
+    <title>{`${title} | Say Their Names`}</title>
     <meta name="title" content={`${title} | Say Their Names`} />
     <meta name="description" content={description} />
 
