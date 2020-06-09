@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Routes from './routes/index';
-import Seo from './components/common/Seo'
+import Seo from './components/common/Seo';
 import { trackPageView, initializeGA } from './utils/gaTracker';
 
 initializeGA();
