@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { HelmetProvider } from 'react-helmet-async';
-
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import App from './App';
@@ -14,13 +12,11 @@ const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
   ReactDOM.hydrate(
     <React.StrictMode>
-      {/* <HelmetProvider> */}
       <Router>
         <GlobalStyle whiteColor />
         <ScrollToTop />
         <App />
       </Router>
-      {/* </HelmetProvider> */}
     </React.StrictMode>,
     rootElement
   );
