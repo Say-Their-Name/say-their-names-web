@@ -1,7 +1,8 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 import App from './App';
@@ -9,13 +10,15 @@ import GlobalStyle from './styles';
 import ScrollToTop from './components/common/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
-    <Router>
-      <GlobalStyle whiteColor />
-      <ScrollToTop />
-      <App />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <GlobalStyle whiteColor />
+        <ScrollToTop />
+        <App />
+      </Router>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
