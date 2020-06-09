@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import Seo from '../components/common/Seo';
 import ActionDetailsHeader from '../components/ui/actionDetailsHeader/ActionDetailsHeader';
 import BackNavigation from '../components/backNavigation/BackNavigation';
 import ActionDetailsContent from '../components/ui/actionDetailsContent/ActionDetailsContent';
@@ -37,15 +38,20 @@ const PetitionDetail = ({ match }) => {
   return (
     <>
       {error && (
-      <NotFound
-        message="Oops!!! Something went wrong"
-        longMessage="Unable to load petition detail"
-      />
+        <NotFound
+          message="Oops!!! Something went wrong"
+          longMessage="Unable to load petition detail"
+        />
       )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
         <>
+          <Seo
+            title={petitionDetails.title}
+            description={petitionDetails.description}
+            image={petitionDetails.banner_img_url}
+          />
           <BackNavigation
             text="BACK TO PETITIONS"
             link={petitionDetails.link}
@@ -75,7 +81,6 @@ const PetitionDetail = ({ match }) => {
 };
 
 export default PetitionDetail;
-
 
 PetitionDetail.propTypes = {
   match: PropTypes.shape({

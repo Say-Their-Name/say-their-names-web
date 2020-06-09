@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   width: 800px;
   margin: 0 auto;
   margin-bottom: 100px;
+  min-height: 70vh;
 
   @media (max-width: 1300px) {
     width: 70%;

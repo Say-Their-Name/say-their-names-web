@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import Seo from '../components/common/Seo';
 import ActionDetailsHeader from '../components/ui/actionDetailsHeader/ActionDetailsHeader';
 import BackNavigation from '../components/backNavigation/BackNavigation';
 import ActionDetailsContent from '../components/ui/actionDetailsContent/ActionDetailsContent';
@@ -46,6 +47,11 @@ const DonationDetail = ({ match }) => {
         <Spinner height="95vh" />
       ) : (
         <>
+          <Seo
+            title={donationDetails.title}
+            description={donationDetails.description}
+            image={donationDetails.banner_img_url}
+          />
           <BackNavigation
             text="BACK TO DONATIONS"
             link={donationDetails.link}
