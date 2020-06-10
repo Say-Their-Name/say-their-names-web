@@ -7,9 +7,7 @@ import Container from '../../common/Container';
 
 const ProfileList = ({ profiles, currentPage }) => (
   <Container>
-    {profiles.length === 0 && (
-      <H2 className="not-found">No profiles found</H2>
-    )}
+    {profiles.length === 0 && <H2 className="not-found">No profiles found</H2>}
     <StyledProfileList>
       {profiles.length > 0
         && profiles.map((profile) => (
