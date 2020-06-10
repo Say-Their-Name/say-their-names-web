@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ErrorBoundry from '../components/common/ErrorBoundry';
+import ErrorBoundary from '../components/common/ErrorBoundary';
 import Home from '../pages/Home';
 import About from '../pages/AboutPage';
 import Petitions from '../pages/Petitions';
@@ -39,7 +39,7 @@ const AppRoutes = (props) => {
   return (
     <>
       <Navigation />
-      <ErrorBoundry key={location.pathname}>
+      <ErrorBoundary key={location.pathname}>
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} exact />
@@ -50,7 +50,7 @@ const AppRoutes = (props) => {
           <Route path="/sign/:id" component={PetitionDetail} exact />
           <Route path="*" component={NotFound} exact />
         </Switch>
-      </ErrorBoundry>
+      </ErrorBoundary>
       <Footer />
     </>
   );
