@@ -13,7 +13,7 @@ const TabActive = styled.a`
   @media (max-width: 610px) {
     font-size: 12px;
   }
-  
+
   &:before {
     position: absolute;
     top: 0;
@@ -54,10 +54,6 @@ const TabNav = styled.nav`
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-
-  @media (max-width: 610px) {
-    justify-content: center;
-  }
 `;
 
 export { TabActive, TabInactive, TabNav };
