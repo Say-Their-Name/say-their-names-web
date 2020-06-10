@@ -161,7 +161,7 @@ const StyledFooterMissions = styled.div`
   }
 `;
 
-const DowloadLogo = styled.div`
+const DownloadLogo = styled.div`
   display: flex;
 justify-content: flex-start;
   img {
@@ -177,5 +177,5 @@ export {
   StyledFooterMissions,
   StyleFooterForm,
   FooterContainer,
-  DowloadLogo
+  DownloadLogo
 };
