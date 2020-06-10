@@ -14,6 +14,14 @@ const CardContent = styled.div`
   h3 {
     font-size: 2rem;
     margin: 0;
+
+    @media (max-width: 800px) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1.2rem;
+    }
   }
 
   a {
@@ -72,6 +80,4 @@ const Type = styled.p`
   padding: 5px;
 `;
 
-export {
-  Card, Wrapper, CardContent, Image, ImageDiv, Type
-};
+export { Card, Wrapper, CardContent, Image, ImageDiv, Type };
