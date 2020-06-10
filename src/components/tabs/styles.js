@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import Color from '../../constants/Color';
 
 const TabActive = styled.a`
-  /* padding: 15px 32px; */
-  padding: 0.7rem 1rem;
-  font-size: 16px;
+  padding: 0.7rem;
+  font-weight: bold;
+
+  font-size: 14px;
   color: #fff;
   background: ${Color.PRIMARY};
   text-transform: uppercase;
@@ -21,9 +22,10 @@ const TabActive = styled.a`
 
 const TabInactive = styled.a`
   color: ${Color.PRIMARY};
-  padding: 0.7rem 1rem;
-  font-size: 16px;
-  border: 2px solid ${Color.PRIMARY};
+  padding: 0.7rem;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid ${Color.PRIMARY};
   text-transform: uppercase;
   margin-right: 5px;
   cursor: pointer;
@@ -44,6 +46,7 @@ const TabNav = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-items: center;
 
   @media (max-width: 610px) {
     justify-content: center;
