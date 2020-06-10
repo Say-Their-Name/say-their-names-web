@@ -80,4 +80,6 @@ const Type = styled.p`
   padding: 5px;
 `;
 
-export { Card, Wrapper, CardContent, Image, ImageDiv, Type };
+export {
+  Card, Wrapper, CardContent, Image, ImageDiv, Type
+};

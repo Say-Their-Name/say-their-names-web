@@ -62,7 +62,7 @@ const Petitions = () => {
             title="Petitions"
             description="Petitions are another way to show the level of public support for the Black Lives Matter movement"
             image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
-            />
+          />
           <Wrapper>
             {petitions.length === 0 && !loading ? (
               <h2 className="not-found">NO PETITIONS FOUND</h2>
