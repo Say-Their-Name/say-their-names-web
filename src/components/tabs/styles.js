@@ -4,13 +4,16 @@ import Color from '../../constants/Color';
 const TabActive = styled.a`
   padding: 0.7rem;
   font-weight: bold;
-
   font-size: 14px;
   color: #fff;
   background: ${Color.PRIMARY};
   text-transform: uppercase;
   margin-right: 5px;
 
+  @media (max-width: 610px) {
+    font-size: 12px;
+  }
+  
   &:before {
     position: absolute;
     top: 0;
@@ -30,6 +33,10 @@ const TabInactive = styled.a`
   margin-right: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 610px) {
+    font-size: 12px;
+  }
 
   &:hover {
     background-color: ${Color.PRIMARY};

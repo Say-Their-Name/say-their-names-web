@@ -4,12 +4,8 @@ const StyledGetInvolved = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-
-  @media (max-width: 1000px) {
-    justify-content: space-between;
-  }
 
   @media (max-width: 800px) {
     justify-content: center;
@@ -18,18 +14,15 @@ const StyledGetInvolved = styled.div`
   .image-container {
     width: 45%;
 
-    @media (max-width: 1000px) {
-      width: 50%;
-    }
-    @media (max-width: 800px) {
-      width: 80%;
+    @media (max-width: 900px) {
+      width: 55%;
     }
 
     @media (max-width: 650px) {
-      width: 95%;
+      width: 90%;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 550px) {
       width: 100%;
     }
 
@@ -39,34 +32,26 @@ const StyledGetInvolved = styled.div`
   }
 
   .details {
-    width: 45%;
+    width: 35%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 3rem;
+    margin-left: 2rem;
 
-    @media (max-width: 1000px) {
-      margin-left: 0;
-    }
-
-    @media (max-width: 800px) {
+    @media (max-width: 650px) {
       width: 80%;
       justify-content: center;
       text-align: center;
+      margin-left: 0;
     }
 
-    @media (max-width: 650px) {
-      width: 95%;
-    }
-
-    @media (max-width: 500px) {
-      width: 100%;
+    @media (max-width: 550px) {
+      width: 90%;
     }
 
     h1 {
       font-size: 4rem;
-      text-align: center;
 
-      @media (max-width: 1200px) {
+      @media (max-width: 950px) {
         font-size: 3rem;
       }
     }
