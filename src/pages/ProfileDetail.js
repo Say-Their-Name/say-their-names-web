@@ -52,7 +52,7 @@ const ProfileDetail = ({ match, location }) => {
         <>
           <Seo title={person.full_name} image={person.images[0].image_url} description={person.their_story} />
           <BackNavigation
-            text="BACK TO PROFILES"
+            text="BACK TO VICTIMS"
             link={
               person.donation_links.length > 0
                 ? `/donate/${donation.identifier}`
