@@ -61,7 +61,10 @@ describe('<PersonProfile />', () => {
   test('renders N/A when num_of_children is 0', () => {
     const history = createMemoryHistory();
     const noChildrenInfo = info;
-    noChildrenInfo.number_of_children = 0;
+    const noChildrenInfo = {
+       ...info,
+       number_of_children: 0,
+    };
     const { getByText } = render(
       <Router history={history}>
         <PersonProfile info={noChildrenInfo} donation={donation} />
