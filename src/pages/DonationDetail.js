@@ -35,14 +35,17 @@ const DonationDetail = ({ match }) => {
     fetchdata();
   }, [id]);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load donation detail"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load donation detail"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
