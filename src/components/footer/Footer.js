@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Container from '../common/Container';
-import Geogle from '../../assets/GooglePlaybadge.svg';
+import Google from '../../assets/GooglePlaybadge.svg';
 import Apple from '../../assets/AppStorebadge.svg';
 import Twitter from '../../assets/twitter.svg';
+import Instagram from '../../assets/instagram.svg';
+import Facebook from '../../assets/facebook.svg';
 import Variables from '../../constants/Variables';
 
 import {
@@ -13,7 +15,7 @@ import {
   StyledFooterLinks,
   FooterContainer,
   StyledFooterMissions,
-  DowloadLogo
+  DownloadLogo
 } from './style';
 
 const Footer = () => (
@@ -48,24 +50,49 @@ const Footer = () => (
             <br />
             SAY THEIR NAMES app
           </p>
-          <DowloadLogo>
+          <DownloadLogo>
             <a href={Variables.IOS_URL}>
               <img src={Geogle} alt="google-playstore" />
             </a>
             <a href={Variables.ANDROID_URL}>
               <img src={Apple} alt="apple-store" />
             </a>
-          </DowloadLogo>
+          </DownloadLogo>
         </StyledFooter>
         <StyledFooter>
           <h2>JOIN US ON SOCIAL MEDIA</h2>
+            <a
+              style={{ marginTop: '1rem', textDecoration: 'none' }}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={Variables.TWITTER_URL}
+            >
+              <img src={Twitter} alt="twitter-handle" />
+          <p>
+            Twitter
+          </p>
+          </a>
           <a
             style={{ marginTop: '1rem', textDecoration: 'none' }}
             target="_blank"
             rel="noopener noreferrer"
-            href={Variables.TWITTER_URL}
+            href={Variables.FACEBOOK_URL}
           >
-            <img src={Twitter} alt="twitter-handle" />
+              <img src={Facebook} alt="facebook-handle" />
+              <p>
+               Facebook
+           </p>
+          </a>
+          <a
+            style= {{ marginTop: '1rem', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={Variables.INSTAGRAM_URL}
+          >
+              <img src={Instagram} alt="instagram-handle" />
+              <p>
+              Instagram
+            </p>
           </a>
         </StyledFooter>
       </FooterContainer>
