@@ -30,6 +30,12 @@ const StyledFooter = styled.div`
   };
   background-color: ${Color.WHITE};
 
+  p {
+    color: ${Color.PRIMARY};
+    align-items: flex-start;
+    margin: 0;   
+  };
+
   @media (max-width: 780px) {
     width: 100%;
     align-items: center;
