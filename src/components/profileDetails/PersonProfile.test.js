@@ -64,22 +64,10 @@ describe('<PersonProfile />', () => {
     noChildrenInfo.number_of_children = 0;
     const { getByText } = render(
       <Router history={history}>
-        <PersonProfile info={info} donation={donation} />
+        <PersonProfile info={noChildrenInfo} donation={donation} />
       </Router>
     );
-
-    expect(getByText('FULL NAME'));
-    expect(getByText('full name'));
-    expect(getByText('AGE'));
-    expect(getByText('30'));
     expect(getByText('CHILDREN'));
     expect(getByText('N/A'));
-    expect(getByText('LOCATION'));
-    expect(getByText('city, country'));
-    expect(getByText('DONATE'));
-    expect(getByText('THEIR STORY'));
-    expect(getByText('sample story'));
-    expect(getByText('Context'));
-    expect(getByText('sample outcome'));
   });
 });
