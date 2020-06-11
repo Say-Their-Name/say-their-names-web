@@ -87,7 +87,7 @@ const SearchBar = ({ victims }) => {
         );
       }
     } catch (err) {
-      console.log(err);
+      setError(err);
     }
   };
 
