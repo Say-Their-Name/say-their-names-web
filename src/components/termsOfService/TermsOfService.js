@@ -11,7 +11,7 @@ const TermsOfService = () => (
         <p>
           By accessing the website at
           {' '}
-          <Link to="/">http://saytheirnames.io</Link>
+          <Link to="/">https://saytheirnames.io</Link>
           , you are agreeing to be
           bound by these terms of service, all applicable laws and regulations,
           and agree that you are responsible for compliance with any applicable

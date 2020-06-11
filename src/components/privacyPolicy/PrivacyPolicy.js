@@ -25,7 +25,7 @@ const PrivacyPolicy = () => (
 
         <p>
           This Privacy Policy applies only to our online activities and is valid
-          for visitors to our  and mobile apps with regards to the information that they
+          for visitors to our website and mobile apps with regards to the information that they
           shared and/or collect in Say Their Names. This policy is not
           applicable to any information collected offline or via channels other
           than this website and our mobile apps.
