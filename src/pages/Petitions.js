@@ -29,6 +29,7 @@ const Petitions = () => {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
         setPaginationData(res.data.meta);
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -108,11 +109,15 @@ const Petitions = () => {
                   path="sign"
                 />
               ))}
-            <Pagination
-              paginationData={paginationData}
-              currentPage={paginationData.current_page}
-              updateCurrentPage={setCurrentPage}
-            />
+            {petitions.filter((petition) => (activeTab !== undefined
+              ? petition.type.type === tabData[activeTab].type
+              : petition)).length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  currentPage={paginationData.current_page}
+                  updateCurrentPage={setCurrentPage}
+                />
+            )}
           </Wrapper>
         </>
       )}
