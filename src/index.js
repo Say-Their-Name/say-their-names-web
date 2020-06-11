@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 if (process.env.NODE_ENV !== 'production') {
   (async () => {
     const axe = (await import('react-axe')).default;
-    axe(React, ReactDOM, 1000);
+    axe(React, ReactDOM, 2000);
   })();
 }
 
