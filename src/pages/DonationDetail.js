@@ -19,7 +19,7 @@ const getSocialCopy = (donationDetails) => {
     socialCopy = `Join me in donating to ${donationDetails.person.full_name}’s fund, and supporting their family’s fight for justice. 
 #SayTheirNames #BlackLivesMatter #${donationDetails.person.full_name.replace(/\s+/g, '')}`;
   } else {
-    socialCopy = `The movement goes on. Join me in supporting ${donationDetails.fund} and let’s help fuel the campaign for justice together. #BlackLivesMatter #SayTheirNames`;
+    socialCopy = `The movement goes on. Join me in supporting ${donationDetails.fund} and let’s fuel the campaign for justice together. #BlackLivesMatter #SayTheirNames`;
   }
 
   return socialCopy;
