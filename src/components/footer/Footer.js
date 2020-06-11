@@ -67,7 +67,6 @@ const Footer = () => (
           >
             <img src={Twitter} alt="twitter-handle" />
           </a>
-          </a>
           <a
             style={{ marginTop: '1rem', textDecoration: 'none' }}
             target="_blank"
@@ -77,7 +76,7 @@ const Footer = () => (
             <img src={Facebook} alt="facebook-handle" />
           </a>
           <a
-            style = {{ marginTop: '1rem', textDecoration: 'none' }}
+            style={{ marginTop: '1rem', textDecoration: 'none' }}
             target="_blank"
             rel="noopener noreferrer"
             href={Variables.INSTAGRAM_URL}
@@ -91,3 +90,4 @@ const Footer = () => (
 );
 
 export default Footer;
+
