@@ -151,6 +151,7 @@ describe('<Donations />', () => {
         <Donations match={{ params: { id: '1' } }} />
       </Router>
     );
+    // console.log(getByText(''));
 
     await wait(() => expect(getByText('NO DONATIONS FOUND')));
   });
