@@ -10,38 +10,36 @@ const ProfilePreview = ({
   dateOfIncident,
   image,
   currentPage
-}) => {
-  return (
-    <StyledProfilePreviewContainer>
-      <Link
-        to={{
-          pathname: `/profile/${id}`,
-          state: { oldCurrentPage: currentPage }
-        }}
-      >
-        <StyledProfilePreview>
-          <div className="image-container">
-            <img
-              src={
+}) => (
+  <StyledProfilePreviewContainer>
+    <Link
+      to={{
+        pathname: `/profile/${id}`,
+        state: { oldCurrentPage: currentPage }
+      }}
+    >
+      <StyledProfilePreview>
+        <div className="image-container">
+          <img
+            src={
                 image
                   ? image.image_url
                   : 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
               }
-              alt={fullName}
-            />
-          </div>
+            alt={fullName}
+          />
+        </div>
 
-          <div className="profile-preview-container">
-            <div className="profile-preview">
-              <h3>{fullName}</h3>
-              <p>{dateOfIncident}</p>
-            </div>
+        <div className="profile-preview-container">
+          <div className="profile-preview">
+            <h3>{fullName}</h3>
+            <p>{dateOfIncident}</p>
           </div>
-        </StyledProfilePreview>
-      </Link>
-    </StyledProfilePreviewContainer>
-  );
-};
+        </div>
+      </StyledProfilePreview>
+    </Link>
+  </StyledProfilePreviewContainer>
+);
 
 export default ProfilePreview;
 

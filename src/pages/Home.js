@@ -42,8 +42,10 @@ const Home = () => {
 
   useEffect(() => {
     if (isSubsequentVisit.current && data?.data) {
-      // window.scrollTo(0, profileListRef.current.offsetTop);
-      window.scrollTo(0, profileListRef.current.offsetTop);
+      window.scrollTo({
+        top: profileListRef.current.offsetTop,
+        behavior: 'smooth'
+      });
     }
     if (data) {
       isSubsequentVisit.current = true;
@@ -53,15 +55,14 @@ const Home = () => {
     history.replace('/', null);
   }, [data, history]);
 
-  const renderData = () =>
-    !data && error.request?.status === 0 ? (
-      <NotFound
-        message="Oops!!! Something went wrong"
-        longMessage="Unable to load profiles"
-      />
-    ) : (
-      <ProfileList currentPage={currentPage} profiles={profiles} />
-    );
+  const renderData = () => (!data && error.request?.status === 0 ? (
+    <NotFound
+      message="Oops!!! Something went wrong"
+      longMessage="Unable to load profiles"
+    />
+  ) : (
+    <ProfileList currentPage={currentPage} profiles={profiles} />
+  ));
   return (
     <div className="App">
       <Seo

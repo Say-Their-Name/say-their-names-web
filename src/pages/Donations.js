@@ -102,11 +102,9 @@ const Donations = () => {
             )}
 
             {donations
-              .filter((donation) =>
-                activeTab !== undefined
-                  ? donation.type.type === tabData[activeTab].type
-                  : donation
-              )
+              .filter((donation) => (activeTab !== undefined
+                ? donation.type.type === tabData[activeTab].type
+                : donation))
               .map((donation) => (
                 <Petition
                   key={donation.id}
@@ -119,16 +117,14 @@ const Donations = () => {
                   path="donate"
                 />
               ))}
-            {donations.filter((donation) =>
-              activeTab !== undefined
-                ? donation.type.type === tabData[activeTab].type
-                : donation
-            ).length > 0 && (
-              <Pagination
-                paginationData={paginationData}
-                currentPage={paginationData.current_page}
-                updateCurrentPage={setCurrentPage}
-              />
+            {donations.filter((donation) => (activeTab !== undefined
+              ? donation.type.type === tabData[activeTab].type
+              : donation)).length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  currentPage={paginationData.current_page}
+                  updateCurrentPage={setCurrentPage}
+                />
             )}
           </Wrapper>
         </>
