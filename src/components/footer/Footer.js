@@ -28,6 +28,8 @@ const Footer = () => (
             <Link to="/">Home</Link>
             <Link to="/donations">Donations</Link>
             <Link to="/petitions">Petitions</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms Of Service</Link>
           </StyledFooterLinks>
         </StyledFooter>
         <StyledFooter width="30%">
@@ -92,4 +94,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
