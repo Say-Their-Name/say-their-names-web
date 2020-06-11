@@ -7,7 +7,7 @@ const PrivacyPolicy = () => (
   <Container>
     <StyledPrivacyPolicy>
       <StyledPrivacyPolicyContainer>
-        <h2> Privacy Policy for Say Their Names</h2>
+        <h2> PRIVACY POLICY FOR SAY THEIR NAMES</h2>
         <p>
           At Say Their Names, accessible from
           {' '}

@@ -7,7 +7,7 @@ const TermsOfService = () => (
   <Container>
     <StyledTermsOfService>
       <StyledTermsOfServiceContainer>
-        <h2> Terms</h2>
+        <h2> TERMS OF SERVICE FOR SAY THEIR NAMES</h2>
         <p>
           By accessing the website at
           {' '}
