@@ -10,7 +10,7 @@ describe('<Petition />', () => {
     const { getByText, getByAltText } = render(
       <Router history={history}>
         <Petition
-          id={1}
+          id="1"
           title="title"
           description="description"
           img="https://www.google.ca"
@@ -31,7 +31,7 @@ describe('<Petition />', () => {
     const { getByText } = render(
       <Router history={history}>
         <Petition
-          id={1}
+          id="1"
           title="title"
           description="description"
           img="https://www.google.ca"

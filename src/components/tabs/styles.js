@@ -2,13 +2,17 @@ import styled from 'styled-components';
 import Color from '../../constants/Color';
 
 const TabActive = styled.a`
-  /* padding: 15px 32px; */
-  padding: 0.7rem 1rem;
-  font-size: 16px;
+  padding: 0.7rem;
+  font-weight: bold;
+  font-size: 14px;
   color: #fff;
   background: ${Color.PRIMARY};
   text-transform: uppercase;
   margin-right: 5px;
+
+  @media (max-width: 610px) {
+    font-size: 12px;
+  }
 
   &:before {
     position: absolute;
@@ -21,13 +25,18 @@ const TabActive = styled.a`
 
 const TabInactive = styled.a`
   color: ${Color.PRIMARY};
-  padding: 0.7rem 1rem;
-  font-size: 16px;
-  border: 2px solid ${Color.PRIMARY};
+  padding: 0.7rem;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid ${Color.PRIMARY};
   text-transform: uppercase;
   margin-right: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  @media (max-width: 610px) {
+    font-size: 12px;
+  }
 
   &:hover {
     background-color: ${Color.PRIMARY};
@@ -44,10 +53,7 @@ const TabNav = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-
-  @media (max-width: 610px) {
-    justify-content: center;
-  }
+  align-items: center;
 `;
 
 export { TabActive, TabInactive, TabNav };
