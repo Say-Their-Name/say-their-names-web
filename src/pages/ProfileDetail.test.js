@@ -126,7 +126,7 @@ describe('<ProfileDetail />', () => {
      * HashTags already tested
      */
     expect(getByLabelText('audio-loading'));
-    await wait(() => expect(getByText('BACK TO PROFILES')));
+    await wait(() => expect(getByText('BACK TO VICTIMS')));
   });
 
   test('renders ProfileDetail on failed response', async () => {

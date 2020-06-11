@@ -9,6 +9,9 @@ const Tabs = ({ locations, currentTab, setState }) => {
       label: PropTypes.string.isRequired
     };
 
+    if (index === undefined && currentTab === null) {
+      return <TabActive onClick={() => setState(index)}>{label}</TabActive>;
+    }
     if (index === currentTab) {
       return <TabActive onClick={() => setState(index)}>{label}</TabActive>;
     }
