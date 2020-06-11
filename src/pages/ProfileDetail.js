@@ -53,7 +53,15 @@ const ProfileDetail = ({ match, location }) => {
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
-          <Seo title={person.full_name} image={person.images[0].image_url} description={person.their_story} />
+          <Seo
+            title={person.full_name}
+            image={
+              person.images.length === 0
+                ? 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                : person.images[0].image_url
+            }
+            description={person.their_story}
+          />
           <BackNavigation
             text="BACK TO VICTIMS"
             link={
