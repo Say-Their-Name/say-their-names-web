@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Container from '../common/Container';
 import { StyledPrivacyPolicy, StyledPrivacyPolicyContainer } from './style';
 
@@ -9,10 +9,13 @@ const PrivacyPolicy = () => (
       <StyledPrivacyPolicyContainer>
         <h2> Privacy Policy for Say Their Names</h2>
         <p>
-          At Say Their Names, accessible from saytheirnames.io, one of our main
-          priorities is the privacy of our visitors. This Privacy Policy
-          document contains types of information that is collected and recorded
-          by Say Their Names and how we use it.
+          At Say Their Names, accessible from
+          {' '}
+          <Link to="/"> saytheirnames.io</Link>
+          , one of our main priorities is
+          the privacy of our visitors. This Privacy Policy document contains
+          types of information that is collected and recorded by Say Their Names
+          and how we use it.
         </p>
 
         <p>
