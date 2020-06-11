@@ -30,7 +30,10 @@ const Donations = () => {
         const res = await axios.get(API_URL);
         setPaginationData(res.data.meta);
         setDonations(res.data.data);
-        window.scrollTo(0, 0);
+        window.scrollTo({
+          top: 0,
+          behavior: 'unset'
+        });
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -52,7 +55,7 @@ const Donations = () => {
     fetchDonationType();
     fetchDonations();
   }, [currentPage]);
-
+  console.log(error);
   return (
     <>
       {error && (
