@@ -19,7 +19,7 @@ const getSocialCopy = (petitionDetails) => {
     socialCopy = `Help bring justice to ${petitionDetails.person.full_name} by signing this petition and put pressure on the authorities to do the right thing. If we show up in numbers, we can win. 
 #SayTheirNames #BlackLivesMatter #${petitionDetails.person.full_name.replace(/\s+/g, '')}`;
   } else {
-    socialCopy = 'Sign this petition to demand policy change and bring media attention to the number of people who want action. #BlackLivesMatter #SayTheirNames';
+    socialCopy = 'Sign this petition to demand policy change and bring media attention to to how many of us want action #BlackLivesMatter #SayTheirNames';
   }
 
   return socialCopy;
