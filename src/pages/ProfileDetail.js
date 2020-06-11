@@ -63,7 +63,7 @@ const ProfileDetail = ({ match, location }) => {
             description={person.their_story}
           />
           <BackNavigation
-            text="BACK TO PROFILES"
+            text="BACK TO VICTIMS"
             link={
               person.donation_links.length > 0
                 ? `/donate/${donation.identifier}`
