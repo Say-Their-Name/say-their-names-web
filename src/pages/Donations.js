@@ -7,6 +7,7 @@ import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
 import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
+import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
@@ -18,14 +19,20 @@ const Donations = () => {
   const [error, setError] = useState();
   const [activeTab, setActiveTab] = useState();
   const [tabData, setTabData] = useState([]);
+  const [paginationData, setPaginationData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchDonations = async () => {
-      const API_URL = `${apiBaseUrl}/donations`;
+      const API_URL = `${apiBaseUrl}/donations?page=${currentPage}`;
 
       try {
         const res = await axios.get(API_URL);
+
+        console.log(res.data.meta);
+        setPaginationData(res.data.meta);
         setDonations(res.data.data);
+        window.scrollTo(0, 0);
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -45,8 +52,8 @@ const Donations = () => {
     };
     fetchDonations();
     fetchDonationType();
-  }, []);
-
+  }, [currentPage]);
+  console.log(currentPage);
   return (
     <>
       {error && (
@@ -90,10 +97,13 @@ const Donations = () => {
             {donations.length === 0 && !loading && (
               <h2 className="not-found">NO DONATIONS FOUND</h2>
             )}
+
             {donations
-              .filter((donation) => (activeTab !== undefined
-                ? donation.type.type === tabData[activeTab].type
-                : donation))
+              .filter((donation) =>
+                activeTab !== undefined
+                  ? donation.type.type === tabData[activeTab].type
+                  : donation
+              )
               .map((donation) => (
                 <Petition
                   key={donation.id}
@@ -106,6 +116,13 @@ const Donations = () => {
                   path="donate"
                 />
               ))}
+            {donations.length > 0 && (
+              <Pagination
+                paginationData={paginationData}
+                currentPage={paginationData.current_page}
+                updateCurrentPage={setCurrentPage}
+              />
+            )}
           </Wrapper>
         </>
       )}
