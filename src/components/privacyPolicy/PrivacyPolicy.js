@@ -14,7 +14,7 @@ const PrivacyPolicy = () => (
           <Link to="/"> saytheirnames.io</Link>
           , one of our main priorities is
           the privacy of our visitors. This Privacy Policy document contains
-          types of information that is collected and recorded by Say Their Names
+          types of information that are collected and recorded by Say Their Names
           and how we use it.
         </p>
 
@@ -57,7 +57,6 @@ const PrivacyPolicy = () => (
             apps, and for marketing and promotional purposes
           </li>
           <li>Send you emails</li>
-          <li>Find and prevent fraud</li>
         </ul>
 
         <h2>Log Files</h2>
