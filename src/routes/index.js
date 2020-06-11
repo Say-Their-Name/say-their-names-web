@@ -13,6 +13,8 @@ import Donations from '../pages/Donations';
 import NotFound from '../pages/notFound/NotFound';
 import DonationDetail from '../pages/DonationDetail';
 import PetitionDetail from '../pages/PetitionDetail';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import TermsOfService from '../pages/TermsOfService';
 
 import { trackInitialPageView } from '../utils/gaTracker';
 
@@ -48,6 +50,8 @@ const AppRoutes = (props) => {
           <Route path="/donations" component={Donations} exact />
           <Route path="/donate/:id" component={DonationDetail} exact />
           <Route path="/sign/:id" component={PetitionDetail} exact />
+          <Route path="/privacy" component={PrivacyPolicy} exact />
+          <Route path="/terms" component={TermsOfService} exact />
           <Route path="*" component={NotFound} exact />
         </Switch>
       </ErrorBoundary>

@@ -56,7 +56,7 @@ const PersonProfile = (props) => {
               <H2>{age}</H2>
             </Age>
             <Children>
-              <H4>CHILDREN</H4>
+              <H4>{number_of_children === 1 ? 'CHILD' : 'CHILDREN'}</H4>
               <H2>{number_of_children > 0 ? number_of_children : 'N/A'}</H2>
             </Children>
           </Div>
