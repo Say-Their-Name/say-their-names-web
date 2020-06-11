@@ -30,7 +30,6 @@ const Donations = () => {
         const res = await axios.get(API_URL);
         setPaginationData(res.data.meta);
         setDonations(res.data.data);
-        // window.scrollTo(0, 0);
         window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');

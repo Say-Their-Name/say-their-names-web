@@ -4,6 +4,7 @@ import axios from 'axios';
 import Seo from '../components/common/Seo';
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
+import Pagination from '../components/pagination/Pagination';
 import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
@@ -17,14 +18,17 @@ const Petitions = () => {
   const [error, setError] = useState();
   const [activeTab, setActiveTab] = useState();
   const [tabData, setTabData] = useState([]);
+  const [paginationData, setPaginationData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchPetitions = async () => {
-      const API_URL = `${apiBaseUrl}/petitions`;
+      const API_URL = `${apiBaseUrl}/petitions?page=${currentPage}`;
 
       try {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
+        setPaginationData(res.data.meta);
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -45,7 +49,7 @@ const Petitions = () => {
     };
     fetchPetitions();
     fetchPetitionType();
-  }, []);
+  }, [currentPage]);
 
   if (error) {
     return (
@@ -89,10 +93,9 @@ const Petitions = () => {
               />
             )}
             {petitions
-              .filter((petition) => (
-                activeTab !== undefined
-                  ? petition.type.type === tabData[activeTab].type
-                  : petition))
+              .filter((petition) => (activeTab !== undefined
+                ? petition.type.type === tabData[activeTab].type
+                : petition))
               .map((petition) => (
                 <Petition
                   key={petition.id}
@@ -105,6 +108,11 @@ const Petitions = () => {
                   path="sign"
                 />
               ))}
+            <Pagination
+              paginationData={paginationData}
+              currentPage={paginationData.current_page}
+              updateCurrentPage={setCurrentPage}
+            />
           </Wrapper>
         </>
       )}
