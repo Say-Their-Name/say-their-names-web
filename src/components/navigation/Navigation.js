@@ -28,7 +28,7 @@ const navRoutes = [
   }
 ];
 const Navigation = () => (
-  <StyledNavigation className="navbar">
+  <StyledNavigation className="navbar" role="navigation">
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
         <img src={Logo} alt="Say Their Names Logo" />
