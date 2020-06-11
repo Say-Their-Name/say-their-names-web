@@ -9,10 +9,8 @@ const PrivacyPolicy = () => (
       <StyledPrivacyPolicyContainer>
         <h2> PRIVACY POLICY FOR SAY THEIR NAMES</h2>
         <p>
-          At Say Their Names, accessible from
-          {' '}
-          <Link to="/"> saytheirnames.io</Link>
-          , one of our main priorities is
+          At Say Their Names, accessible from{' '}
+          <Link to="/"> saytheirnames.io</Link>, one of our main priorities is
           the privacy of our visitors. This Privacy Policy document contains
           types of information that is collected and recorded by Say Their Names
           and how we use it.
@@ -25,17 +23,17 @@ const PrivacyPolicy = () => (
 
         <p>
           This Privacy Policy applies only to our online activities and is valid
-          for visitors to our website and mobile apps with regards to the information that they
-          shared and/or collect in Say Their Names. This policy is not
-          applicable to any information collected offline or via channels other
-          than this website and our mobile apps.
+          for visitors to our website and mobile apps with regards to the
+          information that they shared and/or collect in Say Their Names. This
+          policy is not applicable to any information collected offline or via
+          channels other than this website and our mobile apps.
         </p>
       </StyledPrivacyPolicyContainer>
       <StyledPrivacyPolicyContainer>
         <h2>Consent </h2>
         <p>
-          By using our website or mobile app, you hereby consent to our Privacy Policy and
-          agree to its terms.
+          By using our website or mobile app, you hereby consent to our Privacy
+          Policy and agree to its terms.
         </p>
       </StyledPrivacyPolicyContainer>
 
@@ -46,13 +44,15 @@ const PrivacyPolicy = () => (
         <ul>
           <li>Provide, operate, and maintain our website and mobile apps</li>
           <li>Improve, personalize, and expand our website and mobile apps</li>
-          <li>Understand and analyze how you use our website and mobile apps</li>
+          <li>
+            Understand and analyze how you use our website and mobile apps
+          </li>
           <li>Develop new products, services, features, and functionality</li>
           <li>
             Communicate with you, either directly or through one of our
             partners, including for customer service, to provide you with
-            updates and other information relating to the website or mobile apps, and for
-            marketing and promotional purposes
+            updates and other information relating to the website or mobile
+            apps, and for marketing and promotional purposes
           </li>
           <li>Send you emails</li>
           <li>Find and prevent fraud</li>
@@ -62,15 +62,16 @@ const PrivacyPolicy = () => (
 
         <p>
           Say Their Names follows a standard procedure of using log files. These
-          files log visitors when they visit websites or mobile apps. All hosting companies do
-          this and a part of hosting services&apos; analytics. The information
-          collected by log files include internet protocol (IP) addresses,
-          browser type, Internet Service Provider (ISP), date and time stamp,
-          referring/exit pages, and possibly the number of clicks. These are not
-          linked to any information that is personally identifiable. The purpose
-          of the information is for analyzing trends, administering the site,
-          tracking users&apos; movement on the website/mobile apps, and gathering
-          demographic information.
+          files log visitors when they visit websites or mobile apps. All
+          hosting companies do this and a part of hosting services&apos;
+          analytics. The information collected by log files include internet
+          protocol (IP) addresses, browser type, Internet Service Provider
+          (ISP), date and time stamp, referring/exit pages, and possibly the
+          number of clicks. These are not linked to any information that is
+          personally identifiable. The purpose of the information is for
+          analyzing trends, administering the site, tracking users&apos;
+          movement on the website/mobile apps, and gathering demographic
+          information.
         </p>
       </StyledPrivacyPolicyContainer>
 
@@ -129,16 +130,16 @@ const PrivacyPolicy = () => (
           business has collected about consumers.
         </p>
         <p>
-          Request that a business delete any personal data about the consumer
-          that a business has collected.
-        </p>
-        <p>
           Request that a business that sells a consumer&apos;s personal data,
           not sell the consumer&apos;s personal data.
         </p>
         <p>
           If you make a request, we have one month to respond to you. If you
-          would like to exercise any of these rights, please contact us.
+          would like to exercise any of these rights, please contact us at{' '}
+          <a href="mailto: developers@saytheirnames.io">
+            developers@saytheirnames.io
+          </a>
+          .
         </p>
       </StyledPrivacyPolicyContainer>
 
