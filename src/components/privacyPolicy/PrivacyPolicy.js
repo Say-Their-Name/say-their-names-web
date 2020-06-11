@@ -25,37 +25,17 @@ const PrivacyPolicy = () => (
 
         <p>
           This Privacy Policy applies only to our online activities and is valid
-          for visitors to our website with regards to the information that they
+          for visitors to our  and mobile apps with regards to the information that they
           shared and/or collect in Say Their Names. This policy is not
           applicable to any information collected offline or via channels other
-          than this website.
+          than this website and our mobile apps.
         </p>
       </StyledPrivacyPolicyContainer>
       <StyledPrivacyPolicyContainer>
         <h2>Consent </h2>
         <p>
-          By using our website, you hereby consent to our Privacy Policy and
+          By using our website or mobile app, you hereby consent to our Privacy Policy and
           agree to its terms.
-        </p>
-      </StyledPrivacyPolicyContainer>
-
-      <StyledPrivacyPolicyContainer>
-        <h2>Information we collect </h2>
-        <p>
-          The personal information that you are asked to provide, and the
-          reasons why you are asked to provide it, will be made clear to you at
-          the point we ask you to provide your personal information.
-        </p>
-        <p>
-          If you contact us directly, we may receive additional information
-          about you such as your name, email address, phone number, the contents
-          of the message and/or attachments you may send us, and any other
-          information you may choose to provide.
-        </p>
-        <p>
-          When you register for an Account, we may ask for your contact
-          information, including items such as name, company name, address,
-          email address, and telephone number.
         </p>
       </StyledPrivacyPolicyContainer>
 
@@ -64,14 +44,14 @@ const PrivacyPolicy = () => (
         <p>We use the information we collect in various ways, including to:</p>
 
         <ul>
-          <li>Provide, operate, and maintain our website</li>
-          <li>Improve, personalize, and expand our website</li>
-          <li>Understand and analyze how you use our website</li>
+          <li>Provide, operate, and maintain our website and mobile apps</li>
+          <li>Improve, personalize, and expand our website and mobile apps</li>
+          <li>Understand and analyze how you use our website and mobile apps</li>
           <li>Develop new products, services, features, and functionality</li>
           <li>
             Communicate with you, either directly or through one of our
             partners, including for customer service, to provide you with
-            updates and other information relating to the website, and for
+            updates and other information relating to the website or mobile apps, and for
             marketing and promotional purposes
           </li>
           <li>Send you emails</li>
@@ -82,14 +62,14 @@ const PrivacyPolicy = () => (
 
         <p>
           Say Their Names follows a standard procedure of using log files. These
-          files log visitors when they visit websites. All hosting companies do
+          files log visitors when they visit websites or mobile apps. All hosting companies do
           this and a part of hosting services&apos; analytics. The information
           collected by log files include internet protocol (IP) addresses,
           browser type, Internet Service Provider (ISP), date and time stamp,
           referring/exit pages, and possibly the number of clicks. These are not
           linked to any information that is personally identifiable. The purpose
           of the information is for analyzing trends, administering the site,
-          tracking users&apos; movement on the website, and gathering
+          tracking users&apos; movement on the website/mobile apps, and gathering
           demographic information.
         </p>
       </StyledPrivacyPolicyContainer>
