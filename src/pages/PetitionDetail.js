@@ -47,14 +47,16 @@ const PetitionDetail = ({ match }) => {
     fetchdata();
   }, [id]);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load petition detail"
+      />
+    );
+  }
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load petition detail"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (

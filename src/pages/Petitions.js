@@ -36,24 +36,28 @@ const Petitions = () => {
       const API_URL = `${apiBaseUrl}/petition-types`;
       try {
         const res = await axios.get(API_URL);
-        // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
+      } finally {
+        setLoading(false);
       }
     };
     fetchPetitions();
     fetchPetitionType();
   }, []);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load petitions"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load petitions"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -74,8 +78,8 @@ const Petitions = () => {
               the Black Lives Matter movement.
             </p>
             <p>
-              SAY THEIR NAMES online and demonstrate to those in power that
-              the cause is important to you and you demand justice and change.
+              SAY THEIR NAMES online and demonstrate to those in power that the
+              cause is important to you and you demand justice and change.
             </p>
             {petitions.length > 0 && !loading && (
               <Tabs
@@ -85,9 +89,10 @@ const Petitions = () => {
               />
             )}
             {petitions
-              .filter((petition) => (activeTab !== undefined
-                ? petition.type.type === tabData[activeTab].type
-                : petition))
+              .filter((petition) => (
+                activeTab !== undefined
+                  ? petition.type.type === tabData[activeTab].type
+                  : petition))
               .map((petition) => (
                 <Petition
                   key={petition.id}
