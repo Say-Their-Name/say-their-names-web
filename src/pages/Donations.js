@@ -41,20 +41,25 @@ const Donations = () => {
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
+      } finally {
+        setLoading(false);
       }
     };
     fetchDonations();
     fetchDonationType();
   }, []);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load donations"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load donations"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -65,9 +70,7 @@ const Donations = () => {
             description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
           />
           <Wrapper>
-            <h2>
-              <>DONATIONS</>
-            </h2>
+            <h2>DONATIONS</h2>
 
             <p>
               Donations provide financial support and power to the Black Lives
