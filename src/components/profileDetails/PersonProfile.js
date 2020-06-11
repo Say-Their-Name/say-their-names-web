@@ -37,7 +37,14 @@ const PersonProfile = (props) => {
     <Profile>
       <PersonalInformation>
         <Photo>
-          <img src={images[0].image_url} alt={full_name} />
+          <img
+            src={
+              images.length === 0
+                ? 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                : images[0].image_url
+            }
+            alt={full_name}
+          />
         </Photo>
         <PersonSection>
           <Name>

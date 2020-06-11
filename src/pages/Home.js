@@ -11,7 +11,6 @@ import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
-
 const { apiBaseUrl } = config;
 
 const Home = () => {
@@ -19,7 +18,9 @@ const Home = () => {
   const isSubsequentVisit = useRef(false);
   const location = useLocation();
   const history = useHistory();
-  const [currentPage, setCurrentPage] = useState(location?.state?.oldCurrentPage ? location.state.oldCurrentPage : 1);
+  const [currentPage, setCurrentPage] = useState(
+    location?.state?.oldCurrentPage ? location.state.oldCurrentPage : 1
+  );
 
   const { data, error } = useSWR(
     `/people?page=${currentPage}`,
@@ -41,6 +42,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isSubsequentVisit.current && data?.data) {
+      // window.scrollTo(0, profileListRef.current.offsetTop);
       window.scrollTo(0, profileListRef.current.offsetTop);
     }
     if (data) {
@@ -51,15 +53,15 @@ const Home = () => {
     history.replace('/', null);
   }, [data, history]);
 
-  const renderData = () => (!data && error.request?.status === 0 ? (
-    <NotFound
-      message="Oops!!! Something went wrong"
-      longMessage="Unable to load profiles"
-    />
-  ) : (
-    <ProfileList currentPage={currentPage} profiles={profiles} />
-  ));
-
+  const renderData = () =>
+    !data && error.request?.status === 0 ? (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load profiles"
+      />
+    ) : (
+      <ProfileList currentPage={currentPage} profiles={profiles} />
+    );
   return (
     <div className="App">
       <Seo

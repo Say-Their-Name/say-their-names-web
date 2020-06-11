@@ -39,18 +39,29 @@ const ProfileDetail = ({ match, location }) => {
     fetchdata();
   }, [id]);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load profile detail"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load profile detail"
-        />
-      )}
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
-          <Seo title={person.full_name} image={person.images[0].image_url} description={person.their_story} />
+          <Seo
+            title={person.full_name}
+            image={
+              person.images.length === 0
+                ? 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                : person.images[0].image_url
+            }
+            description={person.their_story}
+          />
           <BackNavigation
             text="BACK TO PROFILES"
             link={

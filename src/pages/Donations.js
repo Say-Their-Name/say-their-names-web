@@ -30,10 +30,8 @@ const Donations = () => {
         const res = await axios.get(API_URL);
         setPaginationData(res.data.meta);
         setDonations(res.data.data);
-        window.scrollTo({
-          top: 0,
-          behavior: 'unset'
-        });
+        // window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -50,20 +48,25 @@ const Donations = () => {
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
+      } finally {
+        setLoading(false);
       }
     };
     fetchDonationType();
     fetchDonations();
   }, [currentPage]);
-  console.log(error);
+
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load donations"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load donations"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -74,9 +77,7 @@ const Donations = () => {
             description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
           />
           <Wrapper>
-            <h2>
-              <>DONATIONS</>
-            </h2>
+            <h2>DONATIONS</h2>
 
             <p>
               Donations provide financial support and power to the Black Lives
@@ -101,9 +102,11 @@ const Donations = () => {
             )}
 
             {donations
-              .filter((donation) => (activeTab !== undefined
-                ? donation.type.type === tabData[activeTab].type
-                : donation))
+              .filter((donation) =>
+                activeTab !== undefined
+                  ? donation.type.type === tabData[activeTab].type
+                  : donation
+              )
               .map((donation) => (
                 <Petition
                   key={donation.id}
@@ -116,14 +119,16 @@ const Donations = () => {
                   path="donate"
                 />
               ))}
-            {donations.filter((donation) => (activeTab !== undefined
-              ? donation.type.type === tabData[activeTab].type
-              : donation)).length > 0 && (
-                <Pagination
-                  paginationData={paginationData}
-                  currentPage={paginationData.current_page}
-                  updateCurrentPage={setCurrentPage}
-                />
+            {donations.filter((donation) =>
+              activeTab !== undefined
+                ? donation.type.type === tabData[activeTab].type
+                : donation
+            ).length > 0 && (
+              <Pagination
+                paginationData={paginationData}
+                currentPage={paginationData.current_page}
+                updateCurrentPage={setCurrentPage}
+              />
             )}
           </Wrapper>
         </>
