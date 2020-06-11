@@ -39,14 +39,17 @@ const ProfileDetail = ({ match, location }) => {
     fetchdata();
   }, [id]);
 
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load profile detail"
+      />
+    );
+  }
+
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load profile detail"
-        />
-      )}
       {loading && <Spinner />}
       {Object.keys(person).length > 0 && (
         <>
