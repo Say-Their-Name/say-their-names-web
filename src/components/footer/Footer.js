@@ -5,6 +5,8 @@ import Container from '../common/Container';
 import Google from '../../assets/GooglePlaybadge.svg';
 import Apple from '../../assets/AppStorebadge.svg';
 import Twitter from '../../assets/twitter.svg';
+import Facebook from '../../assets/facebook.svg';
+import Instagram from '../../assets/instagram.svg';
 import Variables from '../../constants/Variables';
 
 import {
