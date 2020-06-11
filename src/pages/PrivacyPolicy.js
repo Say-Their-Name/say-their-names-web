@@ -6,8 +6,8 @@ import PrivacyPolicyComponent from '../components/privacyPolicy/PrivacyPolicy';
 const PrivacyPolicy = () => (
   <>
     <Seo
-      title="About"
-      description="Our aim is to build an open-source platform to raise awareness of the injustice and often forgotten names of racial inequality at the hands of law enforcement."
+      title="Privacy Policy"
+      description="Privacy Policy for Say Their Names"
       image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
     />
 
