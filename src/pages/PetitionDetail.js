@@ -13,11 +13,25 @@ import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
+const getShareCopy = (petitionDetails) => {
+  let socialCopy;
+  if (petitionDetails.person) {
+    socialCopy = `Help bring justice to ${petitionDetails.person.full_name} by signing this petition and put pressure on the authorities to do the right thing. If we show up in numbers, we can win. 
+#SayTheirNames #BlackLivesMatter #${petitionDetails.person.full_name}`;
+  } else {
+    socialCopy = 'Sign this petition to demand policy change and bring media attention to the number of people who want action. #BlackLivesMatter #SayTheirNames';
+  }
+
+  return socialCopy;
+};
+
 const PetitionDetail = ({ match }) => {
   const { id } = match.params;
   const [petitionDetails, setDonationDetail] = useState([]); // this will hold the profles list fetched from the API
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
+
+  console.log(petitionDetails);
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -62,6 +76,7 @@ const PetitionDetail = ({ match }) => {
           />
           <Container>
             <ActionDetailsHeader
+              socialCopy={getShareCopy(petitionDetails)}
               title={petitionDetails.title}
               link={petitionDetails.link}
               bannerImageUrl={petitionDetails.banner_img_url}

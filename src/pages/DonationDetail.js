@@ -13,6 +13,18 @@ import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
+const getShareCopy = (donationDetails) => {
+  let socialCopy;
+  if (donationDetails.person) {
+    socialCopy = `Join me in donating to ${donationDetails.person.full_name}’s fund, and supporting their family’s fight for justice. 
+#SayTheirNames #BlackLivesMatter #${donationDetails.person.full_name.replace(/\s+/g, '')}`;
+  } else {
+    socialCopy = 'The movement goes on. Join me in supporting {fund} and let’s help fuel the campaign for justice together. #BlackLivesMatter #SayTheirNames';
+  }
+
+  return socialCopy;
+};
+
 const DonationDetail = ({ match }) => {
   const { id } = match.params;
   const [donationDetails, setDonationDetails] = useState([]); // this will hold the profles list fetched from the API
@@ -34,6 +46,8 @@ const DonationDetail = ({ match }) => {
 
     fetchdata();
   }, [id]);
+
+  console.log(donationDetails);
 
   if (error) {
     return (
@@ -65,6 +79,7 @@ const DonationDetail = ({ match }) => {
           />
           <Container>
             <ActionDetailsHeader
+              socialCopy={getShareCopy(donationDetails)}
               title={donationDetails.title}
               link={donationDetails.link}
               bannerImageUrl={donationDetails.banner_img_url}
