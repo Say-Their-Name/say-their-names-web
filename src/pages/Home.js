@@ -12,6 +12,7 @@ import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 import SearchBar from '../components/searchBar/SearchBar';
 
+
 const { apiBaseUrl } = config;
 
 const Home = () => {
@@ -54,7 +55,10 @@ const Home = () => {
 
   useEffect(() => {
     if (isSubsequentVisit.current && data?.data) {
-      window.scrollTo(0, profileListRef.current.offsetTop);
+      window.scrollTo({
+        top: profileListRef.current.offsetTop,
+        behavior: 'smooth'
+      });
     }
     if (data) {
       isSubsequentVisit.current = true;
@@ -72,7 +76,6 @@ const Home = () => {
   ) : (
     <ProfileList currentPage={currentPage} profiles={profiles} />
   ));
-
   return (
     <div className="App">
       <Seo
