@@ -9,8 +9,10 @@ const PrivacyPolicy = () => (
       <StyledPrivacyPolicyContainer>
         <h2> PRIVACY POLICY FOR SAY THEIR NAMES</h2>
         <p>
-          At Say Their Names, accessible from{' '}
-          <Link to="/"> saytheirnames.io</Link>, one of our main priorities is
+          At Say Their Names, accessible from
+          {' '}
+          <Link to="/"> saytheirnames.io</Link>
+          , one of our main priorities is
           the privacy of our visitors. This Privacy Policy document contains
           types of information that is collected and recorded by Say Their Names
           and how we use it.
@@ -135,7 +137,8 @@ const PrivacyPolicy = () => (
         </p>
         <p>
           If you make a request, we have one month to respond to you. If you
-          would like to exercise any of these rights, please contact us at{' '}
+          would like to exercise any of these rights, please contact us at
+          {' '}
           <a href="mailto: developers@saytheirnames.io">
             developers@saytheirnames.io
           </a>
