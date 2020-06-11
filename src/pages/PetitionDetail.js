@@ -13,7 +13,7 @@ import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
-const getTwitterCopy = (petitionDetails) => {
+const getSocialCopy = (petitionDetails) => {
   let socialCopy;
   if (petitionDetails.person) {
     socialCopy = `Help bring justice to ${petitionDetails.person.full_name} by signing this petition and put pressure on the authorities to do the right thing. If we show up in numbers, we can win. 
@@ -74,7 +74,7 @@ const PetitionDetail = ({ match }) => {
           />
           <Container>
             <ActionDetailsHeader
-              twitterCopy={getTwitterCopy(petitionDetails)}
+              socialCopy={getSocialCopy(petitionDetails)}
               title={petitionDetails.title}
               link={petitionDetails.link}
               bannerImageUrl={petitionDetails.banner_img_url}

@@ -13,7 +13,7 @@ import config from '../utils/config';
 
 const { apiBaseUrl } = config;
 
-const getTwitterCopy = (donationDetails) => {
+const getSocialCopy = (donationDetails) => {
   let socialCopy;
   if (donationDetails.person) {
     socialCopy = `Join me in donating to ${donationDetails.person.full_name}’s fund, and supporting their family’s fight for justice. 
@@ -77,7 +77,7 @@ const DonationDetail = ({ match }) => {
           />
           <Container>
             <ActionDetailsHeader
-              twitterCopy={getTwitterCopy(donationDetails)}
+              socialCopy={getSocialCopy(donationDetails)}
               title={donationDetails.title}
               link={donationDetails.link}
               bannerImageUrl={donationDetails.banner_img_url}
