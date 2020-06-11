@@ -28,8 +28,6 @@ const Donations = () => {
 
       try {
         const res = await axios.get(API_URL);
-
-        console.log(res.data.meta);
         setPaginationData(res.data.meta);
         setDonations(res.data.data);
         window.scrollTo(0, 0);
@@ -44,16 +42,17 @@ const Donations = () => {
       const API_URL = `${apiBaseUrl}/donation-types`;
       try {
         const res = await axios.get(API_URL);
+
         // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
       }
     };
-    fetchDonations();
     fetchDonationType();
+    fetchDonations();
   }, [currentPage]);
-  console.log(currentPage);
+
   return (
     <>
       {error && (
@@ -99,11 +98,9 @@ const Donations = () => {
             )}
 
             {donations
-              .filter((donation) =>
-                activeTab !== undefined
-                  ? donation.type.type === tabData[activeTab].type
-                  : donation
-              )
+              .filter((donation) => (activeTab !== undefined
+                ? donation.type.type === tabData[activeTab].type
+                : donation))
               .map((donation) => (
                 <Petition
                   key={donation.id}
@@ -116,12 +113,14 @@ const Donations = () => {
                   path="donate"
                 />
               ))}
-            {donations.length > 0 && (
-              <Pagination
-                paginationData={paginationData}
-                currentPage={paginationData.current_page}
-                updateCurrentPage={setCurrentPage}
-              />
+            {donations.filter((donation) => (activeTab !== undefined
+              ? donation.type.type === tabData[activeTab].type
+              : donation)).length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  currentPage={paginationData.current_page}
+                  updateCurrentPage={setCurrentPage}
+                />
             )}
           </Wrapper>
         </>
