@@ -85,7 +85,6 @@ const DownloadLogo = styled.div`
 justify-content: flex-start;
   img {
     width: 80%;
-    padding: 0.3rem;
   }
 `;
 
