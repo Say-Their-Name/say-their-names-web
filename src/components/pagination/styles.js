@@ -17,7 +17,7 @@ const StyledPagination = styled.div`
   .pagination > .active > a {
     background-color: ${Color.PRIMARY};
     border-color: ${Color.PRIMARY};
-    color: #fff;
+    color: #fff; 
   }
   .pagination > li > a {
     margin: 0.3rem;
@@ -30,6 +30,11 @@ const StyledPagination = styled.div`
       background-color: grey;
       color: white;
     }
+
+    &:focus {
+      outline: 2px solid black;
+    }
+
   }
   .pagination > .active > a,
   .pagination > .active > span,
