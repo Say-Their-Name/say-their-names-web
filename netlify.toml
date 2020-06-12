@@ -1,8 +1,7 @@
 [build]
-  publish = "build"
+  base = "/"
+  publish = "build/"
   command = "yarn build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[template.environment]
+  REACT_APP_BACKEND_URL = "API_URL"
