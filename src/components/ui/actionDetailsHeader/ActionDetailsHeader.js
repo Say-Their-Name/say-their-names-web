@@ -6,7 +6,7 @@ import Share from '../share/Share';
 import { Button } from '../../profileDetails/styles';
 
 const ActionDetailsHeader = ({
-  title, link, action, bannerImageUrl
+  title, link, action, bannerImageUrl, socialCopy
 }) => (
   <StyledActionDetailsHeader>
     <div className="banner">
@@ -21,7 +21,7 @@ const ActionDetailsHeader = ({
     </a>
 
     <div className="share">
-      <Share url={window.location.href} title="#SayTheirNames" />
+      <Share socialCopy={socialCopy} url={window.location.href} title="#SayTheirNames" />
     </div>
   </StyledActionDetailsHeader>
 );
@@ -29,6 +29,7 @@ const ActionDetailsHeader = ({
 export default ActionDetailsHeader;
 
 ActionDetailsHeader.propTypes = {
+  socialCopy: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired,

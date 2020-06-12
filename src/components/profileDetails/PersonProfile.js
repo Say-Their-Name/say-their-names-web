@@ -19,6 +19,10 @@ import {
   Context
 } from './styles';
 
+const getSocialCopy = (info) => `Join me in donating to ${info.full_name}’s fund, and supporting their family’s fight for justice. 
+#SayTheirNames #BlackLivesMatter #${info.full_name.replace(/\s+/g, '')}`;
+
+
 const PersonProfile = (props) => {
   const { info, donation } = props;
   const {
@@ -74,7 +78,7 @@ const PersonProfile = (props) => {
               </Button>
             </Link>
           )}
-          <Share url={window.location.href} title="#SayTheirNames" />
+          <Share socialCopy={getSocialCopy(info)} url={window.location.href} title="#SayTheirNames" />
         </PersonSection>
       </PersonalInformation>
       <Context>
