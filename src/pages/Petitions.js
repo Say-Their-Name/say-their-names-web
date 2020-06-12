@@ -4,6 +4,7 @@ import axios from 'axios';
 import Seo from '../components/common/Seo';
 import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
+import Pagination from '../components/pagination/Pagination';
 import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
 import NotFound from './notFound/NotFound';
@@ -17,14 +18,18 @@ const Petitions = () => {
   const [error, setError] = useState();
   const [activeTab, setActiveTab] = useState();
   const [tabData, setTabData] = useState([]);
+  const [paginationData, setPaginationData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchPetitions = async () => {
-      const API_URL = `${apiBaseUrl}/petitions`;
+      const API_URL = `${apiBaseUrl}/petitions?page=${currentPage}`;
 
       try {
         const res = await axios.get(API_URL);
         setPetitions(res.data.data);
+        setPaginationData(res.data.meta);
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -36,24 +41,28 @@ const Petitions = () => {
       const API_URL = `${apiBaseUrl}/petition-types`;
       try {
         const res = await axios.get(API_URL);
-        // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
+      } finally {
+        setLoading(false);
       }
     };
     fetchPetitions();
     fetchPetitionType();
-  }, []);
+  }, [currentPage]);
+
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load petitions"
+      />
+    );
+  }
 
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load petitions"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -74,8 +83,8 @@ const Petitions = () => {
               the Black Lives Matter movement.
             </p>
             <p>
-              SAY THEIR NAMES online and demonstrate to those in power that
-              the cause is important to you and you demand justice and change.
+              SAY THEIR NAMES online and demonstrate to those in power that the
+              cause is important to you and you demand justice and change.
             </p>
             {petitions.length > 0 && !loading && (
               <Tabs
@@ -100,6 +109,15 @@ const Petitions = () => {
                   path="sign"
                 />
               ))}
+            {petitions.filter((petition) => (activeTab !== undefined
+              ? petition.type.type === tabData[activeTab].type
+              : petition)).length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  currentPage={paginationData.current_page}
+                  updateCurrentPage={setCurrentPage}
+                />
+            )}
           </Wrapper>
         </>
       )}

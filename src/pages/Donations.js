@@ -7,6 +7,7 @@ import Spinner from '../components/common/Spinner';
 import Petition from '../components/ui/petition/Petition';
 import Tabs from '../components/tabs/Tabs';
 import { Wrapper } from '../components/ui/petition/styles';
+import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
@@ -18,14 +19,18 @@ const Donations = () => {
   const [error, setError] = useState();
   const [activeTab, setActiveTab] = useState();
   const [tabData, setTabData] = useState([]);
+  const [paginationData, setPaginationData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchDonations = async () => {
-      const API_URL = `${apiBaseUrl}/donations`;
+      const API_URL = `${apiBaseUrl}/donations?page=${currentPage}`;
 
       try {
         const res = await axios.get(API_URL);
+        setPaginationData(res.data.meta);
         setDonations(res.data.data);
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');
         // set error and show error page
@@ -37,24 +42,30 @@ const Donations = () => {
       const API_URL = `${apiBaseUrl}/donation-types`;
       try {
         const res = await axios.get(API_URL);
+
         // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
+      } finally {
+        setLoading(false);
       }
     };
-    fetchDonations();
     fetchDonationType();
-  }, []);
+    fetchDonations();
+  }, [currentPage]);
+
+  if (error) {
+    return (
+      <NotFound
+        message="Oops!!! Something went wrong"
+        longMessage="Unable to load donations"
+      />
+    );
+  }
 
   return (
     <>
-      {error && (
-        <NotFound
-          message="Oops!!! Something went wrong"
-          longMessage="Unable to load donations"
-        />
-      )}
       {loading ? (
         <Spinner height="95vh" />
       ) : (
@@ -65,9 +76,7 @@ const Donations = () => {
             description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
           />
           <Wrapper>
-            <h2>
-              <>DONATIONS</>
-            </h2>
+            <h2>DONATIONS</h2>
 
             <p>
               Donations provide financial support and power to the Black Lives
@@ -90,6 +99,7 @@ const Donations = () => {
             {donations.length === 0 && !loading && (
               <h2 className="not-found">NO DONATIONS FOUND</h2>
             )}
+
             {donations
               .filter((donation) => (activeTab !== undefined
                 ? donation.type.type === tabData[activeTab].type
@@ -106,6 +116,15 @@ const Donations = () => {
                   path="donate"
                 />
               ))}
+            {donations.filter((donation) => (activeTab !== undefined
+              ? donation.type.type === tabData[activeTab].type
+              : donation)).length > 0 && (
+                <Pagination
+                  paginationData={paginationData}
+                  currentPage={paginationData.current_page}
+                  updateCurrentPage={setCurrentPage}
+                />
+            )}
           </Wrapper>
         </>
       )}

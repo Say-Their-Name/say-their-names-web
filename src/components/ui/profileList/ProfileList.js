@@ -8,20 +8,20 @@ import Container from '../../common/Container';
 const ProfileList = ({ profiles, currentPage }) => (
   <Container>
     {profiles.length === 0 && (
-      <H2 className="not-found">No profiles found</H2>
+    <H2 className="not-found">No profiles found</H2>
     )}
     <StyledProfileList>
       {profiles.length > 0
-        && profiles.map((profile) => (
-          <PersonPreview
-            key={profile.id}
-            id={profile.identifier}
-            image={profile.images[0]}
-            fullName={profile.full_name}
-            dateOfIncident={profile.date_of_incident}
-            currentPage={currentPage}
-          />
-        ))}
+          && profiles.map((profile) => (
+            <PersonPreview
+              key={profile.id}
+              id={profile.identifier}
+              image={profile.images[0]}
+              fullName={profile.full_name}
+              dateOfIncident={profile.date_of_incident}
+              currentPage={currentPage}
+            />
+          ))}
     </StyledProfileList>
   </Container>
 );

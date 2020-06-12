@@ -19,6 +19,10 @@ import {
   Context
 } from './styles';
 
+const getSocialCopy = (info) => `Join me in donating to ${info.full_name}’s fund, and supporting their family’s fight for justice. 
+#SayTheirNames #BlackLivesMatter #${info.full_name.replace(/\s+/g, '')}`;
+
+
 const PersonProfile = (props) => {
   const { info, donation } = props;
   const {
@@ -37,7 +41,14 @@ const PersonProfile = (props) => {
     <Profile>
       <PersonalInformation>
         <Photo>
-          <img src={images[0].image_url} alt={full_name} />
+          <img
+            src={
+              images.length === 0
+                ? 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                : images[0].image_url
+            }
+            alt={full_name}
+          />
         </Photo>
         <PersonSection>
           <Name>
@@ -52,7 +63,7 @@ const PersonProfile = (props) => {
               <H2>{age}</H2>
             </Age>
             <Children>
-              <H4>CHILDREN</H4>
+              <H4>{number_of_children === 1 ? 'CHILD' : 'CHILDREN'}</H4>
               <H2>{number_of_children > 0 ? number_of_children : 'N/A'}</H2>
             </Children>
           </Div>
@@ -67,7 +78,7 @@ const PersonProfile = (props) => {
               </Button>
             </Link>
           )}
-          <Share url={window.location.href} title="#SayTheirNames" />
+          <Share socialCopy={getSocialCopy(info)} url={window.location.href} title="#SayTheirNames" />
         </PersonSection>
       </PersonalInformation>
       <Context>

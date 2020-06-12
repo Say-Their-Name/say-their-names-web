@@ -4,15 +4,30 @@ import PropTypes from 'prop-types';
 
 import { StyledProfilePreviewContainer, StyledProfilePreview } from './styles';
 
-
 const ProfilePreview = ({
-  id, fullName, dateOfIncident, image, currentPage
+  id,
+  fullName,
+  dateOfIncident,
+  image,
+  currentPage
 }) => (
   <StyledProfilePreviewContainer>
-    <Link to={{ pathname: `/profile/${id}`, state: { oldCurrentPage: currentPage } }}>
+    <Link
+      to={{
+        pathname: `/profile/${id}`,
+        state: { oldCurrentPage: currentPage }
+      }}
+    >
       <StyledProfilePreview>
         <div className="image-container">
-          <img src={image.image_url} alt={fullName} />
+          <img
+            src={
+                image
+                  ? image.image_url
+                  : 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+              }
+            alt={fullName}
+          />
         </div>
 
         <div className="profile-preview-container">
@@ -20,7 +35,6 @@ const ProfilePreview = ({
             <h3>{fullName}</h3>
             <p>{dateOfIncident}</p>
           </div>
-
         </div>
       </StyledProfilePreview>
     </Link>

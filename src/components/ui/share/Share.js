@@ -11,12 +11,12 @@ import {
 } from './styles';
 
 const Share = (props) => {
-  const { url, title } = props;
+  const { url, socialCopy } = props;
   return (
     <ShareStyle>
       <h3>Share</h3>
       <ShareSection>
-        <TwitterShareButton url={url} title={title}>
+        <TwitterShareButton url={url} title={socialCopy}>
           <p>
             <i className="fab fa-twitter" />
             Twitter
@@ -24,7 +24,7 @@ const Share = (props) => {
         </TwitterShareButton>
       </ShareSection>
       <ShareSection>
-        <FacebookShareButton url={url} title={title}>
+        <FacebookShareButton url={url} quote={socialCopy}>
           <p>
             <i className="fab fa-facebook-square" />
             Facebook
@@ -32,7 +32,7 @@ const Share = (props) => {
         </FacebookShareButton>
       </ShareSection>
       <ShareSection>
-        <WhatsappShareButton url={url} title={title}>
+        <WhatsappShareButton url={url} title={socialCopy}>
           <p>
             <i className="fab fa-whatsapp-square" />
             Whatsapp
@@ -45,12 +45,12 @@ const Share = (props) => {
 
 Share.defaultProps = {
   url: null,
-  title: null
+  socialCopy: null
 };
 
 Share.propTypes = {
   url: PropTypes.string,
-  title: PropTypes.string
+  socialCopy: PropTypes.string
 };
 
 export default Share;
