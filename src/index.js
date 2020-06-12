@@ -8,13 +8,6 @@ import GlobalStyle from './styles';
 import ScrollToTop from './components/common/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
-if (process.env.NODE_ENV !== 'production') {
-  (async () => {
-    const axe = (await import('react-axe')).default;
-    axe(React, ReactDOM, 2000);
-  })();
-}
-
 const app = (
   <React.StrictMode>
     <Router>
