@@ -15,7 +15,7 @@ const ShareSection = styled.section`
     :focus {
       background-color: red;
       border: 1px solid red;
-      outline: none;
+      outline: 2px solid black;
     }
   }
 

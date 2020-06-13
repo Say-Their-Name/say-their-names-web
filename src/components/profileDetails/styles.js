@@ -178,6 +178,9 @@ const Button = styled.div`
     :hover {
       opacity: 0.9;
     }
+    :focus {
+      2px solid black;
+    }
   }
 `;
 
@@ -188,6 +191,8 @@ const ShareSection = styled.section`
   p {
     margin: 5px 0px;
   }
+
+
 `;
 
 const Share = styled.div`
@@ -202,6 +207,7 @@ const Share = styled.div`
     font-size: 17px;
     line-height: 20px;
   }
+
 `;
 
 const H2 = styled.h2`
