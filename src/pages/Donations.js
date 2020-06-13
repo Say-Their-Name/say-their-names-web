@@ -30,6 +30,7 @@ const Donations = () => {
         const res = await axios.get(API_URL);
         setPaginationData(res.data.meta);
         setDonations(res.data.data);
+
         window.scrollTo({ top: 0, behavior: 'auto' });
       } catch (err) {
         setError('Error occured');
@@ -38,12 +39,12 @@ const Donations = () => {
         setLoading(false);
       }
     };
+
     const fetchDonationType = async () => {
       const API_URL = `${apiBaseUrl}/donation-types`;
       try {
         const res = await axios.get(API_URL);
 
-        // const typeArr = res.data.data.map((data) => data.type);
         setTabData(res.data.data);
       } catch (err) {
         setError('Error occured');
