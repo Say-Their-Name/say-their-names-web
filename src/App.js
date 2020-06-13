@@ -15,7 +15,7 @@ const App = () => {
   }, [history]);
 
   return (
-    <main className="App" role="main">
+    <main className="App">
       <Routes
         initialLoadProp={initialLoad}
         setInitialLoadProp={() => setInitialLoad(true)}
