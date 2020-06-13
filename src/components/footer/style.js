@@ -29,7 +29,7 @@ const StyledFooter = styled.div`
     line-height: 20px;
 
     span {
-      color: red;
+      color: grey;
       font-size: 0.9rem;
     }
   }
