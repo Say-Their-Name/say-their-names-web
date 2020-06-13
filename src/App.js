@@ -15,12 +15,12 @@ const App = () => {
   }, [history]);
 
   return (
-    <div className="App">
+    <main className="App">
       <Routes
         initialLoadProp={initialLoad}
         setInitialLoadProp={() => setInitialLoad(true)}
       />
-    </div>
+    </main>
   );
 };
 
