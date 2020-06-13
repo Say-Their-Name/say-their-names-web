@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Container from '../common/Container';
-import Google from '../../assets/GooglePlaybadge.svg';
-import Apple from '../../assets/AppStorebadge.svg';
+// import Google from '../../assets/GooglePlaybadge.svg';
+// import Apple from '../../assets/AppStorebadge.svg';
 import Twitter from '../../assets/twitter.svg';
 import Facebook from '../../assets/facebook.svg';
 import Instagram from '../../assets/instagram.svg';
@@ -14,8 +14,8 @@ import {
   StyledFooter,
   StyledFooterLinks,
   FooterContainer,
-  StyledFooterMissions,
-  DownloadLogo
+  StyledFooterMissions
+  // DownloadLogo
 } from './style';
 
 const Footer = () => (
@@ -45,7 +45,7 @@ const Footer = () => (
             </p>
           </StyledFooterMissions>
         </StyledFooter>
-        <StyledFooter width="25%">
+        {/* <StyledFooter width="25%">
           <h2>DOWNLOADS</h2>
           <p>
             Download the app
@@ -60,7 +60,7 @@ const Footer = () => (
               <img src={Apple} alt="apple-store" />
             </a>
           </DownloadLogo>
-        </StyledFooter>
+        </StyledFooter> */}
         <StyledFooter>
           <h2>JOIN US ON SOCIAL MEDIA</h2>
           <a

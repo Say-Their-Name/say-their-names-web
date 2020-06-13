@@ -21,7 +21,7 @@ describe('<Footer />', () => {
     expect(getByText('Petitions'));
 
     expect(getByText('Our Mission'));
-    expect(getByText('DOWNLOADS'));
+    // expect(getByText('DOWNLOADS'));
     expect(getByText('JOIN US ON SOCIAL MEDIA'));
   });
 
