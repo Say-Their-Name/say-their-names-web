@@ -113,7 +113,7 @@ const H4 = styled.h4`
   font-weight: bold;
   font-size: 13px;
   line-height: 15px;
-  color: rgba(16, 16, 16, 0.47129);
+  color: rgba(16, 16, 16, 0.58);
 `;
 
 const Div = styled.div`

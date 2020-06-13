@@ -10,6 +10,7 @@ describe('<ActionDetailsHeader />', () => {
         link="/"
         action="action"
         bannerImageUrl="https://www.google.com"
+        socialCopy="socialCopy"
       />
     );
 
