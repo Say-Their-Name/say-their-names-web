@@ -113,7 +113,7 @@ const H4 = styled.h4`
   font-weight: bold;
   font-size: 13px;
   line-height: 15px;
-  color: rgba(16, 16, 16, 0.47129);
+  color: rgba(16, 16, 16, 0.58);
 `;
 
 const Div = styled.div`
@@ -178,6 +178,9 @@ const Button = styled.div`
     :hover {
       opacity: 0.9;
     }
+    :focus {
+      2px solid black;
+    }
   }
 `;
 
@@ -188,6 +191,8 @@ const ShareSection = styled.section`
   p {
     margin: 5px 0px;
   }
+
+
 `;
 
 const Share = styled.div`
@@ -202,6 +207,7 @@ const Share = styled.div`
     font-size: 17px;
     line-height: 20px;
   }
+
 `;
 
 const H2 = styled.h2`

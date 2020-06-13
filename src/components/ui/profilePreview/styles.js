@@ -93,7 +93,7 @@ const StyledProfilePreview = styled.div`
     }
     p {
       margin: 0;
-      color: rgba(16,16,16,0.47129);
+      color: rgba(16, 16, 16, 0.58);
     }
   }
 `;

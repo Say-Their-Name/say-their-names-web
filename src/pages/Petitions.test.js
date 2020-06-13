@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, wait } from '@testing-library/react';
+import { render, waitForElement } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import axios from 'axios';
@@ -8,6 +8,14 @@ import Petitions from './Petitions';
 jest.mock('axios');
 
 describe('<Petitions />', () => {
+  beforeEach(() => {
+    global.scrollTo = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   test('renders Petitions on successful response', async () => {
     const mockDataPetitions = {
       data: {
@@ -107,8 +115,8 @@ describe('<Petitions />', () => {
      */
     expect(getByLabelText('audio-loading'));
 
-    await wait(() => expect(getByText('PETITIONS')));
-    await wait(() => expect(getByText('Petition For Firstname Lastname')));
+    await waitForElement(() => getByText('PETITIONS'));
+    await waitForElement(() => getByText('Petition For Firstname Lastname'));
   });
 
   test('renders No Petitions Found on successful response with no petitions', async () => {
@@ -152,7 +160,7 @@ describe('<Petitions />', () => {
       </Router>
     );
 
-    await wait(() => expect(getByText('NO PETITIONS FOUND')));
+    await waitForElement(() => getByText('NO PETITIONS FOUND'));
   });
 
   test('renders Petitions on failed response', async () => {
@@ -165,7 +173,7 @@ describe('<Petitions />', () => {
       </Router>
     );
 
-    await wait(() => expect(getByText('Oops!!! Something went wrong')));
-    await wait(() => expect(getByText('Unable to load petitions')));
+    await waitForElement(() => getByText('Oops!!! Something went wrong'));
+    await waitForElement(() => getByText('Unable to load petitions'));
   });
 });
