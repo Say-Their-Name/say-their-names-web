@@ -56,10 +56,10 @@ const Footer = () => (
             SAY THEIR NAMES app
           </p>
           <DownloadLogo>
-            <a href={Variables.IOS_URL}>
+            <a href={Variables.ANDROID_URL}>
               <img src={Google} alt="google-playstore" />
             </a>
-            <a href={Variables.ANDROID_URL}>
+            <a href={Variables.IOS_URL}>
               <img src={Apple} alt="apple-store" />
             </a>
           </DownloadLogo>
