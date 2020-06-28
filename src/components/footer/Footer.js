@@ -48,7 +48,6 @@ const Footer = () => (
         <StyledFooter width="25%">
           <h2>
             DOWNLOADS
-            <span> (Coming shortly)</span>
           </h2>
           <p>
             Download the app
