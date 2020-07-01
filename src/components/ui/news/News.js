@@ -3,6 +3,8 @@ import { ReactTinyLink } from 'react-tiny-link';
 import PropTypes from 'prop-types';
 import StyledNews from './styles';
 
+console.log()
+
 const News = ({ news }) => {
   const [display, setDisplay] = useState('block');
 
@@ -17,7 +19,7 @@ const News = ({ news }) => {
             minLine={1}
             url={news.url}
             loadSecureUrl
-            proxyUrl={process.env.REACT_APP_NEWS_FETCH_PROXY}
+            proxyUrl="https://thingproxy.freeboard.io/fetch"
             onSuccess={() => setDisplay('block')}
             onError={() => setDisplay('none')}
           />
