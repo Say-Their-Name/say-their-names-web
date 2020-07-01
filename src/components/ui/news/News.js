@@ -17,6 +17,7 @@ const News = ({ news }) => {
             minLine={1}
             url={news.url}
             loadSecureUrl
+            proxyUrl="https://thingproxy.freeboard.io/fetch"
             onSuccess={() => setDisplay('block')}
             onError={() => setDisplay('none')}
           />
