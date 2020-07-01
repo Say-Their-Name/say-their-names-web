@@ -3,7 +3,7 @@ import { ReactTinyLink } from 'react-tiny-link';
 import PropTypes from 'prop-types';
 import StyledNews from './styles';
 
-console.log()
+
 
 const News = ({ news }) => {
   const [display, setDisplay] = useState('block');
