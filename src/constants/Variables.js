@@ -1,8 +1,15 @@
-console.log(process.env.REACT_APP_TWITTER_URL)
+const {
+  REACT_APP_TWITTER_URL,
+  REACT_APP_FACEBOOK_URL,
+  REACT_APP_INSTAGRAM_URL,
+  REACT_APP_ANDROID_URL,
+  REACT_APP_IOS_URL
+} = process.env;
+
 export default {
-  TWITTER_URL: 'https://twitter.com/SayTheirName_io',
-  FACEBOOK_URL: 'https://www.facebook.com/Say-Their-Names-108926117523025/?modal=admin_todo_tour',
-  INSTAGRAM_URL: 'https://www.instagram.com/saytheirname.io/',
-  ANDROID_URL: '#',
-  IOS_URL: 'https://apps.apple.com/app/say-their-names/id1517599626'
+  TWITTER_URL: REACT_APP_TWITTER_URL,
+  FACEBOOK_URL: REACT_APP_FACEBOOK_URL,
+  INSTAGRAM_URL: REACT_APP_INSTAGRAM_URL,
+  ANDROID_URL: REACT_APP_ANDROID_URL,
+  IOS_URL: REACT_APP_IOS_URL
 };
