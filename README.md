@@ -1,3 +1,5 @@
+![Unit Test Workflow](https://github.com/Say-Their-Name/say-their-names-web/workflows/Unit%20Test%20Workflow/badge.svg)
+
 # Say Their Names ✊🏿
 
 ## Overview
@@ -28,12 +30,24 @@ Using SSH:
 ```
 
 ### Navigate to app
+
 ```sh
  cd say-their-names-web
 ```
 
 ### Add Environment Variable
-Create a `.env` file in the root of the project and copy the contents of `.env.example` file to the newly created `.env` file.
+
+Create a `.env` file in the root of the project and copy the contents below to the newly created `.env` file.
+
+```
+REACT_APP_API_BASE_URL=https://saytheirnames.dev/api
+REACT_APP_NEWS_FETCH_PROXY=https://thingproxy.freeboard.io/fetch
+REACT_APP_TWITTER_URL=https://twitter.com/SayTheirName_io
+REACT_APP_FACEBOOK_URL=https://www.facebook.com/Say-Their-Names-108926117523025/?modal=admin_todo_tour
+REACT_APP_INSTAGRAM_URL=https://www.instagram.com/saytheirname.io
+REACT_APP_ANDROID_URL=https://play.google.com/store/apps/details?id=io.saytheirnames.android
+REACT_APP_IOS_URL=https://apps.apple.com/app/say-their-names/id1517599626
+```
 
 ### Installing Dependencies
 
