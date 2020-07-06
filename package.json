@@ -33,12 +33,6 @@
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
-  "reactSnap": {
-    "inlineCss": true,
-    "removeBlobs": true,
-    "removeScriptTags": true,
-    "removeStyleTags": true
-  },
   "browserslist": {
     "production": [
       ">0.2%",
