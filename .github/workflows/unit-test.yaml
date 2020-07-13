@@ -2,17 +2,21 @@ name: Unit Test Workflow
 
 on:
   pull_request:
-    branches: [ master, development ]
+    branches: [master, development]
 
 jobs:
   unit_test_pull_request:
     runs-on: ubuntu-latest
-    steps: 
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1  
-      with: 
-        node-version: 12
-    - name: Install Node Dependencies
-      run: yarn install --frozen-lockfile
-    - name: Run all Unit Tests
-      run: CI=true yarn test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Node Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run all Unit Tests
+        run: CI=true yarn test
+env:
+  REACT_APP_TWITTER_URL: https://twitter.com/SayTheirName_io
+  REACT_APP_FACEBOOK_URL: https://www.facebook.com/Say-Their-Names-108926117523025/?modal=admin_todo_tour
+  REACT_APP_INSTAGRAM_URL: https://www.instagram.com/saytheirname.iocat
