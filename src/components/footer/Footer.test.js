@@ -19,9 +19,10 @@ describe('<Footer />', () => {
     expect(getByText('Home'));
     expect(getByText('Donations'));
     expect(getByText('Petitions'));
-
+    expect(getByText('Privacy Policy'));
+    expect(getByText('Terms Of Service'));
     expect(getByText('Our Mission'));
-    // expect(getByText('DOWNLOADS (Coming shortly)'));
+    expect(getByText('DOWNLOADS'));
     expect(getByText('JOIN US ON SOCIAL MEDIA'));
   });
 
