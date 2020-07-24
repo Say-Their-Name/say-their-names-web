@@ -25,7 +25,7 @@ describe('<PersonProfile />', () => {
 
   test('renders PersonProfile', () => {
     const history = createMemoryHistory();
-    const { getByText } = render(
+    const { getByText, getByAltText } = render(
       <Router history={history}>
         <PersonProfile info={info} donation={donation} />
       </Router>
@@ -33,6 +33,7 @@ describe('<PersonProfile />', () => {
 
     expect(getByText('FULL NAME'));
     expect(getByText('full name'));
+    expect(getByAltText('full name'));
     expect(getByText('AGE'));
     expect(getByText('30'));
     expect(getByText('CHILDREN'));

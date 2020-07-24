@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
     const { children } = this.props;
     if (hasError) {
       return (
-        <NotFound message="Oops!!! " longMessage="Something went wroing" />
+        <NotFound message="Oops!!! " longMessage="Something went wrong" />
       );
     }
 

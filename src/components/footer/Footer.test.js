@@ -43,5 +43,11 @@ describe('<Footer />', () => {
 
     fireEvent.click(getByText('Petitions'));
     expect(history.location.pathname).toBe('/petitions');
+
+    fireEvent.click(getByText('Privacy Policy'));
+    expect(history.location.pathname).toBe('/privacy');
+
+    fireEvent.click(getByText('Terms Of Service'));
+    expect(history.location.pathname).toBe('/terms');
   });
 });
