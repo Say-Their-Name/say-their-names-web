@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Color from '../../constants/Color';
 
-const TabActive = styled.a`
+const TabActive = styled.button`
   padding: 0.7rem;
   font-weight: bold;
   font-size: 14px;
@@ -21,13 +21,19 @@ const TabActive = styled.a`
     border-style: solid;
     border-color: ${Color.WHITE} ${Color.PRIMARY};
   }
+
+  &:focus {
+    outline: 2px solid black;
+  }
+
 `;
 
-const TabInactive = styled.a`
+const TabInactive = styled.button`
   color: ${Color.PRIMARY};
   padding: 0.7rem;
   font-size: 14px;
   font-weight: bold;
+  background-color: white;
   border: 1px solid ${Color.PRIMARY};
   text-transform: uppercase;
   margin-right: 5px;
@@ -41,6 +47,10 @@ const TabInactive = styled.a`
   &:hover {
     background-color: ${Color.PRIMARY};
     color: ${Color.WHITE};
+  }
+
+  &:focus {
+    outline: 2px solid black;
   }
 
   @media (max-width: 800px) {

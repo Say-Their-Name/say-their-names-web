@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-
 import axios from 'axios';
 import config from '../../utils/config';
-
 import { Form, Container } from './style';
 
 const { apiBaseUrl } = config;
@@ -113,9 +110,5 @@ const SearchBar = () => {
     </Container>
   );
 };
-
-// SearchBar.propTypes = {
-//   victims: PropTypes.instanceOf(Array).isRequired
-// };
 
 export default SearchBar;

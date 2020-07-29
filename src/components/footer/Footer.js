@@ -36,8 +36,8 @@ const Footer = () => (
           <h2>Our Mission</h2>
           <StyledFooterMissions>
             <p>
-              SAY THEIR NAMES is a place to commemorate the death of our black royalty
-              who were victims of racial inequality. SAY THEIR NAMES
+              SAY THEIR NAMES is a place to commemorate the death of our black
+              royalty who were victims of racial inequality. SAY THEIR NAMES
               makes it easy to donate, raise awareness, and sign petitions.
               <br />
               <br />
@@ -46,17 +46,19 @@ const Footer = () => (
           </StyledFooterMissions>
         </StyledFooter>
         <StyledFooter width="25%">
-          <h2>DOWNLOADS</h2>
+          <h2>
+            DOWNLOADS
+          </h2>
           <p>
             Download the app
             <br />
             SAY THEIR NAMES app
           </p>
           <DownloadLogo>
-            <a href={Variables.IOS_URL}>
+            <a href={Variables.ANDROID_URL}>
               <img src={Google} alt="google-playstore" />
             </a>
-            <a href={Variables.ANDROID_URL}>
+            <a href={Variables.IOS_URL}>
               <img src={Apple} alt="apple-store" />
             </a>
           </DownloadLogo>

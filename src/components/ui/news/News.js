@@ -17,6 +17,7 @@ const News = ({ news }) => {
             minLine={1}
             url={news.url}
             loadSecureUrl
+            proxyUrl={process.env.REACT_APP_NEWS_FETCH_PROXY}
             onSuccess={() => setDisplay('block')}
             onError={() => setDisplay('none')}
           />
