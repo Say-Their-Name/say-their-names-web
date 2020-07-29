@@ -26,21 +26,17 @@ describe('<AboutPage />', () => {
     );
     expect(queryAllByRole('link')[1]).toHaveAttribute(
       'href',
-      'https://twitter.com/SayTheirName_io'
+      'https://airtable.com/shr6Da28410B2Muy3'
     );
     expect(queryAllByRole('link')[2]).toHaveAttribute(
       'href',
-      'https://airtable.com/shr6Da28410B2Muy3'
+      'https://t.co/JvU3sgfoFu'
     );
     expect(queryAllByRole('link')[3]).toHaveAttribute(
       'href',
-      'https://t.co/JvU3sgfoFu'
-    );
-    expect(queryAllByRole('link')[4]).toHaveAttribute(
-      'href',
       'https://github.com/Say-Their-Name'
     );
-    expect(queryAllByRole('link')[5]).toHaveAttribute(
+    expect(queryAllByRole('link')[4]).toHaveAttribute(
       'href',
       'https://twitter.com/SayTheirName_io'
     );
