@@ -10,7 +10,6 @@ import Spinner from '../components/common/Spinner';
 import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
-import SearchBar from '../components/searchBar/SearchBar';
 
 
 const { apiBaseUrl } = config;
@@ -18,7 +17,6 @@ const { apiBaseUrl } = config;
 const Home = () => {
   const profileListRef = useRef(null);
   const isSubsequentVisit = useRef(false);
-  const [victims, setVictims] = useState([]);
 
   const location = useLocation();
   const history = useHistory();
@@ -43,15 +41,6 @@ const Home = () => {
   const updateCurrentPage = (page) => {
     setCurrentPage(page);
   };
-
-  useEffect(() => {
-    async function loadData() {
-      const res = await axios.get(`${apiBaseUrl}/people`);
-      const victimData = await res.data.data;
-      setVictims(victimData);
-    }
-    loadData();
-  }, []);
 
   useEffect(() => {
     if (isSubsequentVisit.current && data?.data) {
@@ -83,7 +72,6 @@ const Home = () => {
         image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
         description="Our aim is to build an open-source platform that raises awareness of the injustice and often forgotten names of racial inequality"
       />
-      <SearchBar victims={victims} />
       <GetInvolved />
       <div ref={profileListRef}>
         {!data && error?.request?.status !== 0 ? (

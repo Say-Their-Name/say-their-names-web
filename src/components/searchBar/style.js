@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 500px;
   display: block;
-  margin: 1rem auto;
 `;
 const Form = styled.form`
   position: relative;
@@ -19,7 +18,6 @@ const Form = styled.form`
       border: 1px solid #008abf;
       transition: 0.35s ease;
       color: #008abf;
-      width: 100%;
       &::-webkit-input-placeholder {
         transition: opacity 0.45s ease;
         opacity: 0;

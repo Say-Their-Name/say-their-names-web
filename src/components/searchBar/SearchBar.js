@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
@@ -9,17 +9,13 @@ import { Form, Container } from './style';
 
 const { apiBaseUrl } = config;
 
-const SearchBar = ({ victims }) => {
+const SearchBar = () => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
+  const [victims, setVictims] = useState([]);
   const [isShowError, setIsShowError] = useState(false);
   // use history hooks from react router dom
   const history = useHistory();
-
-  // handle input change
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
 
   // load profile by name
   const loadProfile = async (name) => {
@@ -31,8 +27,16 @@ const SearchBar = ({ victims }) => {
     return false;
   };
 
-  // render suggestions
-  const renderSuggestions = (victim) => (
+  // handle input change
+  const handleChange = async (e) => {
+    setValue(e.target.value);
+    const res = await loadProfile(value);
+    setVictims(res);
+    console.log(res);
+  };
+
+  // render search results
+  const renderSearch = (victim) => (
     <option value={victim.full_name} key={victim.full_name} />
   );
 
@@ -105,14 +109,14 @@ const SearchBar = ({ victims }) => {
 
         <i className="fas fa-search search-icon" />
 
-        <datalist id="suggestions">{victims.map(renderSuggestions)}</datalist>
+        <datalist id="suggestions">{victims.map(renderSearch)}</datalist>
       </Form>
     </Container>
   );
 };
 
-SearchBar.propTypes = {
-  victims: PropTypes.instanceOf(Array).isRequired
-};
+// SearchBar.propTypes = {
+//   victims: PropTypes.instanceOf(Array).isRequired
+// };
 
 export default SearchBar;
