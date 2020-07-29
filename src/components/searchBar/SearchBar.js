@@ -32,7 +32,6 @@ const SearchBar = () => {
     setValue(e.target.value);
     const res = await loadProfile(value);
     setVictims(res);
-    console.log(res);
   };
 
   // render search results
