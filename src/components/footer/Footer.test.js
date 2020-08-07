@@ -23,6 +23,7 @@ describe('<Footer />', () => {
     expect(getByText('Our Mission'));
     // expect(getByText('DOWNLOADS (Coming shortly)'));
     expect(getByText('JOIN US ON SOCIAL MEDIA'));
+    expect(getByText('CONTRIBUTE'));
   });
 
   test('renders correct links', () => {
