@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:all": "yarn run lint:fix && CI=true yarn test",
-    "test:coverage": "CI=true yarn test --coverage --watchAll=false",
+    "test:coverage": "yarn test --coverage --watchAll=false --CI=true",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
