@@ -45,6 +45,8 @@ REACT_APP_NEWS_FETCH_PROXY=https://thingproxy.freeboard.io/fetch
 REACT_APP_TWITTER_URL=https://twitter.com/SayTheirName_io
 REACT_APP_FACEBOOK_URL=https://www.facebook.com/Say-Their-Names-108926117523025/?modal=admin_todo_tour
 REACT_APP_INSTAGRAM_URL=https://www.instagram.com/saytheirname.io
+REACT_APP_GITHUB_URL=https://github.com/Say-Their-Name
+REACT_APP_SLACK_URL=https://app.slack.com/client/T014JL5B3SN/C014X92G997
 REACT_APP_ANDROID_URL=https://play.google.com/store/apps/details?id=io.saytheirnames.android
 REACT_APP_IOS_URL=https://apps.apple.com/app/say-their-names/id1517599626
 ```
