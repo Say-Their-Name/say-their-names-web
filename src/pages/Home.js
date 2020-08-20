@@ -11,11 +11,13 @@ import Pagination from '../components/pagination/Pagination';
 import NotFound from './notFound/NotFound';
 import config from '../utils/config';
 
+
 const { apiBaseUrl } = config;
 
 const Home = () => {
   const profileListRef = useRef(null);
   const isSubsequentVisit = useRef(false);
+
   const location = useLocation();
   const history = useHistory();
   const [currentPage, setCurrentPage] = useState(

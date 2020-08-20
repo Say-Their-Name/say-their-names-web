@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import {
   StyledNavigation,
   StyledNavigationLogo,
@@ -8,6 +7,8 @@ import {
 } from './styles';
 import NavigationItem from './NavigationItem';
 import Logo from '../../assets/logo.png';
+import SearchBar from '../searchBar/SearchBar';
+
 
 const navRoutes = [
   {
@@ -27,8 +28,9 @@ const navRoutes = [
     path: '/about'
   }
 ];
+
 const Navigation = () => (
-  <StyledNavigation className="navbar" role="navigation">
+  <StyledNavigation className="navbar">
     <StyledNavigationLogo className="navbar__logo">
       <Link to="/">
         <img src={Logo} alt="Say Their Names Logo" />
@@ -41,6 +43,9 @@ const Navigation = () => (
         <NavigationItem key={route.name} name={route.name} path={route.path} />
       ))}
     </StyledNavigationLinkContainer>
+
+    <SearchBar />
+
   </StyledNavigation>
 );
 
