@@ -7,6 +7,8 @@ import Apple from '../../assets/AppStorebadge.svg';
 import Twitter from '../../assets/twitter.svg';
 import Facebook from '../../assets/facebook.svg';
 import Instagram from '../../assets/instagram.svg';
+import Github from '../../assets/github.svg';
+import Slack from '../../assets/slack.svg';
 import Variables from '../../constants/Variables';
 
 import {
@@ -88,6 +90,24 @@ const Footer = () => (
             href={Variables.INSTAGRAM_URL}
           >
             <img src={Instagram} alt="instagram-handle" />
+          </a>
+          <br />
+          <h2>CONTRIBUTE</h2>
+          <a
+            style={{ marginTop: '1rem', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={Variables.GITHUB_URL}
+          >
+            <img src={Github} alt="github-handle" />
+          </a>
+          <a
+            style={{ marginTop: '1rem', textDecoration: 'none' }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={Variables.SLACK_URL}
+          >
+            <img src={Slack} alt="slack-handle" />
           </a>
         </StyledFooter>
       </FooterContainer>
