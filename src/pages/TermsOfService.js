@@ -8,7 +8,7 @@ const TermsOfService = () => (
     <Seo
       title="Terms Of Service"
       description="Terms Of Service for Say their Names"
-      image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
+      image="https://saytheirnames.dev/images/assets/placeholder.png"
     />
 
     <TermsOfServiceComponent />

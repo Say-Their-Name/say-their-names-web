@@ -24,7 +24,7 @@ const ProfilePreview = ({
             src={
                 image
                   ? image.image_url
-                  : 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                  : 'https://saytheirnames.dev/images/assets/placeholder.png'
               }
             alt={fullName}
           />

@@ -70,7 +70,7 @@ const Petitions = () => {
           <Seo
             title="Petitions"
             description="Petitions are another way to show the level of public support for the Black Lives Matter movement"
-            image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
+            image="https://saytheirnames.dev/images/assets/placeholder.png"
           />
           <Wrapper>
             {petitions.length === 0 && !loading ? (
