@@ -73,7 +73,7 @@ const Donations = () => {
         <>
           <Seo
             title="Donations"
-            image="https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png"
+            image="https://saytheirnames.dev/images/assets/placeholder.png"
             description="Donations provide financial support and power to the Black Lives Movement to keep the pressure so we can change the system and get justice."
           />
           <Wrapper>

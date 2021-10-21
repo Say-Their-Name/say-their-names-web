@@ -57,7 +57,7 @@ const ProfileDetail = ({ match, location }) => {
             title={person.full_name}
             image={
               person.images.length === 0
-                ? 'https://say-their-names.fra1.cdn.digitaloceanspaces.com/assets/cover.png'
+                ? 'https://saytheirnames.dev/images/assets/placeholder.png'
                 : person.images[0].image_url
             }
             description={person.their_story}
