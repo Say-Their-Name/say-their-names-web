@@ -20,7 +20,8 @@ describe('<PersonProfile />', () => {
     their_story: 'sample story',
     outcome: 'sample outcome',
     country: 'country',
-    donation_links: ['https://www.google.com']
+    donation_links: ['https://www.google.com'],
+    date_of_incident: '2021-10-25'
   };
 
   test('renders PersonProfile', () => {
@@ -44,6 +45,8 @@ describe('<PersonProfile />', () => {
     expect(getByText('sample story'));
     expect(getByText('Context'));
     expect(getByText('sample outcome'));
+    expect(getByText('DATE OF INCIDENT'));
+    expect(getByText('2021-10-25'));
   });
 
   test('renders PersonProfile with correct links', () => {
@@ -70,6 +73,21 @@ describe('<PersonProfile />', () => {
       </Router>
     );
     expect(getByText('CHILDREN'));
+    expect(getByText('N/A'));
+  });
+
+  test('renders N/A when date_of_incident is null', () => {
+    const history = createMemoryHistory();
+    const noChildrenInfo = {
+      ...info,
+      date_of_incident: null
+    };
+    const { getByText } = render(
+      <Router history={history}>
+        <PersonProfile info={noChildrenInfo} donation={donation} />
+      </Router>
+    );
+    expect(getByText('DATE OF INCIDENT'));
     expect(getByText('N/A'));
   });
 });
