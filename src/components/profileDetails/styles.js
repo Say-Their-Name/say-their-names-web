@@ -118,7 +118,7 @@ const H4 = styled.h4`
 
 const Div = styled.div`
   display: flex;
-  width: 50%;
+  width: 60%;
   justify-content: flex-start;
   margin: 10px;
 
@@ -131,7 +131,7 @@ const Age = styled.div`
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  width: 25%;
+  padding-right 15px;
   border-right: 1px solid #d8d8d8;
 
   h2 {
@@ -141,6 +141,18 @@ const Age = styled.div`
 
 const Children = styled.div`
   display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  padding-left: 15px;
+  border-right: 1px solid #d8d8d8;
+  padding-right: 15px;
+  h2 {
+    margin: 0px;
+  }
+`;
+
+const DateOfIncident = styled.div`
+  display: inline;
   flex-direction: column;
   align-content: space-around;
   padding-left: 15px;
@@ -191,8 +203,6 @@ const ShareSection = styled.section`
   p {
     margin: 5px 0px;
   }
-
-
 `;
 
 const Share = styled.div`
@@ -207,7 +217,6 @@ const Share = styled.div`
     font-size: 17px;
     line-height: 20px;
   }
-
 `;
 
 const H2 = styled.h2`
@@ -261,5 +270,6 @@ export {
   Button,
   H2,
   Share,
-  Context
+  Context,
+  DateOfIncident
 };

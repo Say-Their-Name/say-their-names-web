@@ -16,12 +16,14 @@ import {
   Location,
   Button,
   H2,
-  Context
+  Context,
+  DateOfIncident
 } from './styles';
 
-const getSocialCopy = (info) => `Join me in donating to ${info.full_name}’s fund, and supporting their family’s fight for justice. 
+const getSocialCopy = (info) => `Join me in donating to ${
+  info.full_name
+}’s fund, and supporting their family’s fight for justice. 
 #SayTheirNames #BlackLivesMatter #${info.full_name.replace(/\s+/g, '')}`;
-
 
 const PersonProfile = (props) => {
   const { info, donation } = props;
@@ -34,7 +36,8 @@ const PersonProfile = (props) => {
     their_story,
     outcome,
     country,
-    donation_links
+    donation_links,
+    date_of_incident
   } = info;
 
   return (
@@ -66,6 +69,10 @@ const PersonProfile = (props) => {
               <H4>{number_of_children === 1 ? 'CHILD' : 'CHILDREN'}</H4>
               <H2>{number_of_children > 0 ? number_of_children : 'N/A'}</H2>
             </Children>
+            <DateOfIncident>
+              <H4>DATE OF INCIDENT</H4>
+              <H2>{date_of_incident ?? 'N/A'}</H2>
+            </DateOfIncident>
           </Div>
           <Location>
             <H4>LOCATION</H4>
@@ -78,7 +85,11 @@ const PersonProfile = (props) => {
               </Button>
             </Link>
           )}
-          <Share socialCopy={getSocialCopy(info)} url={window.location.href} title="#SayTheirNames" />
+          <Share
+            socialCopy={getSocialCopy(info)}
+            url={window.location.href}
+            title="#SayTheirNames"
+          />
         </PersonSection>
       </PersonalInformation>
       <Context>
@@ -123,7 +134,8 @@ PersonProfile.propTypes = {
     their_story: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
     outcome: PropTypes.string,
-    donation_links: PropTypes.array.isRequired
+    donation_links: PropTypes.array.isRequired,
+    date_of_incident: PropTypes.array.isRequired
   }),
   donation: PropTypes.shape({
     identifier: PropTypes.string
