@@ -20,7 +20,8 @@
     "react-share": "^4.1.0",
     "react-tiny-link": "^3.4.0",
     "styled-components": "^5.1.1",
-    "swr": "^0.2.2"
+    "swr": "^0.2.2",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "postbuild": "react-snap",
@@ -31,7 +32,9 @@
     "test:coverage": "yarn test --coverage --watchAll=false --CI=true",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "browserslist": {
     "production": [
@@ -53,5 +56,6 @@
     "prettier": "^2.0.5",
     "react-axe": "^3.4.1",
     "react-snap": "1.10.0"
-  }
+  },
+  "snyk": true
 }
