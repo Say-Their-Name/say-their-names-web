@@ -1,0 +1,67 @@
+# Git mailmap file to consolidate contributor identities
+# See https://git-scm.com/docs/gitmailmap for format details
+#
+# Format: Canonical Name <canonical@email> Commit Name <commit@email>
+#
+# This file ensures consistent contributor attribution across Git history
+# by mapping multiple identities (different emails or name variations) to
+# a single canonical identity.
+#
+# This addresses the issue of seeing multiple accounts for the same person,
+# which can happen when:
+# - Contributors use different email addresses (work vs personal)
+# - Name variations in git config (e.g., "First Last" vs "Last First")  
+# - Different GitHub accounts are used for different purposes
+# - Automated tools (like Snyk) use different account credentials
+#
+# Note: This file does not modify git history, but changes how Git displays
+# contributor information in commands like 'git shortlog', 'git log --author',
+# and on some GitHub views.
+
+# Ezekiel Ekunola - consolidate name variations
+Ezekiel Ekunola <ekunolaeasybuoy@gmail.com> Ekunola Ezekiel <ekunolaeasybuoy@gmail.com>
+
+# Kouame N'Dri - consolidate different email addresses
+Kouame N'Dri <kouamendri@outlook.com> Kouame N'Dri <56895441+kndri@users.noreply.github.com>
+Kouame N'Dri <kouamendri@outlook.com> Kouame <kndri@redventures.com>
+
+# Utiee Obot - consolidate case variations in email
+Utiee Obot <utibeobot2001@gmail.com> Utiee Obot <Utibeobot2001@gmail.com>
+
+# Leo Antelyes - consolidate different email addresses
+Leo Antelyes <lantelyes@gmail.com> Leo  Antelyes <lantelyes@quuantstamp.com>
+
+# Kris - use full name with canonical account
+Kris Gardiner <krisgardiner.dev@gmail.com> Kris <34139730+krisgardiner@users.noreply.github.com>
+Kris Gardiner <krisgardiner.dev@gmail.com> krisgardiner <krisgardiner.dev@gmail.com>
+
+# JD Shaeffer - use full name
+JD Shaeffer <shaefferjd@gmail.com> JD <31992827+jdshaeffer@users.noreply.github.com>
+JD Shaeffer <shaefferjd@gmail.com> jdshaeffer <shaefferjd@gmail.com>
+
+# Nmeregini Vincent - use consistent name
+Nmeregini Vincent <nmereginivincent@gmail.com> Nmeregini Vincent <40114267+iamcristos@users.noreply.github.com>
+Nmeregini Vincent <nmereginivincent@gmail.com> iamcristos <nmereginivincent@gmail.com>
+
+# Sanjana Rao - use GitHub account
+Sanjana Rao <sprao@ncsu.edu> sprao16 <31786927+sprao16@users.noreply.github.com>
+
+# Jwahir Sundai - use consistent name
+Jwahir Sundai <36107423+jsundai@users.noreply.github.com> Jwahir <36107423+jsundai@users.noreply.github.com>
+Jwahir Sundai <36107423+jsundai@users.noreply.github.com> jsundai <36107423+jsundai@users.noreply.github.com>
+
+# Charlye Castro - consolidate different email addresses
+Charlye Castro <charlyecastro@gmail.com> charlyecastro <castroc@uw.edu>
+
+# Mbaye Faye - consolidate different email addresses
+Mbaye Faye <fayembaye13@hotmail.com> Mbaye faye <mbayefaye@github.com>
+Mbaye Faye <fayembaye13@hotmail.com> mbayefaye <fayembaye13@hotmail.com>
+
+# Ashley Graf - use consistent name
+Ashley Graf <ashley.graf101@gmail.com> ashleygraf101 <ashley.graf101@gmail.com>
+
+# Samuel Akintunde - use consistent name
+Samuel Akintunde <samakintunde37@gmail.com> Samuel Akintunde <samakintunde37@gmail.com>
+
+# Daniel Ferrer - consolidate name
+Daniel Ferrer <danielferrer212@gmail.com> DanFerrer <danielferrer212@gmail.com>
